@@ -1,3 +1,4 @@
+/*Reference 1 -  taken from https://github.com/gatsbyjs/gatsby-starter-default/tree/master/src */
 import * as React from "react";
 
 import Layout from "../components/General/layout";
@@ -13,3 +14,4 @@ const NotFoundPage = () => (
 export const Head = () => <Seo title="404: Not Found" />;
 
 export default NotFoundPage;
+/* End of Reference 1 */

@@ -1,3 +1,4 @@
+/* Reference 1 -  taken from https://github.com/gatsbyjs/gatsby-starter-default/tree/master/src */
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -8,5 +9,6 @@
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
-}
+  setHtmlAttributes({ lang: `en` });
+};
+/* End of Reference 1 */

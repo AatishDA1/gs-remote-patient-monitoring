@@ -1,3 +1,4 @@
+/* Reference 1 -  taken from https://github.com/gatsbyjs/gatsby-starter-default/tree/master/src */
 /**
  * SEO component that queries for data with
  * Gatsby's useStaticQuery React hook
@@ -43,3 +44,4 @@ function Seo({ description, title, children }) {
 }
 
 export default Seo;
+/* End of Reference 1 */

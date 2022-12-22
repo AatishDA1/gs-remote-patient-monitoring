@@ -1,5 +1,5 @@
 import * as React from "react";
-import Header from "./Header";
+import Header from "../Index/Header.js";
 import { GlobalStyle } from "../Styles/GlobalStyles";
 
 const Layout = ({ children }) => {

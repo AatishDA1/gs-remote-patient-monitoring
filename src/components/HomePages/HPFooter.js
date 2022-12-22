@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
 import logo from "../../Assets/Images/GilbertSolutionsLogo.svg";
-import Clock from "./Clock";
+import { LOButton } from "./LOButton";
 
-const Header = () => {
+const HPFooter = () => {
   return (
-    <Nav>
+    <Foot>
       <Logo>
         <img
           style={{ width: 90, height: 90 }}
@@ -14,19 +14,23 @@ const Header = () => {
         />
         GILBERT SOLUTIONS
       </Logo>
-      <Clock></Clock>
-    </Nav>
+      <LOBtn>
+        <LOButton primary="true" big="true" round="true" to="/index">
+          Logout
+        </LOButton>
+      </LOBtn>
+    </Foot>
   );
 };
 
-export default Header;
+export default HPFooter;
 
-const Nav = styled.nav`
-  background: rgba(0, 0, 0, 0);
-  height: 80px;
+const Foot = styled.nav`
+  background: rgba(8, 8, 8, 0.9);
+  height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1300px) / 2);
+  padding: 0.5rem calc((100vw - 1200px) / 2);
   z-index: 100;
   position: relative;
 `;
@@ -44,4 +48,11 @@ const Logo = styled.div`
   font-weight: bold;
   font-style: italic;
   padding: 0 1rem;
+`;
+
+const LOBtn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  font-weight: bold;
 `;

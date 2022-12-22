@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-export const Button = styled(Link)`
-  background: ${({ primary }) => (primary ? "#09369B" : "#077BF1")};
+export const LOButton = styled(Link)`
+  background: ${({ primary }) => (primary ? "#6C0000" : "#A40000")};
   padding: ${({ big }) => (big ? "20px 50px" : "10px 32px")};
-  font-size: ${({ big }) => (big ? "24px" : "16px")};
-  border-radius: ${({ round }) => (round ? "60px" : "none")};
+  font-size: ${({ big }) => (big ? "20px" : "12px")};
+  border-radius: ${({ round }) => (round ? "50px" : "none")};
   color: #fff;
   white-space: nowrap;
   outline: none;
@@ -18,7 +18,7 @@ export const Button = styled(Link)`
   min-width: 100px;
 
   &:hover {
-    background: ${({ primary }) => (primary ? "#077BF1" : "#09369B")};
+    background: ${({ primary }) => (primary ? "#A40000" : "#6C0000")};
     transform: translateY(-2px);
   }
 `;

@@ -6,7 +6,7 @@
   background: #fff;
 }
 
-h1 {
+h2 {
   text-align: center;
   color: #252e48;
   font-size: clamp(1.5rem, 4vw, 4rem);
@@ -116,13 +116,13 @@ h1 {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 600px) {
   .btns_items {
     display: flex;
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 600px) {
   .btns_item {
     margin-bottom: 2rem;
   }

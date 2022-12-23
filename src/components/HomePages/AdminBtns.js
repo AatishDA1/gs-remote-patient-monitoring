@@ -10,7 +10,7 @@ import Simulation from "../../Assets/Images/Simulation.jpg";
 function AdminBtns() {
   return (
     <div className="btns">
-      <h1>Admin Home Page</h1>
+      <h2>Admin Home Page</h2>
       <div className="btns_container">
         <div className="btns_wrapper">
           <ul className="btns_items">

@@ -27,10 +27,11 @@ export default HPFooter;
 
 const Foot = styled.nav`
   background: rgba(8, 8, 8, 0.9);
-  padding: 1rem calc((100vw - 1300px) / 2) 5rem calc((100vw - 1300px) / 2);
+  padding: 1rem calc((100vw - 1300px) / 2) 30rem calc((100vw - 1300px) / 2);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row;
   position: relative;
 `;
 

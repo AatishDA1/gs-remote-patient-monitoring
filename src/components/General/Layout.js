@@ -1,13 +1,15 @@
 import * as React from "react";
-import Header from "../Index/Header.js";
 import { GlobalStyle } from "../Styles/GlobalStyles";
+import GenHeader from "./GenHeader";
+import GenFooter from "./GenFooter";
 
 const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header />
+      <GenHeader />
       <main>{children}</main>
+      <GenFooter />
     </>
   );
 };

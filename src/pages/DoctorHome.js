@@ -5,16 +5,14 @@ import HPHeader from "../components/HomePages/HPHeader";
 import HPFooter from "../components/HomePages/HPFooter";
 import AdminBtns from "../components/HomePages/DoctorBtns";
 
-
-const AdminHome = () => (
+const DoctorHome = () => (
   <>
     <GlobalStyle />
     <HPHeader />
-    <Seo title="AdminHome" />
+    <Seo title="DoctorHome" />
     <AdminBtns />
     <HPFooter />
   </>
 );
 
-export default AdminHome;
-
+export default DoctorHome;

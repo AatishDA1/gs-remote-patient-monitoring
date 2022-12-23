@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
-import Layout from "../components/General/layout";
+import Layout from "../components/General/Layout";
 import Seo from "../components/General/seo";
 
 const UsingDSG = () => (

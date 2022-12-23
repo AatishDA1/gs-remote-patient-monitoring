@@ -1,7 +1,7 @@
 /*Reference 1 -  taken from https://github.com/gatsbyjs/gatsby-starter-default/tree/master/src */
 import * as React from "react";
 
-import Layout from "../components/General/layout";
+import Layout from "../components/General/Layout";
 import Seo from "../components/General/seo";
 
 const NotFoundPage = () => (

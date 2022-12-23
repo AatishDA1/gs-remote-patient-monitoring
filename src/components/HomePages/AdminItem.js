@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 
+/* Reference 4 - taken from https://github.com/briancodex/react-website-v1/blob/master/src/components/CardItem.js*/
+
 function AdminItem(props) {
   return (
     <>
@@ -23,3 +25,5 @@ function AdminItem(props) {
 }
 
 export default AdminItem;
+
+/* End of Reference 4 */

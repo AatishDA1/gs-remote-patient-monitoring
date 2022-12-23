@@ -13,10 +13,10 @@ const Hero = () => {
         <HeroItms>
           <HeroH1>Remote Patient Monitoring</HeroH1>
           <HeroAuth>By GILBERT SOLUTIONS</HeroAuth>
-          <Button primary="true" big="true" round="true" to="/AdminLogin">
+          <Button primary="true" big="true" round="true" to="/AdminHome">
             Admin Login
           </Button>
-          <Button primary="true" big="true" round="true" to="/DoctorLogin">
+          <Button primary="true" big="true" round="true" to="/DoctorHome">
             Doctor Login
           </Button>
         </HeroItms>

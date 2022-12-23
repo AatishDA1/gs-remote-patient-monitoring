@@ -5,6 +5,7 @@ import HPHeader from "../components/HomePages/HPHeader";
 import HPFooter from "../components/HomePages/HPFooter";
 import AdminBtns from "../components/HomePages/AdminBtns";
 
+
 const AdminHome = () => (
   <>
     <GlobalStyle />
@@ -16,3 +17,4 @@ const AdminHome = () => (
 );
 
 export default AdminHome;
+

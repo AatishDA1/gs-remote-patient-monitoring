@@ -15,7 +15,7 @@ const HPFooter = () => {
         GILBERT SOLUTIONS
       </Logo>
       <LOBtn>
-        <LOButton primary="true" big="true" round="true" to="/index">
+        <LOButton primary="true" big="true" round="true" to="/">
           Logout
         </LOButton>
       </LOBtn>
@@ -27,11 +27,10 @@ export default HPFooter;
 
 const Foot = styled.nav`
   background: rgba(8, 8, 8, 0.9);
-  height: 100px;
+  padding: 1rem calc((100vw - 1300px) / 2) 5rem calc((100vw - 1300px) / 2);
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1200px) / 2);
-  z-index: 100;
+  justify-content: space-around;
+  align-items: center;
   position: relative;
 `;
 
@@ -43,7 +42,6 @@ const Logo = styled.div`
   padding: 0 1rem;
   height: 100%;
   font-size: 1.3rem;
-  margin-bottom: 1.5rem;
   letter-spacing: 3px;
   font-weight: bold;
   font-style: italic;

@@ -1,6 +1,11 @@
 import React from "react";
 import "../Styles/AdminBtns.css";
 import AdminItem from "./AdminItem";
+import PatientArchives from "../../Assets/Images/PatientArchives.jpg";
+import PatientSelect from "../../Assets/Images/PatientSelect.jpg";
+import ManageDoctors from "../../Assets/Images/ManageDoctors.jpg";
+import ManagePatients from "../../Assets/Images/ManagePatients.jpg";
+import Simulation from "../../Assets/Images/Simulation.jpg";
 
 function AdminBtns() {
   return (
@@ -10,36 +15,36 @@ function AdminBtns() {
         <div className="btns_wrapper">
           <ul className="btns_items">
             <AdminItem
-              src="../../Assets/Images/GilbertSolutionsLogo.svg"
+              src={PatientSelect}
               text="Patient Select"
               label="All Users"
-              path="/asdasd"
+              path="/PatientSelect"
             />
             <AdminItem
-              src="https://github.com/AatishDA1/gs-remote-patient-monitoring/blob/master/src/Assets/Images/PatientArchives.jpg"
+              src={PatientArchives}
               text="Patient Archives"
               label="All Users"
-              path="/asdasd"
+              path="/PatientArchives"
             />
           </ul>
           <ul className="btns_items">
             <AdminItem
-              src="../../Assets/Images/GilbertSolutionsLogo.svg"
-              text="Patient Select"
+              src={ManageDoctors}
+              text="Manage Doctors"
               label="Admin Only"
-              path="/asdasd"
+              path="/ManageDoctors"
             />
             <AdminItem
-              src="../../Assets/Images/GilbertSolutionsLogo.svg"
+              src={ManagePatients}
               text="Patient Select"
               label="Admin Only"
-              path="/asdasd"
+              path="/PatientSelect"
             />
             <AdminItem
-              src="../../Assets/Images/GilbertSolutionsLogo.svg"
-              text="Patient Select"
+              src={Simulation}
+              text="Simulation"
               label="Admin Only"
-              path="/asdasd"
+              path="/Simulation"
             />
           </ul>
         </div>

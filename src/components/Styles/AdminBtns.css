@@ -1,18 +1,27 @@
 .btns {
-  padding: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
   background: #fff;
 }
 
 h1 {
   text-align: center;
+  color: #252e48;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  margin-bottom: 1.5rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+  padding: 0 1rem;
 }
 
 .btns_container {
-  display: flex;
+  display: inline-flexbox;
   flex-flow: column;
   align-items: center;
-  max-width: 1600px;
-  width: 80%;
+  max-width: 1120px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -22,8 +31,10 @@ h1 {
 }
 
 .btns_items {
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
 }
+
+/* Reference 3 - taken from https://github.com/briancodex/react-website-v1/blob/master/src/components/Cards.css */
 
 .btns_item {
   display: flex;
@@ -36,7 +47,7 @@ h1 {
   display: flex;
   flex-flow: column;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  box-shadow: 0 6px 20px #09359b65;
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   border-radius: 10px;
@@ -44,10 +55,10 @@ h1 {
   text-decoration: none;
 }
 
-.cbtns_pic-wrap {
+.btns_pic-wrap {
   position: relative;
   width: 100%;
-  padding-top: 67%;
+  padding-top: 100%;
   overflow: hidden;
 }
 
@@ -82,7 +93,7 @@ h1 {
   height: 100%;
   max-height: 100%;
   object-fit: cover;
-  transition: all 0.2s linear;
+  transition: all 0.25s linear;
 }
 
 .btns_img:hover {
@@ -116,3 +127,5 @@ h1 {
     margin-bottom: 2rem;
   }
 }
+
+/* End of Reference 3 */

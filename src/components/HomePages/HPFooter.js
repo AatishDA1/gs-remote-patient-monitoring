@@ -30,7 +30,7 @@ const Foot = styled.nav`
   padding: 1rem calc((100vw - 1300px) / 2);
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   position: relative;
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/AdminBtns.css";
+import "../Styles/Btns.css";
 import AdminItem from "./AdminItem";
 import PatientArchives from "../../Assets/Images/PatientArchives.jpg";
 import PatientSelect from "../../Assets/Images/PatientSelect.jpg";

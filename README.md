@@ -53,3 +53,5 @@ Welcome to our Remote Patient Monitor
     ```shell
     gatsby clean
     ```
+
+## 🔧 Functionality

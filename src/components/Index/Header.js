@@ -38,7 +38,7 @@ const Logo = styled.div`
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
-  font-size: 1.3rem;
+  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
   margin-bottom: 1.5rem;
   letter-spacing: 3px;
   font-weight: bold;

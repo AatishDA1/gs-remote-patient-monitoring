@@ -1,17 +1,27 @@
-/*Reference 1 -  taken from https://github.com/gatsbyjs/gatsby-starter-default/tree/master/src */
 import * as React from "react";
-
-import Layout from "../components/General/Layout";
+import styled from "styled-components";
 import Seo from "../components/General/seo";
+import { GlobalStyle } from "../components/Styles/GlobalStyles";
+import Header from "../components/Index/Header";
 
 const NotFoundPage = () => (
-  <Layout>
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+  <>
+    <GlobalStyle />
+    <Header />
+    <h2>404: Not Found</h2>
+    <Unlucky>Nothing exists here sadly... maybe next time.</Unlucky>
+  </>
 );
 
 export const Head = () => <Seo title="404: Not Found" />;
 
 export default NotFoundPage;
-/* End of Reference 1 */
+
+const Unlucky = styled.div`
+  text-align: center;
+  font-size: clamp(0.5rem, 3vw, 1.5rem);
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  padding: 0 2rem;
+  font-weight: bold;
+`;

@@ -7,6 +7,8 @@ import ManageDoctors from "../../Assets/Images/ManageDoctors.jpg";
 import ManagePatients from "../../Assets/Images/ManagePatients.jpg";
 import Simulation from "../../Assets/Images/Simulation.jpg";
 
+/* Reference 5 - taken from https://github.com/briancodex/react-website-v1/blob/master/src/components/Cards.js */
+
 function AdminBtns() {
   return (
     <div className="btns">
@@ -54,3 +56,5 @@ function AdminBtns() {
 }
 
 export default AdminBtns;
+
+/* End of Reference 5 */

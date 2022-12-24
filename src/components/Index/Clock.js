@@ -15,7 +15,7 @@ function Clock() {
   return (
     <div
       style={{
-        fontSize: "2rem",
+        fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)",
         margin: "1rem",
         color: "#fff",
         letterSpacing: "3px",

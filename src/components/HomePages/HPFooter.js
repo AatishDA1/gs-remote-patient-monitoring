@@ -27,7 +27,7 @@ export default HPFooter;
 
 const Foot = styled.nav`
   background: rgba(8, 8, 8, 0.9);
-  padding: 1rem calc((100vw - 1300px) / 2) 30rem calc((100vw - 1300px) / 2);
+  padding: 1rem calc((100vw - 1300px) / 2);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -42,7 +42,7 @@ const Logo = styled.div`
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
-  font-size: 1.3rem;
+  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
   letter-spacing: 3px;
   font-weight: bold;
   font-style: italic;
@@ -54,4 +54,5 @@ const LOBtn = styled.div`
   align-items: center;
   margin-right: 5px;
   font-weight: bold;
+  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
 `;

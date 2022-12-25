@@ -4,7 +4,7 @@ import FormSignup from "../components/Login/FormSignup";
 import { navigate } from "gatsby";
 import { GlobalStyle } from "../components/Styles/GlobalStyles";
 import GenHeader from "../components/General/GenHeader";
-import LoginFooter from "../components/Login/LoginFooter";
+import GenFooter from "../components/General/GenFooter";
 
 /* Reference 9 - taken from https://github.com/briancodex/react-form-v1/blob/master/src/Form.js */
 
@@ -15,20 +15,21 @@ const Form = () => {
     setIsSubmitted(true);
   }
   /* End of Reference 9 */
+
   return (
     <>
       <GlobalStyle />
       <GenHeader />
-      <h2>Admin Login Page</h2>
+      <h2>Doctor Login Page</h2>
       <div className="form-container">
         <div className="form-content-left"></div>
         {!isSubmitted ? (
           <FormSignup submitForm={submitForm} />
         ) : (
-          navigate("/AdminHome")
+          navigate("/DoctorHome")
         )}
       </div>
-      <LoginFooter />
+      <GenFooter />
     </>
   );
 };

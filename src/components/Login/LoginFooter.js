@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import logo from "../../Assets/Images/GilbertSolutionsLogo.svg";
 
-const HPFooter = () => {
+const LoginFooter = () => {
   return (
     <Foot>
       <Logo>
@@ -17,11 +17,11 @@ const HPFooter = () => {
   );
 };
 
-export default HPFooter;
+export default LoginFooter;
 
 const Foot = styled.nav`
   background: rgba(8, 8, 8, 0.9);
-  padding: 1rem calc((100vw - 1300px) / 2);
+  padding: 1rem calc((100vw - 1300px) / 2) 1.78rem calc((100vw - 1300px) / 2);
   display: flex;
   justify-content: space-around;
   align-items: flex-start;

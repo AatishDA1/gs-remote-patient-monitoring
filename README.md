@@ -48,7 +48,7 @@ Welcome to our Remote Patient Monitor
 
     The site should now be running at `http://localhost:8000`.
 
-    If after the first time you try developing you get error you may need to clear the cache before trying again. This can be done using the following command.
+    If after the first time you try developing you get an error, you may need to clear the cache before trying again. This can be done using the following command.
 
     ```shell
     gatsby clean

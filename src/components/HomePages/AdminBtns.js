@@ -6,6 +6,7 @@ import PatientSelect from "../../Assets/Images/PatientSelect.jpg";
 import ManageDoctors from "../../Assets/Images/ManageDoctors.jpg";
 import ManagePatients from "../../Assets/Images/ManagePatients.jpg";
 import Simulation from "../../Assets/Images/Simulation.jpg";
+import Patient1 from "../PatientDisplayTabs/Patient1";
 
 function AdminBtns() {
   return (
@@ -18,7 +19,7 @@ function AdminBtns() {
               src={PatientSelect}
               text="Patient Select"
               label="All Users"
-              path="/PatientSelect"
+              path="/PatientDisplay"
             />
             <AdminItem
               src={PatientArchives}

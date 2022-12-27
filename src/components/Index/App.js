@@ -1,22 +1,20 @@
-import Navbar from "./NavBar"
-import CenteredGrid from "./pages/Patient1Vitals"
-import Patient2 from "./pages/Patient2"
-import Patient3 from "./pages/Patient3"
-import Patient4 from "./pages/Patient4"
-import Patient5 from "./pages/Patient5"
-import Patient1Graph from "./pages/Patient1Graph"
-import Home from "./pages/Home"
+import React from "react";
+import Navbar from "../General/NavBar"
+import Patient1 from "../PatientDisplayTabs/Patient1"
+import Patient2 from "../PatientDisplayTabs/Patient2"
+import Patient3 from "../PatientDisplayTabs/Patient3"
+import Patient4 from "../PatientDisplayTabs/Patient4"
+import Patient5 from "../PatientDisplayTabs/Patient5"
+import Home from "../PatientDisplayTabs/Home"
 
 function App() {
     let component
-    let graph
     switch(window.location.pathname){
         case "/":
             component = <Home/>
             break
             case "/Patient_1":
-                component = <CenteredGrid/>
-                graph = <Patient1Graph/>
+                component = <Patient1/>
                 break
             case "/Patient_2":
                 component = <Patient2/>
@@ -35,7 +33,6 @@ function App() {
     <>
         <Navbar/>
         <div className="container">{component}</div>
-        <div className="graph">{graph}</div>
     </>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Clock() {
+function GenClock() {
   const [clockState, setClockState] = useState();
   /* Reference 2 - taken from https://github.com/Rinlama/ReactTools/blob/clock/src/components/Clock.js */
   useEffect(() => {
@@ -27,4 +27,4 @@ function Clock() {
   );
 }
 
-export default Clock;
+export default GenClock;

@@ -11,6 +11,7 @@ h2 {
   color: #252e48;
   font-size: clamp(1.5rem, 4vw, 4rem);
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   letter-spacing: 3px;
   font-weight: bold;
   padding: 0 rem;

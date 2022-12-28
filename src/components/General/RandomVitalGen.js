@@ -1,4 +1,5 @@
-let repeat=setInterval(RandomRespRate,1000)
+import React, { useEffect, useState } from "react";
+
 export default function RandomRespRate(){
     let min = 12
     let max = 16

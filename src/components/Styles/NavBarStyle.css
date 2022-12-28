@@ -7,7 +7,7 @@ body {
 
 .kontainer{
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 40fr 15fr ;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 8fr 2fr ;
     gap: 10px;
     grid-template-areas: 
     "RespGraph RespRate"
@@ -124,7 +124,6 @@ body {
     list-style:none;
     display: flex;
     gap: 1rem;
-    
 }
 /* .graph {
     text-align: left;

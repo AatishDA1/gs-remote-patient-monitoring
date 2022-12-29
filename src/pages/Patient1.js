@@ -1,37 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import Layout from "../components/General/Layout";
 import "chartjs-adapter-luxon";
 import Chart from "chart.js/auto";
 import StreamingPlugin from "chartjs-plugin-streaming";
-import RandomRespRate from "../components/Vitals/RandomVitalGen";
-import {
-  RandomTemp,
-  RandomSys,
-  RandomDias,
-  RandomHR,
-} from "../components/Vitals/RandomVitalGen";
+import RandomRespRate,  { RandomTemp, RandomSys, RandomDias } from "../components/Vitals/RandomVitalGen";
 import Navbar from "../components/General/NavBar";
-import {
-  Chart as ChartJS,
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Tooltip,
-} from "chart.js";
+import RandomHR from "../components/Vitals/testingvitals";
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Tooltip } from "chart.js";
 
-ChartJS.register(
-  LineElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  Tooltip
-);
-
+ChartJS.register( LineElement, CategoryScale, LinearScale, PointElement, Tooltip);
 Chart.register(StreamingPlugin);
 
 export default function Patient1() {
+  
   const respdata = {
     labels: ["0", "5", "10", "15", "20", "25", "30"],
     datasets: [
@@ -147,6 +129,7 @@ export default function Patient1() {
       },
     },
   };
+
   return (
     <Layout>
       <Navbar />
@@ -157,9 +140,7 @@ export default function Patient1() {
         </div>
         <div className="RespRate">
           <li>Resp Rate:</li>
-          <li>
-            <RandomRespRate /> bpm
-          </li>
+          <li><RandomRespRate /> bpm </li>
         </div>
         <div className="TempGraph">
           <li>Temperature Graph</li>
@@ -167,9 +148,7 @@ export default function Patient1() {
         </div>
         <div className="Temp">
           <li>Temperature:</li>
-          <li>
-            <RandomTemp /> °C
-          </li>
+          <li><RandomTemp /> °C</li>
         </div>
         <div className="BP_Sys_Graph">
           <li>Blood Pressure Systolic Graph</li>
@@ -177,9 +156,7 @@ export default function Patient1() {
         </div>
         <div className="BP_Sys">
           <li>BP Systolic</li>
-          <li>
-            <RandomSys /> mmHg
-          </li>
+          <li><RandomSys /> mmHg</li>
         </div>
         <div className="BP_Dias_Graph">
           <li>Blood Pressure Diastolic Graph</li>
@@ -187,9 +164,7 @@ export default function Patient1() {
         </div>
         <div className="BP_Dias">
           <li>BP Diastolic:</li>
-          <li>
-            <RandomDias /> mmHg
-          </li>
+          <li>{RandomDias()} mmHg</li>
         </div>
         <div className="HRGraph">
           <li>Heart Rate Graph</li>
@@ -207,17 +182,19 @@ export default function Patient1() {
             }}
             options={{
               scales: {
-                min: 59,
-                max: 101,
+                y:{min: 59,
+                max: 101,},
                 x: {
                   type: "realtime",
                   realtime: {
-                    delay: 2000,
+                    delay: 2000, // how much earlier the code finds the next value
+                    refresh:1000, // how often the chart plots a point
+                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
                           x: Date.now(),
-                          y: RandomHR(),
+                          y: <RandomHR/>,
                         });
                       });
                     },
@@ -229,14 +206,14 @@ export default function Patient1() {
         </div>
         <div className="HR">
           <li>Heart Rate:</li>
-          <li>
-            <RandomHR /> bpm
-          </li>
+          <li><RandomHR/> bpm</li>
         </div>
         <div className="ECG">
           <li>ECG</li>
         </div>
       </div>
     </Layout>
+    
   );
 }
+

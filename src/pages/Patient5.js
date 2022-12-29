@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/General/Layout";
-import RandomRespRate from "../components/Vitals/RandomVitalGen";
-import {
+import RandomRespRate, {
   RandomTemp,
   RandomSys,
   RandomDias,

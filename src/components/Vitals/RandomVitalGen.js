@@ -1,3 +1,5 @@
+import React, { Component, useState, useEffect } from "react";
+
 export default function RandomRespRate() {
   let min = 12;
   let max = 16;
@@ -19,12 +21,6 @@ export function RandomSys() {
 export function RandomDias() {
   let min = 60;
   let max = 80;
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-export function RandomHR() {
-  let min = 60;
-  let max = 100;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import React from "react";
 
 
-const NavButton = styled(Link)`
+export const NavButton = styled(Link)`
   padding: ${({ big }) => (big ? "20px 20px" : "10px 15px")};
   border-radius: ${({ round }) => (round ? "40px" : "none")};
   color: #fff;
@@ -24,5 +24,3 @@ const NavButton = styled(Link)`
     transform: translateY(-2px);
   }
 `;
-
-export default NavButton;

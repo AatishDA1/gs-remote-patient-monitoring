@@ -198,3 +198,57 @@ input:checked::before {
   padding-left: 30px;
   text-align: center;
 }
+
+.flex-containerdr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c5cee2;
+  align-items: stretch;
+}
+
+.flex-containerdr > span {
+  background-color: #fff;
+  margin:5px;
+  width: 45.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+.flex-containerdr > div {
+  background-color: #fff;
+  margin:5px;
+  width: 8.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+
+.btnstyle {
+  background: #1f1f1f;
+  padding: 10px 15px;
+  border-radius: 40px;
+  border-radius: "none";
+  color: #fff;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 10px;
+  text-align: center;
+}
+
+.btnstyle:hover {
+  cursor: pointer;
+  background: #b4b4b4;
+  transition: all 0.4s ease-out;
+}

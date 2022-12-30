@@ -1,44 +1,89 @@
-import * as React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { AEDButton } from "./AEDButton";
+import { alldoctors } from "./ListDrs";
 import "./styles.css";
 
-const HPHeader = () => {
-  return (
-    <div>
-        <div>
-            <h3>
-                searchbar here
-            </h3>
+//reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
+//                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
+//                  https://blog.logrocket.com/building-custom-checkbox-react/
+
+export default function MPActions() {
+    const [checkedstate, setcheckedstate] = useState(
+        new Array(alldoctors.length).fill(false)
+    );
+
+    const [total, setTotal] = useState(0);
+
+    const handleOnChange = (position) => {
+        const updatedCheckedState =checkedstate.map((item, index) =>
+            index === position ? !item:item
+        );
+
+        setcheckedstate(updatedCheckedState);
+
+        const totalPrice = updatedCheckedState.reduce(
+            (sum,  currentState, index) => {
+                if(currentState === true) {
+                    return sum+1;
+                }
+                return sum;
+            },
+            0
+        );
+        setTotal(totalPrice);
+    };
+
+    return(
+        <div className="ChangeBtnState">
+            <ul className="doctors-list">
+                {alldoctors.map(({name, office},index) => {
+                    return (
+                        <li key={index}>
+                            <span className="flex-containerdr">
+                                <div className="left-section">
+                                    <span className="checkbox-wrapper">
+                                        <input
+                                        type="checkbox"
+                                        id={'custom-checkbox-{index}'}
+                                        name={name}
+                                        value={name}
+                                        checked={checkedstate[index]}
+                                        onChange={()=> handleOnChange(index)}
+                                        className={checkedstate? "checked" : ""}
+                                        />
+                                    </span>
+                                </div>
+                                <span className="left-section">{name}</span>
+                                <span className="center-section">{office}</span>
+                            </span>
+                        </li>
+                    );
+                })}
+                <li>
+                    <div>
+                        <AEDBtn>
+                            <AEDButton disabled={total!==0} primary round to="/AddPatient">
+                                Add
+                            </AEDButton>
+                            <AEDButton disabled={total!==1} primary round to="/EditPatient">
+                                Edit
+                            </AEDButton>
+                            <AEDButton disabled={total===0} primary round to="/DeletePatient">
+                                Delete
+                            </AEDButton>
+                        </AEDBtn>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <Nav>
-                <div className="left-section">
-                    Doctor Name
-                </div>
-                <div className="right-section">
-                    Office Number
-                </div>
-        </Nav>
-    </div>
-  );
-};
+    )
+}
 
-export default HPHeader;
-
-const Nav = styled.nav`
-  background: #09369B;
-  color: #ffffff;
-  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
-  font-weight: bold;
-  height: 80px;
+const AEDBtn = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  text-align:center;
-  position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
-  width: 60%;
-  margin: 0 auto;
+  text-align: center;
+  margin-right: 5px;
+  font-weight: bold;
 `;

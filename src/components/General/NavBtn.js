@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 import React from "react";
+import { Button } from "react-bootstrap";
 
 
 export const NavButton = styled(Link)`
+  background-color: ${({ primary }) => (primary ? "#1f1f1f" : "#b4b4b4")};
   padding: ${({ big }) => (big ? "20px 20px" : "10px 15px")};
   border-radius: ${({ round }) => (round ? "40px" : "none")};
   color: #fff;
@@ -20,7 +22,7 @@ export const NavButton = styled(Link)`
   text-align: center;
 
   &:hover {
-    background: ${({ primary }) => (primary ? "#b4b4b4" : "#fff")};
+    background: ${({ primary }) => (primary ? "#b4b4b4" : "#1f1f1f")};
     transform: translateY(-2px);
   }
 `;

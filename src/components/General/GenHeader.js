@@ -7,7 +7,7 @@ import { LOButton } from "../HomePages/LOButton";
 import {FaHome} from "react-icons/fa";
 import {RiArrowGoBackFill} from "react-icons/ri"
 import { navigate } from "@gatsbyjs/reach-router";
-
+import "../ManagingDrs/styles.css";
 
 
 const GenHeader = () => {
@@ -18,7 +18,7 @@ const GenHeader = () => {
         <NavButton primary round to="/AdminHome">
           <FaHome/>
         </NavButton>
-        <button onClick={() => navigate(-1)}>
+        <button className="btnstyle" onClick={() => navigate(-1)}>
           <RiArrowGoBackFill/>
         </button>
       </div>
@@ -37,7 +37,7 @@ const GenHeader = () => {
 export default GenHeader;
 
 const Nav = styled.nav`
-  background: rgba(8, 8, 8, 0.9);
+  background: #1f1f1f;
   height: 80px;
   display: flex;
   justify-content: space-between;

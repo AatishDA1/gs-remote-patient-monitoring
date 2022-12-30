@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { AEDButton } from "./AEDButton";
-import { alldoctors } from "./ListDrs";
-import "./styles.css";
+import { AEDButton } from "../ManagingDrs/AEDButton";
+import { allpatients } from "./ListPats";
+import "../ManagingDrs/styles.css";
 
 // export default function ChangeBtnState() {
 //     const [change, setChange] = useState(Array(3).fill(false));
@@ -23,9 +23,9 @@ import "./styles.css";
 //     )
 // }
 
-export default function ChangeBtnState() {
+export default function MPActions() {
     const [checkedstate, setcheckedstate] = useState(
-        new Array(alldoctors.length).fill(false)
+        new Array(allpatients.length).fill(false)
     );
 
     const [total, setTotal] = useState(0);
@@ -51,13 +51,12 @@ export default function ChangeBtnState() {
 
     return(
         <div className="ChangeBtnState">
-            {/* <h3>Select Doctors</h3> */}
             <ul className="doctors-list">
-                {alldoctors.map(({name, office},index) => {
+                {allpatients.map(({name, room, supo},index) => {
                     return (
                         <li key={index}>
-                            <span className="doctors-list-item">
-                                <span className="left-section">
+                            <span className="flex-container">
+                                <div className="left-section">
                                     <span className="checkbox-wrapper">
                                         <input
                                         type="checkbox"
@@ -68,19 +67,17 @@ export default function ChangeBtnState() {
                                         onChange={()=> handleOnChange(index)}
                                         className={checkedstate? "checked" : ""}
                                         />
-                                        <span htmlFor={'custom-checkbox-{index}'}>{name}</span>
+                                        
                                     </span>
-                                </span>
-                                <span className="alignright">{office}</span>
+                                </div>
+                                <span className="left-section">{name}</span>
+                                <span className="center-section">{room}</span>
+                                <span className="alignright">{supo}</span>
                             </span>
                         </li>
                     );
                 })}
                 <li>
-                    {/* <div className="doctors-list-item">
-                        <div className="left-section">Total:</div>
-                        <div className="right-section">{total}</div>
-                    </div> */}
                     <div>
                         <AEDBtn>
                             <AEDButton disabled={total!==0} primary round to="/AddDoctor">
@@ -106,5 +103,20 @@ const AEDBtn = styled.div`
   text-align: center;
   margin-right: 5px;
   font-weight: bold;
-  font-size: clamp(0.5rem, 2.0vw, 2.5rem);
+`;
+
+const Listbox = styled.nav`
+  background: #A9A9A9;
+  color: rgb(0,0,0);
+  font-weight: bold;
+  display: inline;
+  justify-content: space-between;
+  text-align:left;
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  width: 100px;
+  margin: 0 auto;
 `;

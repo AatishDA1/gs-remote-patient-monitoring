@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import "./styles.css";
+import "../ManagingDrs/styles.css";
 
 const HPHeader = () => {
   return (
@@ -14,8 +14,11 @@ const HPHeader = () => {
                 <div className="left-section">
                     Doctor Name
                 </div>
+                <div className="center-section">
+                    Room
+                </div>
                 <div className="right-section">
-                    Office Number
+                    Assigned Doctor
                 </div>
         </Nav>
     </div>
@@ -27,7 +30,7 @@ export default HPHeader;
 const Nav = styled.nav`
   background: #09369B;
   color: #ffffff;
-  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(0.5rem, 2.5vw, 2.0rem);
   font-weight: bold;
   height: 80px;
   display: flex;

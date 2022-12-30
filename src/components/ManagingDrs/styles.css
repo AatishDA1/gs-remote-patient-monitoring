@@ -35,7 +35,7 @@ h3 {
 }
 
 .doctors-list li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .dctors-list-item {
@@ -46,7 +46,7 @@ h3 {
 }
 
 .dcotors-list li:last-child {
-  border-top: 1px solid rgb(224, 170, 170);
+  border-top: 1px solid rgb(255, 255, 255);
   margin-top: 1rem;
   padding-top: 1rem;
 }
@@ -61,21 +61,36 @@ h3 {
   justify-content: space-between;
 }
 
-.right-section {
-  text-align: right;
+.center-section {
+  text-align: center;
+  align-items: center;
   justify-content: space-between;
 }
-/* 
+
+.right-section {
+  text-align: right;
+  align-items: right;
+  justify-content: space-between;
+}
+
+.alignleft {
+  float:left;
+}
+
+.alignright {
+  float:right;
+}
+
 .total {
   margin-top: 1rem;
-} */
+}
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .doctors-list,
   .total {
     width: 90%;
   }
-} */
+}
 
 .checkbox-wrapper {
   border-bottom: 1px solid #c6c6c6;
@@ -136,4 +151,50 @@ input:checked::before {
 
 .checkbox-wrapper input[type="checkbox"]:focus {
   box-shadow: 0 0 20px #09369B;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex:33%;
+  max-width: 33%;
+  padding: 0 4px;
+}
+
+.column > span {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c5cee2;
+  align-items: stretch;
+}
+
+.flex-container > span {
+  background-color: #fff;
+  margin:5px;
+  width: 30.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+.flex-container > div {
+  background-color: #fff;
+  margin:5px;
+  width: 8.5%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
 }

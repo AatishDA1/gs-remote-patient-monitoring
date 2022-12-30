@@ -1,13 +1,10 @@
 import React from "react";
 import Layout from "../components/General/Layout";
-import RandomRespRate from "../components/Vitals/RandomVitalGen";
-import {
+import RandomRespRate, {
   RandomTemp,
   RandomSys,
   RandomDias,
-  RandomHR,
-} from "../components/Vitals/RandomVitalGen";
-// import Chart from 'chart.js/auto';
+  RandomHR } from "../components/Vitals/RandomVitalGen";
 import { Line } from "react-chartjs-2";
 import Navbar from "../components/General/NavBar";
 import {

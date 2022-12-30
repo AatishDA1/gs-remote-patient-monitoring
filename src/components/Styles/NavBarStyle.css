@@ -5,10 +5,87 @@ body {
     margin:0;
 }
 
+/* Reference https://www.youtube.com/watch?v=sA_glquejwE*/
+
+.RespGraph{
+    background-color: aliceblue;
+    grid-area: RespGraph;
+    list-style-type:none;
+}
+
+.RespRate{
+    background-color: lavender;
+    grid-area: RespRate;
+    list-style-type:none;
+}
+
+.TempGraph{
+    background-color: aliceblue;
+    grid-area: TempGraph;
+    list-style-type:none;
+}
+
+.Temp{
+    background-color: lavender;
+    grid-area: Temp;
+    list-style-type:none;
+}
+
+.BP_Sys_Graph{
+    background-color: aliceblue;
+    grid-area: BP_Sys_Graph;
+    list-style-type:none;
+}
+
+.BP_Sys{
+    background-color: lavender;
+    grid-area: BP_Sys;
+    list-style-type:none;
+}
+
+.BP_Dias_Graph{
+    background-color: aliceblue;
+    grid-area: BP_Dias_Graph;
+    list-style-type:none;
+}
+
+.BP_Dias{
+    background-color: lavender;
+    grid-area: BP_Dias;
+    list-style-type:none;
+}
+
+.HRGraph{
+    background-color: aliceblue;
+    grid-area: HRGraph;
+    list-style-type:none;
+    
+}
+
+.HR{
+    background-color: lavender;
+    grid-area: HR;
+    list-style-type:none;
+}
+
+.ECG{
+    background-color: aliceblue;
+    grid-area: ECG;
+    list-style-type:none;
+}
+
 .kontainer{
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 8fr 2fr ;
-    gap: 10px;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr;
+    /* 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr ; */
+    /* 'RespGraph RespGraph RespGraph RespGraph RespGraph RespGraph RespRate RespRate RespRate RespRate'
+    'TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph Temp Temp'
+    'BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys BP_Sys'
+    'BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias BP_Dias'
+    'HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HR HR'
+    'ECG ECG ECG ECG ECG ECG ECG ECG ECG ECG'; */
+    grid-gap: 15px;
+    padding: 10px;
     grid-template-areas: 
     "RespGraph RespRate"
     "TempGraph Temp"
@@ -20,87 +97,7 @@ body {
     text-align: Left;
 }
 
-.RespGraph{
-    background-color: aliceblue;
-    grid-area: RespGraph;
-    list-style-type:none;
-    /* text-align: left; */
-}
-
-.RespRate{
-    background-color: lavender;
-    grid-area: RespRate;
-    list-style-type:none;
-    /* text-align: right; */
-}
-
-.TempGraph{
-    background-color: aliceblue;
-    grid-area: TempGraph;
-    list-style-type:none;
-    /* text-align: left; */
-}
-
-.Temp{
-    background-color: lavender;
-    grid-area: Temp;
-    list-style-type:none;
-    /* text-align: right; */
-}
-
-.BP_Sys_Graph{
-    background-color: aliceblue;
-    grid-area: BP_Sys_Graph;
-    list-style-type:none;
-    /* text-align: left; */
-}
-
-.BP_Sys{
-    background-color: lavender;
-    grid-area: BP_Sys;
-    list-style-type:none;
-    /* text-align: right; */
-}
-
-.BP_Dias_Graph{
-    background-color: aliceblue;
-    grid-area: BP_Dias_Graph;
-    list-style-type:none;
-    /* text-align: left; */
-}
-
-.BP_Dias{
-    background-color: lavender;
-    grid-area: BP_Dias;
-    list-style-type:none;
-    /* text-align: right; */
-}
-
-.HRGraph{
-    background-color: aliceblue;
-    grid-area: HRGraph;
-    list-style-type:none;
-    /* text-align: left; */
-}
-
-.HR{
-    background-color: lavender;
-    grid-area: HR;
-    list-style-type:none;
-    /* text-align: right; */
-}
-
-.ECG{
-    background-color: aliceblue;
-    grid-area: ECG;
-    list-style-type:none;
-    /* text-align: left; */
-}
-
-.container {
-    margin:1rem;
-    text-align: right;
-}
+/* end of reference */
 .stat-title {
     margin:1rem;
     align-items: left;
@@ -115,7 +112,7 @@ body {
     padding:0 1rem;
 }
 .site-title{
-    font-size: 2rem;
+    font-size: 3vw;
     text-decoration: none;
 }
 .nav ul {
@@ -124,10 +121,10 @@ body {
     list-style:none;
     display: flex;
     gap: 1rem;
+    text-align: center;
+    font-size: 2vw;
 }
-/* .graph {
-    text-align: left;
-} */
+
 .nav a {
     color:inherit;
     text-decoration: none;
@@ -138,7 +135,7 @@ body {
 }
 
 .nav li.active{
-    background-color: #555;
+    background-color: #777;
 }
 
 .nav li:hover{

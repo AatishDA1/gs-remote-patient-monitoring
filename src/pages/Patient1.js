@@ -4,16 +4,14 @@ import Layout from "../components/General/Layout";
 import "chartjs-adapter-luxon";
 import Chart from "chart.js/auto";
 import StreamingPlugin from "chartjs-plugin-streaming";
-import RandomRespRate,  { RandomTemp, RandomSys, RandomDias } from "../components/Vitals/RandomVitalGen";
+import RandomRespRate,  { RandomTemp, RandomSys, RandomDias, RandomHR } from "../components/Vitals/RandomVitalGen";
 import Navbar from "../components/General/NavBar";
-import RandomHR from "../components/Vitals/testingvitals";
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Tooltip } from "chart.js";
 
 ChartJS.register( LineElement, CategoryScale, LinearScale, PointElement, Tooltip);
 Chart.register(StreamingPlugin);
 
 export default function Patient1() {
-  
   const respdata = {
     labels: ["0", "5", "10", "15", "20", "25", "30"],
     datasets: [
@@ -27,6 +25,8 @@ export default function Patient1() {
     ],
   };
   const respoptions = {
+    responsive:true,
+    maintainAspectRatio:false,
     plugins: {
       legend: true,
     },
@@ -36,6 +36,7 @@ export default function Patient1() {
         max: 17,
       },
     },
+    
   };
   const tempdata = {
     labels: ["0", "5", "10", "15", "20", "25", "30"],
@@ -50,6 +51,8 @@ export default function Patient1() {
     ],
   };
   const tempoptions = {
+    responsive:true,
+    maintainAspectRatio:false,
     plugins: {
       legend: true,
     },
@@ -73,6 +76,8 @@ export default function Patient1() {
     ],
   };
   const bpsysoptions = {
+    responsive:true,
+    maintainAspectRatio:false,
     plugins: {
       legend: true,
     },
@@ -96,6 +101,8 @@ export default function Patient1() {
     ],
   };
   const bpdiasoptions = {
+    responsive:true,
+    maintainAspectRatio:false,
     plugins: {
       legend: true,
     },
@@ -119,6 +126,8 @@ export default function Patient1() {
     ],
   };
   const hroptions = {
+    responsive:true,
+    maintainAspectRatio:false,
     plugins: {
       legend: true,
     },
@@ -129,20 +138,24 @@ export default function Patient1() {
       },
     },
   };
-
+  
+  function u(){
+    let a = 90
+    return a
+  }
   return (
     <Layout>
       <Navbar />
       <div className="kontainer">
-        <div className="RespGraph">
+        <div className="RespGraph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
           <li>Respiratory Graph</li>
           <Line data={respdata} options={respoptions}></Line>
         </div>
-        <div className="RespRate">
+        <div className="RespRate" >
           <li>Resp Rate:</li>
           <li><RandomRespRate /> bpm </li>
         </div>
-        <div className="TempGraph">
+        <div className="TempGraph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
           <li>Temperature Graph</li>
           <Line data={tempdata} options={tempoptions}></Line>
         </div>
@@ -150,7 +163,7 @@ export default function Patient1() {
           <li>Temperature:</li>
           <li><RandomTemp /> °C</li>
         </div>
-        <div className="BP_Sys_Graph">
+        <div className="BP_Sys_Graph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
           <li>Blood Pressure Systolic Graph</li>
           <Line data={bpsysdata} options={bpsysoptions}></Line>
         </div>
@@ -158,15 +171,15 @@ export default function Patient1() {
           <li>BP Systolic</li>
           <li><RandomSys /> mmHg</li>
         </div>
-        <div className="BP_Dias_Graph">
+        <div className="BP_Dias_Graph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
           <li>Blood Pressure Diastolic Graph</li>
           <Line data={bpdiasdata} options={bpdiasoptions}></Line>
         </div>
         <div className="BP_Dias">
           <li>BP Diastolic:</li>
-          <li>{RandomDias()} mmHg</li>
+          <li><RandomDias /> mmHg</li>
         </div>
-        <div className="HRGraph">
+        <div className="HRGraph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
           <li>Heart Rate Graph</li>
           <Line
             data={{
@@ -181,6 +194,8 @@ export default function Patient1() {
               ],
             }}
             options={{
+              responsive:true,
+              maintainAspectRatio:false,
               scales: {
                 y:{min: 59,
                 max: 101,},
@@ -188,13 +203,13 @@ export default function Patient1() {
                   type: "realtime",
                   realtime: {
                     delay: 2000, // how much earlier the code finds the next value
-                    refresh:1000, // how often the chart plots a point
-                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
+                    refresh:5000, // how often the chart plots a point
+                    duration: 18000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
                           x: Date.now(),
-                          y: <RandomHR/>,
+                          y: u(),
                         });
                       });
                     },

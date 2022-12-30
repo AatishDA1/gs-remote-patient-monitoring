@@ -56,7 +56,7 @@ export default function ChangeBtnState() {
                 {alldoctors.map(({name, office},index) => {
                     return (
                         <li key={index}>
-                            <span className="doctors-list-item">
+                            <span className="flex-container">
                                 <span className="left-section">
                                     <span className="checkbox-wrapper">
                                         <input

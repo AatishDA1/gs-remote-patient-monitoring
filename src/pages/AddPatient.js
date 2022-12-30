@@ -7,15 +7,13 @@ import MPActions from "../components/ManagingPats/MPActions";
 import MPheading from "../components/ManagingPats/MPheading";
 
 
-const ManagePatients = () => (
+const AddPatient = () => (
     <>
         <GlobalStyle />
         <GenHeader />
-        <Seo title="ManagePatients" />
-        <MPheading/>
-        <MPActions/>
+        <Seo title="AddPatient" />
         <GenFooter />    
     </>
 );
 
-export default ManagePatients;
+export default AddPatient;

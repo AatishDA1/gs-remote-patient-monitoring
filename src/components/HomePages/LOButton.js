@@ -7,6 +7,7 @@ export const LOButton = styled(Link)`
   border-radius: ${({ round }) => (round ? "50px" : "none")};
   color: #fff;
   font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+  font-weight: bold;
   white-space: nowrap;
   outline: none;
   border: none;

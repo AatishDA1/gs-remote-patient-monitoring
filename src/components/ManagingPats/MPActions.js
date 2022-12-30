@@ -4,24 +4,9 @@ import { AEDButton } from "../ManagingDrs/AEDButton";
 import { allpatients } from "./ListPats";
 import "../ManagingDrs/styles.css";
 
-// export default function ChangeBtnState() {
-//     const [change, setChange] = useState(Array(3).fill(false));
-
-//     function buttonHandler(index){
-//         let status = [...change];
-//         status[index] = !status[index]        
-//         setChange(status)
-//     }
-
-//     return (
-//         <div className="ChangeBtnState">
-
-//         <AEDButton disabled={change.filter(status => status === true).length !== 1} primary round>Delete</AEDButton>
-//         {Array(3).fill(0).map((_, index) => <input type="checkbox" checked={change[index]} onChange={() => buttonHandler(index)}/>)}
-
-//         </div>
-//     )
-// }
+//reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
+//                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
+//                  https://blog.logrocket.com/building-custom-checkbox-react/
 
 export default function MPActions() {
     const [checkedstate, setcheckedstate] = useState(
@@ -67,7 +52,6 @@ export default function MPActions() {
                                         onChange={()=> handleOnChange(index)}
                                         className={checkedstate? "checked" : ""}
                                         />
-                                        
                                     </span>
                                 </div>
                                 <span className="left-section">{name}</span>
@@ -80,13 +64,13 @@ export default function MPActions() {
                 <li>
                     <div>
                         <AEDBtn>
-                            <AEDButton disabled={total!==0} primary round to="/AddDoctor">
+                            <AEDButton disabled={total!==0} primary round to="/AddPatient">
                                 Add
                             </AEDButton>
-                            <AEDButton disabled={total!==1} primary round to="/EditDoctor">
+                            <AEDButton disabled={total!==1} primary round to="/EditPatient">
                                 Edit
                             </AEDButton>
-                            <AEDButton disabled={total===0} primary round to="/DeleteDoctor">
+                            <AEDButton disabled={total===0} primary round to="/DeletePatient">
                                 Delete
                             </AEDButton>
                         </AEDBtn>
@@ -105,18 +89,18 @@ const AEDBtn = styled.div`
   font-weight: bold;
 `;
 
-const Listbox = styled.nav`
-  background: #A9A9A9;
-  color: rgb(0,0,0);
-  font-weight: bold;
-  display: inline;
-  justify-content: space-between;
-  text-align:left;
-  position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
-  width: 100px;
-  margin: 0 auto;
-`;
+// const Listbox = styled.nav`
+//   background: #A9A9A9;
+//   color: rgb(0,0,0);
+//   font-weight: bold;
+//   display: inline;
+//   justify-content: space-between;
+//   text-align:left;
+//   position: relative;
+//   padding-top: 1rem;
+//   padding-bottom: 1rem;
+//   padding-left: 3.2rem;
+//   padding-right: 3.2rem;
+//   width: 100px;
+//   margin: 0 auto;
+// `;

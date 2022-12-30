@@ -58,19 +58,19 @@ h3 {
 
 .left-section {
   text-align: left;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .center-section {
   text-align: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .right-section {
   text-align: right;
   align-items: right;
-  justify-content: space-between;
+  justify-content: right;
 }
 
 .alignleft {
@@ -149,7 +149,7 @@ input:checked::before {
   color: #c0c0c0;
 }
 
-.checkbox-wrapper input[type="checkbox"]:focus {
+.checkbox-wrapper input[type="checkbox"]:hover {
   box-shadow: 0 0 20px #09369B;
 }
 

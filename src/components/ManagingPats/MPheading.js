@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import "../ManagingDrs/styles.css";
 
-const HPHeader = () => {
+const MPHeader = () => {
   return (
     <div>
         <div>
@@ -12,7 +12,7 @@ const HPHeader = () => {
         </div>
         <Nav>
                 <div className="left-section">
-                    Doctor Name
+                    Patient Name
                 </div>
                 <div className="center-section">
                     Room
@@ -25,7 +25,7 @@ const HPHeader = () => {
   );
 };
 
-export default HPHeader;
+export default MPHeader;
 
 const Nav = styled.nav`
   background: #09369B;

@@ -8,7 +8,10 @@ export default function RandomRespRate() {
       updatedRR(RR);
       }, 1000);
   }, []);
+  respR = currentRR
 return (currentRR)}
+
+export var respR = 0
 
 function RandomRespR() {
   let min = 12;
@@ -30,7 +33,10 @@ export function RandomTemp() {
       updatedTR(TR);
       }, 1000);
   }, []);
+  tempR = currentTR
 return (currentTR)}
+
+export var tempR = 0
 
 function RandomSysR() {
   let min = 90;
@@ -46,7 +52,10 @@ export function RandomSys() {
       updatedSR(SR);
       }, 1000);
   }, []);
+  sysR = currentSR
 return (currentSR)}
+
+export var sysR = 0
 
 function RandomDiasRate() {
   let min = 60;
@@ -62,7 +71,10 @@ export function RandomDias() {
       updatedDR(DR);
       }, 1000);
   }, []);
+  diasR = currentDR
 return (currentDR)}
+
+export var diasR = 0
 
 function RandomHRate() {
   let min = 60;
@@ -78,4 +90,7 @@ export function RandomHR() {
       updatedHR(HR);
       }, 1000);
   }, []);
+  heartR = currentHR
 return (currentHR)}
+
+export var heartR = 0

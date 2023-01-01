@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import SearchBar from './SearchBar'
 import ListPage from './ListPage'
 import { allpatients } from './ListPats'
-import "../ManagingDrs/styles.css";
+import "../Styles/styles.css";
 import MPHeader from './MPheading'
 
 // reference(this file, api, searchbar, post): https://github.com/gitdagray/react_search_filter

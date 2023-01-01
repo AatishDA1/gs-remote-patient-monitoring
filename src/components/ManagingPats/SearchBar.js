@@ -1,6 +1,6 @@
 import React from 'react'
 import {BsSearch} from "react-icons/Bs"
-import "../ManagingDrs/styles.css";
+import "../Styles/styles.css";
 
 // npm i axios
 

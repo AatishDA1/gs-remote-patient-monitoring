@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { AEDButton } from "../ManagingDrs/AEDButton";
 import { allpatients } from "./ListPats";
-import "../ManagingDrs/styles.css";
+import "../Styles/styles.css";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/

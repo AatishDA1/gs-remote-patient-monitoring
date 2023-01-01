@@ -1,6 +1,6 @@
 import React from "react"
 import { allpatients } from "./ListPats"
-import "../ManagingDrs/styles.css";
+import "../Styles/styles.css";
 
 const Post = ({ post }) => {
     return(

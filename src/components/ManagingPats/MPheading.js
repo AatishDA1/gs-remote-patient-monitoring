@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import "../ManagingDrs/styles.css";
+import "../Styles/styles.css";
 
 const MPHeader = () => {
   return (

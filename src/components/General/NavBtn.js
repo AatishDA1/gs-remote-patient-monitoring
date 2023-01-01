@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
-import React from "react";
-import { Button } from "react-bootstrap";
+
 
 
 export const NavButton = styled(Link)`

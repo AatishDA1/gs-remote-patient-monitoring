@@ -6,6 +6,7 @@ import GenFooter from "../components/General/GenFooter";
 import MPActions from "../components/ManagingPats/MPActions";
 import MPheading from "../components/ManagingPats/MPheading";
 
+//for testing nav button
 
 const AddPatient = () => (
     <>

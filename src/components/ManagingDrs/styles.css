@@ -22,6 +22,12 @@ h3 {
   margin-top: 1rem;
 }
 
+.gen-list {
+  margin: 0 auto;
+  font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+}
+
+
 .doctors-list,
 .total {
   width: 60%;
@@ -62,6 +68,7 @@ h3 {
 }
 
 .center-section {
+  display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -199,6 +206,24 @@ input:checked::before {
   text-align: center;
 }
 
+.flex-containerex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c5cee2;
+  align-items: stretch;
+}
+.flex-containerex > span {
+  background-color: #fff;
+  margin:5px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+
 .flex-containerdr {
   display: flex;
   flex-direction: row;
@@ -253,8 +278,13 @@ input:checked::before {
   transition: all 0.4s ease-out;
 }
 
+.sixty {
+  width: 60%;
+}
+
+
 .search {
-  width: 95%;
+  width: 60%;
   border: 2px solid #000;
   border-radius: 2em;
   overflow: hidden;
@@ -308,4 +338,17 @@ input:checked::before {
     padding-right: 0.5em;
     font-size: 3rem;
   }
+}
+
+div.scroll {
+  margin:4px, 4px;
+  padding:4px 4px;
+  background-color: #c5cee2;
+  width: 100%;
+  height: 50rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:justify;
+  justify-content: center;
+  align-self: center;
 }

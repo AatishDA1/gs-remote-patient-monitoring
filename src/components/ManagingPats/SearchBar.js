@@ -18,7 +18,8 @@ const SearchBar = ({ posts, setSearchResults }) => {
 
 
     return (
-        <header className='ChangeBtnState'>
+        <header className='center-section'>
+            <div className='sixty'>
             <form className='search' onSubmit={handleSubmit}>
                 <input
                     className='search__input'
@@ -30,6 +31,7 @@ const SearchBar = ({ posts, setSearchResults }) => {
                     <BsSearch/>
                 </button>
             </form>
+            </div>
         </header>
     )
 }

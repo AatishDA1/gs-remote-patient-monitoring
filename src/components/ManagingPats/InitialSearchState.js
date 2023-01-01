@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import SearchBar from './SearchBar'
 import ListPage from './ListPage'
 import { allpatients } from './ListPats'
+import "../ManagingDrs/styles.css";
+import MPHeader from './MPheading'
 
 function InitialSearchState() {
   const [posts, setPosts] = useState([])
@@ -21,7 +23,14 @@ function InitialSearchState() {
   return (
   <>
     <SearchBar posts={posts} setSearchResults={setSearchResults} />
-    <ListPage searchResult={searchResults}/>
+    <MPHeader/>
+    <div className='center-section'> 
+        <div className='sixty'>
+            <div className='scroll'>
+                <ListPage searchResult={searchResults}/>
+            </div>
+        </div>
+    </div>
   </>
   )
 }

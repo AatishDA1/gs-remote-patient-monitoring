@@ -4,8 +4,8 @@ import "../ManagingDrs/styles.css";
 
 const Post = ({ post }) => {
     return(
-        <article className="doctors-list">
-            <span className="flex-container">
+        <article className="gen-list">
+            <span className="flex-containerex">
                 <span>{post.title}</span>
                 <span>{post.body}</span>
                 <span>Post ID: {post.id}</span>

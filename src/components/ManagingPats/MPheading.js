@@ -5,11 +5,6 @@ import "../ManagingDrs/styles.css";
 const MPHeader = () => {
   return (
     <div>
-        <div>
-            <h3>
-                searchbar here
-            </h3>
-        </div>
         <Nav>
                 <div className="left-section">
                     Patient Name

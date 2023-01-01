@@ -3,7 +3,7 @@ import "../components/Styles/Login.css";
 import FormSignup from "../components/Login/FormSignup";
 import { navigate } from "gatsby";
 import { GlobalStyle } from "../components/Styles/GlobalStyles";
-import GenHeader from "../components/General/GenHeader";
+import HPHeader from "../components/HomePages/HPHeader";
 import LoginFooter from "../components/Login/LoginFooter";
 
 /* Reference 9 - taken from https://github.com/briancodex/react-form-v1/blob/master/src/Form.js */
@@ -18,7 +18,7 @@ const Form = () => {
   return (
     <>
       <GlobalStyle />
-      <GenHeader />
+      <HPHeader/>
       <h2>Admin Login Page</h2>
       <div className="form-container">
         <div className="form-content-left"></div>

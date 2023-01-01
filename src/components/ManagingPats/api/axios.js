@@ -1,8 +1,8 @@
 import axios from "axios";
-import { patientslist } from "../ListPatients";
+import { allpatients } from "../ListPats";
 
 export const api = axios.create({
-    content: patientslist
+    baseURL: 'https://jsonplaceholder.typicode.com'
 })
 
 export const getPosts = async () => {

@@ -18,6 +18,7 @@ const GenHeader = () => {
         <NavButton primary round to="/AdminHome">
           <FaHome/>
         </NavButton>
+        {/* reference: https://www.appsloveworld.com/reactjs/100/16/how-do-i-go-to-previous-page-in-gatsby-history-goback */}
         <button className="btnstyle" onClick={() => navigate(-1)}>
           <RiArrowGoBackFill/>
         </button>

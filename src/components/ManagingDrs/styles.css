@@ -38,14 +38,14 @@ h3 {
   margin-bottom: 0.1rem;
 }
 
-.dctors-list-item {
+.doctors-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
 }
 
-.dcotors-list li:last-child {
+.doctors-list li:last-child {
   border-top: 1px solid rgb(255, 255, 255);
   margin-top: 1rem;
   padding-top: 1rem;
@@ -251,4 +251,61 @@ input:checked::before {
   cursor: pointer;
   background: #b4b4b4;
   transition: all 0.4s ease-out;
+}
+
+.search {
+  width: 95%;
+  border: 2px solid #000;
+  border-radius: 2em;
+  overflow: hidden;
+  font-size: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.search:focus-within {
+  box-shadow: 2px 2px 5px #000;
+}
+
+.search__button,
+.search__input {
+  background-color: #fff;
+  border: none;
+  outline: none;
+}
+
+.search__input {
+  padding: 1em;
+  width: 85%;
+}
+
+.search__button {
+  width: 15%;
+  font-size: 1.5rem;
+  padding-right: 0.5em;
+  color: gray;
+  display: grid;
+  place-content: center;
+}
+
+@media (min-width: 576px) {
+  .search {
+    font-size: 1.5rem;
+  }
+
+  .search__button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .search {
+    width: 75%;
+    font-size: 2rem;
+  }
+
+  .search__button {
+    padding-right: 0.5em;
+    font-size: 3rem;
+  }
 }

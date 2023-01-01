@@ -353,4 +353,5 @@ div.scroll {
   text-align:justify;
   justify-content: center;
   align-self: center;
+  scroll-behavior: smooth;
 }

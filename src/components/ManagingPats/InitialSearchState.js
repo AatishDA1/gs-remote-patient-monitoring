@@ -7,6 +7,9 @@ import { allpatients } from './ListPats'
 import "../ManagingDrs/styles.css";
 import MPHeader from './MPheading'
 
+// reference(this file, api, searchbar, post): https://github.com/gitdagray/react_search_filter
+
+
 function InitialSearchState() {
   const [posts, setPosts] = useState([])
   const [searchResults, setSearchResults] = useState([])

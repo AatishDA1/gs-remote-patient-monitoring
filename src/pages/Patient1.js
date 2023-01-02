@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/General/Layout";
 import RandomRespRate,  { RandomTemp, RandomSys, RandomDias, RandomHR } from "../components/Vitals/RandomVitalGen";
-import Navbar from "../components/General/NavBar";
+import Navbar from "../components/Vitals/NavBar";
 import RespGraph, { DiasGraph, HeartRateGraph, SysGraph, TempGraph } from "../components/Vitals/RandomVitalGraphs";
 
 export default function Patient1() {

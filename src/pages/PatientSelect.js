@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/General/NavBar";
+import Navbar from "../components/Vitals/NavBar";
 import Patient1 from "./Patient1";
 import Patient2 from "./Patient2";
 import Patient3 from "./Patient3";

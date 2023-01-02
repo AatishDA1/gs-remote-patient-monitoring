@@ -4,9 +4,10 @@ import RandomRespRate, {
   RandomTemp,
   RandomSys,
   RandomDias,
-  RandomHR } from "../components/Vitals/RandomVitalGen";
+  RandomHR,
+} from "../components/Vitals/RandomVitalGen";
 import { Line } from "react-chartjs-2";
-import Navbar from "../components/General/NavBar";
+import Navbar from "../components/Vitals/NavBar";
 import {
   Chart as ChartJS,
   LineElement,
@@ -144,37 +145,57 @@ export default function Patient2() {
     <Layout>
       <Navbar />
       <div className="kontainer">
-        <div className="RespGraph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
+        <div
+          className="RespGraph"
+          style={{ position: "relative", height: "40vh", width: "80vw" }}
+        >
           <li>Respiratory Graph</li>
           <Line data={respdata} options={respoptions}></Line>
         </div>
-        <div className="RespRate" >
+        <div className="RespRate">
           <li>Resp Rate:</li>
-          <li><RandomRespRate /> bpm </li>
+          <li>
+            <RandomRespRate /> bpm{" "}
+          </li>
         </div>
-        <div className="TempGraph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
+        <div
+          className="TempGraph"
+          style={{ position: "relative", height: "40vh", width: "80vw" }}
+        >
           <li>Temperature Graph</li>
           <Line data={tempdata} options={tempoptions}></Line>
         </div>
         <div className="Temp">
           <li>Temperature:</li>
-          <li><RandomTemp /> °C</li>
+          <li>
+            <RandomTemp /> °C
+          </li>
         </div>
-        <div className="BP_Sys_Graph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
+        <div
+          className="BP_Sys_Graph"
+          style={{ position: "relative", height: "40vh", width: "80vw" }}
+        >
           <li>Blood Pressure Systolic Graph</li>
           <Line data={bpsysdata} options={bpsysoptions}></Line>
         </div>
         <div className="BP_Sys">
           <li>BP Systolic</li>
-          <li><RandomSys /> mmHg</li>
+          <li>
+            <RandomSys /> mmHg
+          </li>
         </div>
-        <div className="BP_Dias_Graph" style={{position: "relative" ,height:"40vh", width: "80vw" }}>
+        <div
+          className="BP_Dias_Graph"
+          style={{ position: "relative", height: "40vh", width: "80vw" }}
+        >
           <li>Blood Pressure Diastolic Graph</li>
           <Line data={bpdiasdata} options={bpdiasoptions}></Line>
         </div>
         <div className="BP_Dias">
           <li>BP Diastolic:</li>
-          <li><RandomDias /> mmHg</li>
+          <li>
+            <RandomDias /> mmHg
+          </li>
         </div>
         <div className="HRGraph">
           <li>Heart Rate Graph</li>

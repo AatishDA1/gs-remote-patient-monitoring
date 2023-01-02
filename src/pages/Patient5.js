@@ -8,7 +8,7 @@ import RandomRespRate, {
 } from "../components/Vitals/RandomVitalGen";
 // import Chart from 'chart.js/auto';
 import { Line } from "react-chartjs-2";
-import Navbar from "../components/General/NavBar";
+import Navbar from "../components/Vitals/NavBar";
 import {
   Chart as ChartJS,
   LineElement,

@@ -9,7 +9,7 @@ import {
 } from "../components/Vitals/RandomVitalGen";
 // import Chart from 'chart.js/auto';
 import { Line } from "react-chartjs-2";
-import Navbar from "../components/Vitals/NavBar";
+// import Navbar from "../components/Vitals/NavBar";
 import {
   Chart as ChartJS,
   LineElement,
@@ -145,7 +145,7 @@ export default function Patient3() {
   };
   return (
     <Layout>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="kontainer">
         <div className="RespGraph">
           <li>Respiratory Graph</li>

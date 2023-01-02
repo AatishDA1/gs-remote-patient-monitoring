@@ -7,7 +7,7 @@ import RandomRespRate, {
   RandomHR,
 } from "../components/Vitals/RandomVitalGen";
 import { Line } from "react-chartjs-2";
-import Navbar from "../components/Vitals/NavBar";
+// import Navbar from "../components/Vitals/NavBar";
 import {
   Chart as ChartJS,
   LineElement,
@@ -143,7 +143,7 @@ export default function Patient2() {
   };
   return (
     <Layout>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="kontainer">
         <div
           className="RespGraph"

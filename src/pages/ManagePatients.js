@@ -14,6 +14,7 @@ const ManagePatients = () => (
         <Seo title="ManagePatients" />
         <MPheading/>
         <MPActions/>
+        
         <InitialSearchState/>
         <GenFooter />    
     </>

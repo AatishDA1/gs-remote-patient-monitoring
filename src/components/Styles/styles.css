@@ -49,11 +49,11 @@ h3 {
   position: relative;
 }
 
-.doctors-list li:last-child {
+/* .doctors-list li:last-child {
   border-top: 1px solid rgb(255, 255, 255);
   margin-top: 1rem;
   padding-top: 1rem;
-}
+} */
 
 .doctors-list-item label {
   vertical-align: text-bottom;
@@ -263,6 +263,38 @@ input:checked::before {
   transition: all 0.4s ease-out;
 }
 
+/* aed button style */
+.aedbtnstyle {
+  background: #09369B;
+  padding: 10px 32px;
+  border-radius: 50px;
+  border-radius: "none";
+  color: #fff;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 10px;
+  text-align: center;
+}
+
+.aedbtnstyle:disabled {
+  color: #A9A9A9;
+  opacity: 0.7;
+  cursor: default;
+}
+
+.aedbtnstyle:hover:enabled {
+  cursor: pointer;
+  background: #077BF1;
+  transition: all 0.4s ease-out;
+  transform: translateY(-2px);
+}
 
 /* search test style */
 .flex-containerex {

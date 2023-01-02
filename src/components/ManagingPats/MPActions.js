@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { AEDButton } from "../ManagingDrs/AEDButton";
+// import { AEDButton } from "../ManagingDrs/AEDButton";
 import { allpatients } from "./ListPats";
 import "../Styles/styles.css";
+import { navigate } from "gatsby";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -37,6 +38,7 @@ export default function MPActions() {
     return(
         <div className="ChangeBtnState">
             <ul className="doctors-list">
+                <div className="scroll">
                 {allpatients.map(({name, room, supo},index) => {
                     return (
                         <li key={index}>
@@ -61,18 +63,19 @@ export default function MPActions() {
                         </li>
                     );
                 })}
+                </div>
                 <li>
                     <div>
                         <AEDBtn>
-                            <AEDButton disabled={total!==0} primary round to="/AddPatient">
+                            <button className="aedbtnstyle" disabled={total!==0} onClick={() => navigate("/AddPatient")}>
                                 Add
-                            </AEDButton>
-                            <AEDButton disabled={total!==1} primary round to="/EditPatient">
+                            </button>
+                            <button className="aedbtnstyle" disabled={total!==1} onClick={() => navigate("/EditPatient")}>
                                 Edit
-                            </AEDButton>
-                            <AEDButton disabled={total===0} primary round to="/DeletePatient">
+                            </button>
+                            <button className="aedbtnstyle" disabled={total===0} onClick={() => navigate("/DeletePatient")}>
                                 Delete
-                            </AEDButton>
+                            </button>
                         </AEDBtn>
                     </div>
                 </li>

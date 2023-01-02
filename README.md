@@ -35,7 +35,7 @@ Welcome to our Remote Patient Monitor
     Run the following command to install all dependencies.
 
     ```shell
-    npm install
+    npm install --force
     ```
 
 5.  **Start Developing**

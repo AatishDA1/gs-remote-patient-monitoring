@@ -148,26 +148,7 @@ export default function PatientSelect() {
       },
     },
   };
-  let component;
-  switch (window.location.pathname) {
-    case "/PatientSelect":
-      break;
-    case "/Patient1":
-      component = <Patient1 />;
-      break;
-    case "/Patient2":
-      component = <Patient2 />;
-      break;
-    case "/Patient3":
-      component = <Patient3 />;
-      break;
-    case "/Patient4":
-      component = <Patient4 />;
-      break;
-    case "/Patient5":
-      component = <Patient5 />;
-      break;
-  }
+
   return (
     <Layout>
       <Navbar />

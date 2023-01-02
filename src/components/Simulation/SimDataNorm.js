@@ -22,7 +22,7 @@ export var respR = 0;
 
 function RandomTempR() {
   let min = 36.5;
-  let max = 37.5;
+  let max = 37.8;
   return Math.round((Math.random() * (max - min) + min) * 10) / 10;
 }
 
@@ -41,8 +41,8 @@ export function RandomTemp() {
 export var tempR = 0;
 
 function RandomSysR() {
-  let min = 90;
-  let max = 120;
+  let min = 100;
+  let max = 110;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -61,7 +61,7 @@ export function RandomSys() {
 export var sysR = 0;
 
 function RandomDiasRate() {
-  let min = 60;
+  let min = 70;
   let max = 80;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -82,7 +82,7 @@ export var diasR = 0;
 
 function RandomHRate() {
   let min = 60;
-  let max = 100;
+  let max = 70;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

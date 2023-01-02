@@ -100,7 +100,7 @@ export default function RespGraphCrit() {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { min: 11, max: 17 },
+            y: { min: 0, max: 30 },
             x: {
               type: "realtime",
               realtime: {
@@ -151,7 +151,7 @@ export function TempGraphCrit() {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { min: 36.4, max: 37.6 },
+            y: { min: 30, max: 45 },
             x: {
               type: "realtime",
               realtime: {
@@ -202,7 +202,7 @@ export function SysGraphCrit() {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { min: 89, max: 121 },
+            y: { min: 70, max: 170 },
             x: {
               type: "realtime",
               realtime: {
@@ -253,7 +253,7 @@ export function DiasGraphCrit() {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { min: 59, max: 81 },
+            y: { min: 50, max: 110 },
             x: {
               type: "realtime",
               realtime: {
@@ -304,7 +304,7 @@ export function HeartRateGraphCrit() {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { min: 59, max: 101 },
+            y: { min: 0, max: 200 },
             x: {
               type: "realtime",
               realtime: {

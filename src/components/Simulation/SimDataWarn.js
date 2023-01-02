@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 function RandomRespRW() {
-  let min = 12;
-  let max = 16;
+  let min = 16;
+  let max = 19;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -21,8 +21,8 @@ export default function RandomRespRateW() {
 export var respRW = 0;
 
 function RandomTempRW() {
-  let min = 36.5;
-  let max = 37.5;
+  let min = 37.5;
+  let max = 38.0;
   return Math.round((Math.random() * (max - min) + min) * 10) / 10;
 }
 
@@ -41,8 +41,8 @@ export function RandomTempW() {
 export var tempRW = 0;
 
 function RandomSysRW() {
-  let min = 90;
-  let max = 120;
+  let min = 130;
+  let max = 140;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -61,8 +61,8 @@ export function RandomSysW() {
 export var sysRW = 0;
 
 function RandomDiasRateW() {
-  let min = 60;
-  let max = 80;
+  let min = 70;
+  let max = 87;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -81,8 +81,8 @@ export function RandomDiasW() {
 export var diasRW = 0;
 
 function RandomHRateW() {
-  let min = 60;
-  let max = 100;
+  let min = 100;
+  let max = 120;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

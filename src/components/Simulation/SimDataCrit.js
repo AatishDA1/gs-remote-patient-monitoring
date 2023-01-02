@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 function RandomRespRC() {
-  let min = 12;
-  let max = 16;
+  let min = 20;
+  let max = 25;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -21,8 +21,8 @@ export default function RandomRespRateC() {
 export var respRC = 0;
 
 function RandomTempRC() {
-  let min = 36.5;
-  let max = 37.5;
+  let min = 38.1;
+  let max = 43.2;
   return Math.round((Math.random() * (max - min) + min) * 10) / 10;
 }
 
@@ -41,8 +41,8 @@ export function RandomTempC() {
 export var tempRC = 0;
 
 function RandomSysRC() {
-  let min = 90;
-  let max = 120;
+  let min = 141;
+  let max = 169;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -61,8 +61,8 @@ export function RandomSysC() {
 export var sysRC = 0;
 
 function RandomDiasRateC() {
-  let min = 60;
-  let max = 80;
+  let min = 90;
+  let max = 109;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -81,8 +81,8 @@ export function RandomDiasC() {
 export var diasRC = 0;
 
 function RandomHRateC() {
-  let min = 60;
-  let max = 100;
+  let min = 121;
+  let max = 174;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

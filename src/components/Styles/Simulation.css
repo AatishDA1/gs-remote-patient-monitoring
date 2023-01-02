@@ -4,6 +4,32 @@
 body {
   margin: 0;
 }
+button {
+  top: 10px;
+  right: 10px;
+  width: 10%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background: rgba(8, 8, 8, 0.9);
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  color: #fff;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 100px;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
 
 /* Reference https://www.youtube.com/watch?v=sA_glquejwE*/
 
@@ -17,6 +43,12 @@ body {
   background-color: lavender;
   grid-area: RespRate;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
 }
 
 .TempGraph {
@@ -29,6 +61,12 @@ body {
   background-color: lavender;
   grid-area: Temp;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
 }
 
 .BP_Sys_Graph {
@@ -41,6 +79,12 @@ body {
   background-color: lavender;
   grid-area: BP_Sys;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
 }
 
 .BP_Dias_Graph {
@@ -53,6 +97,12 @@ body {
   background-color: lavender;
   grid-area: BP_Dias;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
 }
 
 .HRGraph {
@@ -65,19 +115,26 @@ body {
   background-color: lavender;
   grid-area: HR;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
 }
 
 .ECG {
   background-color: aliceblue;
   grid-area: ECG;
   list-style-type: none;
-  margin-left: auto;
-  margin-right: auto;
+
+  display: flex;
+  flex-direction: row;
 }
 
 .kontainer {
   display: grid;
-  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   /* 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr ; */
   /* 'RespGraph RespGraph RespGraph RespGraph RespGraph RespGraph RespRate RespRate RespRate RespRate'
     'TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph Temp Temp'

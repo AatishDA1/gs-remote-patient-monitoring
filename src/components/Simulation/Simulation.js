@@ -39,6 +39,7 @@ import RandomRespRateC, {
   RandomHRC,
 } from "./SimDataCrit";
 import "../Styles/Simulation.css";
+import Navbar from "../Vitals/NavBar";
 
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
@@ -62,7 +63,11 @@ export default function Simulation() {
 
   return (
     <>
+      
+      <Navbar/>
+      
       <h2>Simulation Page</h2>
+      
       <div className="button_holder">
         <button onClick={NormalHandler}>Normal</button>
         <button onClick={WarningHandler}>Warning</button>

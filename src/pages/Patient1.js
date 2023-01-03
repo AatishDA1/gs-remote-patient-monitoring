@@ -6,18 +6,19 @@ import RandomRespRate, {
   RandomDias,
   RandomHR,
 } from "../components/Vitals/RandomVitalGen";
-// import Navbar from "../components/Vitals/NavBar";
 import RespGraph, {
   DiasGraph,
   HeartRateGraph,
   SysGraph,
   TempGraph,
 } from "../components/Vitals/RandomVitalGraphs";
+import Navbar from "../components/Vitals/NavBar";
 
 export default function Patient1() {
   return (
     <Layout>
-      {/* <Navbar /> */}
+      <Navbar />
+      <h2>Patient 1</h2>
       <div className="kontainer">
         <RespGraph />
         <div className="RespRate">
@@ -61,3 +62,4 @@ export default function Patient1() {
     </Layout>
   );
 }
+

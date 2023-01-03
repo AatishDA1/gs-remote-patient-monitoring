@@ -97,6 +97,84 @@ body {
     text-align: Left;
 }
 
+.Nav{
+    /* padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem; */
+    /* background: rgb(192, 228, 207); */
+    background-color: aliceblue;
+}
+
+.Nav_container{
+    display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  
+    justify-content: space-between;
+  gap:0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.Nav_items{
+    /* order:6 ; */
+    /* margin-bottom: 1rem; */
+    
+}
+
+.Nav_item {
+    
+    background: lavender;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    line-height: 0;
+    display: flex;
+    flex: 1;
+    margin: 0 0rem;
+    border-radius: 0px;
+  }
+  .Nav_item:hover{
+    background: aliceblue;
+  }
+
+  .Nav_text {
+    color: #252e48;
+    font-size: clamp(1rem, 2vw, 2rem);
+    line-height: 25px;
+  }
+
+.Nav_link {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    overflow: hidden;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .Nav_items {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .Nav_item {
+      margin-bottom: 0rem;
+    }
+  }
+
 /* end of reference */
 .stat-title {
     margin:1rem;

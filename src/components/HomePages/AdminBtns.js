@@ -34,7 +34,7 @@ function AdminBtns() {
               src={ManageDoctors}
               text="Manage Doctors"
               label="Admin Only"
-              path="/ManageDoctors"
+              path="/DoctorManage"
             />
             <AdminItem
               src={ManagePatients}

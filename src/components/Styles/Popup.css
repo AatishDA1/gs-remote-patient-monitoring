@@ -27,6 +27,14 @@
   color: #000;
 }
 
+.popup-vitals{
+    position: relative;
+    padding: 70px;
+    width: 100%;
+    background-color: white;
+    color: #000;
+}
+
 .close-btn {
   position: absolute;
   top: 10px;

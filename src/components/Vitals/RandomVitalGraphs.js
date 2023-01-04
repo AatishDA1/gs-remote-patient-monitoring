@@ -30,14 +30,14 @@ export default function RespGraph(){
               responsive:true,
               maintainAspectRatio:false,
               scales: {
-                y:{min: 11,
-                max: 17,},
+                y:{min: 0,
+                max: 30,},
                 x: {
                   type: "realtime",
                   realtime: {
                     delay: 1000, // how much earlier the code finds the next value
                     refresh:1000, // how often the chart plots a point
-                    duration: 18000, // time axis and the amount of time the code takes to generate the first value
+                    // duration: 18000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
@@ -126,14 +126,14 @@ export function TempGraph(){
               responsive:true,
               maintainAspectRatio:false,
               scales: {
-                y:{min: 36.4,
-                max: 37.6,},
+                y:{min: 30,
+                max: 45,},
                 x: {
                   type: "realtime",
                   realtime: {
-                    delay: 6000, // how much earlier the code finds the next value
-                    refresh:5000, // how often the chart plots a point
-                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
+                    delay: 1000, // how much earlier the code finds the next value
+                    refresh:1000, // how often the chart plots a point
+                    // duration: 1800000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
@@ -171,14 +171,14 @@ export function SysGraph(){
               responsive:true,
               maintainAspectRatio:false,
               scales: {
-                y:{min: 89,
-                max: 121,},
+                y:{min: 70,
+                max: 170,},
                 x: {
                   type: "realtime",
                   realtime: {
-                    delay: 6000, // how much earlier the code finds the next value
-                    refresh:5000, // how often the chart plots a point
-                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
+                    delay: 1000, // how much earlier the code finds the next value
+                    refresh:1000, // how often the chart plots a point
+                    // duration: 1800000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
@@ -216,14 +216,14 @@ export function DiasGraph(){
               responsive:true,
               maintainAspectRatio:false,
               scales: {
-                y:{min: 59,
-                max: 81,},
+                y:{min: 50,
+                max: 110,},
                 x: {
                   type: "realtime",
                   realtime: {
-                    delay: 6000, // how much earlier the code finds the next value
-                    refresh:5000, // how often the chart plots a point
-                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
+                    delay: 1000, // how much earlier the code finds the next value
+                    refresh:1000, // how often the chart plots a point
+                    // duration: 1800000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
@@ -261,14 +261,14 @@ export function HeartRateGraph(){
               responsive:true,
               maintainAspectRatio:false,
               scales: {
-                y:{min: 59,
-                max: 101,},
+                y:{min: 0,
+                max: 200,},
                 x: {
                   type: "realtime",
                   realtime: {
-                    delay: 6000, // how much earlier the code finds the next value
-                    refresh:5000, // how often the chart plots a point
-                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
+                    delay: 1000, // how much earlier the code finds the next value
+                    refresh:1000, // how often the chart plots a point
+                    // duration: 1800000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({

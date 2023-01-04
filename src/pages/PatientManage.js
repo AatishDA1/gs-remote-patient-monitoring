@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "../components/Styles/firebasestyle.css";
 import db from "./firebase";
-
 import Popup from '../components/General/popupPTV'
-
+import "../components/Styles/styles.css";
+import { navigate } from "gatsby";
 import PatientAddButton from  "../components/HomePages/PatientAddButton";
 
 function PatientManage(){
@@ -55,7 +55,7 @@ function PatientManage(){
 	{!dataIdToBeUpdated ? (
 		
 		<div className="App__buttons">
-		<PatientAddButton/>
+		<button className="aedbtnstyle" onClick={() => navigate("/AddPatient")}>Add</button>
 		</div>
 		) : (
 		<div className="App__Updateform">
@@ -83,7 +83,7 @@ function PatientManage(){
 			value={updatedPatientBedNO}
 			onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
 		/>
-		<button onClick={updateData}>Update</button>
+		<button onClick={updateData}>UPDATE</button>
 		</div>
 		)}
 
@@ -109,7 +109,7 @@ function PatientManage(){
 			<td>{data.bedNO}</td>
 
 			<td>
-				<button
+				<button className="aedbtnstyle"
 				onClick={() => {
                     setDataIdToBeUpdated(id);
                     setUpdatedPatientAge(data.age);
@@ -119,7 +119,7 @@ function PatientManage(){
 					//<PatientAddButton/>
 				}}
 				>
-				Update
+				update
 				</button>
 			</td>
 			<td>

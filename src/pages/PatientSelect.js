@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "../components/Styles/firebasestyle.css";
 import db from "./firebase";
-
-import PatientAddButton from  "../components/HomePages/PatientAddButton";
+import AddPatient from "./AddPatient";
 
 function PatientSelect(){
 
@@ -66,10 +65,7 @@ return(<>
 	
 	<div className="App">
 	{!readData ? (
-		
-		<div className="App__buttons">
-		<PatientAddButton/>
-		</div>
+		<AddPatient/>
 		) : (
 			/*PLOT GRAPHS UNDER HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 		<div className="App__Updateform">

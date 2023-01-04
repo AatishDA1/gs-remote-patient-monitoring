@@ -2,8 +2,12 @@
 import React, { useState, useEffect } from "react";
 import db from "./firebase";
 import PatientSelectPage from "../components/HomePages/PatientSelectPageButton";
+import "../components/Styles/styles.css"
+import "../components/Styles/Popup.css"
+import { navigate } from "gatsby";
+import noscroll from "../components/ManagingPats/noscroll";
 
-function PatientAdd(){
+function PatientAdd(props){
 	// access database here
     const [patientName, setPatientName] = useState("");
     const [patientAge, setPatientAge] = useState("");
@@ -59,14 +63,17 @@ function PatientAdd(){
 		setSysPressure([]);
 		setDiaPressure([]);
 		setHR([]);
-
-        
+  
     };
-	return(
+
+	return(props.trigger) ? (
+		<div className="popup">
+		<div className="popup-addpersonnel">
 		<div className="App">
-		<PatientSelectPage/>
 		{!dataIdToBeUpdated && (
-			<div className="App__form">
+			<div>
+				<button className="aedbtnstyle" onClick={() => props.setTrigger(false)}>BACK</button>
+				<div className="App__form">
 				<input
 					type="text"
 					placeholder="Name"
@@ -91,11 +98,15 @@ function PatientAdd(){
 					value={patientBedNO}
 					onChange={(e) => setPatientBedNO(e.target.value)}
 				/>
-
-				<button onClick={submit}>Submit</button>
+				</div>
+				<button className="aedbtnstyle" onClick={submit}>Submit</button>
+				<button className="aedbtnstyle" onClick={() => props.setTrigger(false)}>CANCEL</button>
 			</div>
 		)}
 		</div>
-	)}
+		</div>
+		</div>
+	) : "";
+}
 
 export default PatientAdd;

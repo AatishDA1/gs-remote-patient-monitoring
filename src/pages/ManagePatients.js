@@ -6,7 +6,8 @@ import GenFooter from "../components/General/GenFooter";
 import MPActions from "../components/ManagingPats/MPActions";
 import MPheading from "../components/ManagingPats/MPheading";
 import InitialSearchState from "../components/ManagingPats/InitialSearchState";
-import MPfirebase from "../components/ManagingPats/MPfirebase";
+import AddPatient from "./AddPatient";
+
 
 const ManagePatients = () => (
     <>
@@ -15,9 +16,8 @@ const ManagePatients = () => (
         <Seo title="ManagePatients" />
         <MPheading/>
         <MPActions/>
-        <MPfirebase/>
         <InitialSearchState/>
-        <GenFooter />    
+        <GenFooter />  
     </>
 );
 

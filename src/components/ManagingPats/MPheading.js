@@ -9,11 +9,11 @@ const MPHeader = () => {
                 <div className="left-section">
                     Patient Name
                 </div>
-                <div className="center-section">
+                {/* <div className="center-section">
                     Room
-                </div>
+                </div> */}
                 <div className="right-section">
-                    Assigned Doctor
+                    Age Gender Bed#
                 </div>
         </Nav>
     </div>

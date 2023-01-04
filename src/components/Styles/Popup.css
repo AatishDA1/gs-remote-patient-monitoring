@@ -35,6 +35,15 @@
     color: #000;
 }
 
+.popup-addpersonnel{
+  position: relative;
+  padding: 70px;
+  width: 60vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
+
 .close-btn {
   position: absolute;
   top: 10px;

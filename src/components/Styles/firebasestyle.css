@@ -8,15 +8,18 @@
     .App__form {
     display: flex;
     flex-direction: column;
+    text-align: left;
     }
     
     input {
-    padding: 7px 11px;
-    border-radius: 3px;
+    width:50rem;
+    height:2.5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
     border: none;
     border-bottom: 1px solid gray;
     margin: 20px;
-    outline: none;
+    outline: 10px;
     }
     
     button {

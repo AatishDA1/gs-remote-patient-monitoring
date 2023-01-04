@@ -11,8 +11,10 @@ import RespGraph, {
   HeartRateGraph,
   SysGraph,
   TempGraph,
+  ECG
 } from "../components/Vitals/RandomVitalGraphs";
 import Navbar from "../components/Vitals/NavBar";
+
 
 export default function Patient1() {
   return (
@@ -56,7 +58,7 @@ export default function Patient1() {
           </li>
         </div>
         <div className="ECG">
-          <li>ECG</li>
+          <ECG/>
         </div>
       </div>
     </Layout>

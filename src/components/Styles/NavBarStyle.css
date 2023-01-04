@@ -87,12 +87,13 @@ body {
     grid-gap: 15px;
     padding: 10px;
     grid-template-areas: 
+    "ECG ECG"
     "RespGraph RespRate"
     "TempGraph Temp"
     "BP_Sys_Graph BP_Sys"
     "BP_Dias_Graph BP_Dias"
     "HRGraph HR"
-    "ECG ECG"
+    
     ;
     text-align: Left;
 }
@@ -104,6 +105,7 @@ body {
     padding-right: 3.2rem; */
     /* background: rgb(192, 228, 207); */
     background-color: aliceblue;
+    ;
 }
 
 .Nav_container{
@@ -115,25 +117,27 @@ body {
    * flex-direction: row;
    * flex-wrap: wrap;
    */
-  flex-flow: row wrap;
+   /* flex-flow: row wrap; */
+   flex-wrap: nowrap;
   
   /* Then we define how is distributed the remaining space */
   
     justify-content: space-between;
-  gap:0;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  
+  
 }
 
 .Nav_items{
     /* order:6 ; */
     /* margin-bottom: 1rem; */
-    
+    /* gap: 5px; */
 }
 
 .Nav_item {
-    
     background: lavender;
     padding: 5px;
     width: 100%;
@@ -163,7 +167,7 @@ body {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 400px) {
     .Nav_items {
       display: flex;
     }
@@ -176,7 +180,7 @@ body {
   }
 
 /* end of reference */
-.stat-title {
+/* .stat-title {
     margin:1rem;
     align-items: left;
 }
@@ -218,5 +222,5 @@ body {
 
 .nav li:hover{
     background-color: #777;
-}
+} */
 

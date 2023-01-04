@@ -41,6 +41,7 @@ import RandomRespRateC, {
 import "../Styles/Simulation.css";
 import Navbar from "../Vitals/NavBar";
 
+
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);

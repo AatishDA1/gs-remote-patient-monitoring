@@ -132,7 +132,6 @@ button {
   background-color: aliceblue;
   grid-area: ECG;
   list-style-type: none;
-
   display: flex;
   flex-direction: row;
 }

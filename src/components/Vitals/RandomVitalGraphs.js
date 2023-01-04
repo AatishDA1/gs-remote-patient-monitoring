@@ -5,6 +5,8 @@ import "chartjs-adapter-luxon";
 import Chart from "chart.js/auto";
 import React from "react";
 import { respR, tempR, sysR, diasR,heartR, } from "./RandomVitalGen";
+import { ECGy } from "./ECG";
+import { getyvalue } from "./ECG";
 ChartJS.register( LineElement, CategoryScale, LinearScale, PointElement, Tooltip);
 Chart.register(StreamingPlugin); 
 
@@ -33,9 +35,9 @@ export default function RespGraph(){
                 x: {
                   type: "realtime",
                   realtime: {
-                    delay: 6000, // how much earlier the code finds the next value
-                    refresh:5000, // how often the chart plots a point
-                    duration: 1800000, // time axis and the amount of time the code takes to generate the first value
+                    delay: 1000, // how much earlier the code finds the next value
+                    refresh:1000, // how often the chart plots a point
+                    duration: 18000, // time axis and the amount of time the code takes to generate the first value
                     onRefresh: (chart) => {
                       chart.data.datasets.forEach((dataset) => {
                         dataset.data.push({
@@ -51,6 +53,57 @@ export default function RespGraph(){
             />
         </div>
     )
+}
+
+export function ECG(){
+  return(
+      <div className="ECG" style={{position: "relative" ,height:"40vh", width: "97vw" }}>
+        {/* <li>ECG Graph</li> */}
+        <Line
+          data={{
+            datasets: [
+              {
+                pointRadius: 0,
+                label: "ECG",
+                backgroundColor: "rgba(54, 162, 235, 0.5)",
+                borderColor: "rgb(54, 162, 235)",
+                // borderWidth:0,
+                // pointBorderWidth:0,
+                // pointBackgroundColor:"rgb(54, 162, 235)",
+                showLine:true,
+                fill: false,
+                data: [],
+              },
+            ],
+          }}
+          options={{
+            
+            responsive:true,
+            maintainAspectRatio:false,
+            scales: {
+              y:{min: -1600,
+              max: 1000,},
+              x: {
+                type: "realtime",
+                realtime: {
+                  delay: 0, // how much earlier the code finds the next value
+                  refresh:0.001, // how often the chart plots a point
+                  duration: 100000, // time axis and the amount of time the code takes to generate the first value
+                  onRefresh: (chart) => {
+                    chart.data.datasets.forEach((dataset) => {
+                      dataset.data.push({
+                        x: Date.now(),
+                        y: getyvalue(),
+                      });
+                    });
+                  },
+                },
+              },
+            },
+          }}
+          />
+      </div>
+  )
 }
 
 export function TempGraph(){

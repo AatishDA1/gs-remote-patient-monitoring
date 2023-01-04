@@ -13,6 +13,9 @@ module.exports = {
     description: `Monitor you patients' vitals wherever you are`,
     author: `@GilbertSolutions`,
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,

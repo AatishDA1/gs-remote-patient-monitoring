@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button {
+  top: 10px;
+  right: 10px;
+  width: 10%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background: rgba(8, 8, 8, 0.9);
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  color: #fff;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 100px;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* Reference https://www.youtube.com/watch?v=sA_glquejwE*/
+
+.RespGraph {
+  background-color: aliceblue;
+  grid-area: RespGraph;
+  list-style-type: none;
+}
+
+.RespRate {
+  background-color: lavender;
+  grid-area: RespRate;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
+}
+
+.TempGraph {
+  background-color: aliceblue;
+  grid-area: TempGraph;
+  list-style-type: none;
+}
+
+.Temp {
+  background-color: lavender;
+  grid-area: Temp;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
+}
+
+.BP_Sys_Graph {
+  background-color: aliceblue;
+  grid-area: BP_Sys_Graph;
+  list-style-type: none;
+}
+
+.BP_Sys {
+  background-color: lavender;
+  grid-area: BP_Sys;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
+}
+
+.BP_Dias_Graph {
+  background-color: aliceblue;
+  grid-area: BP_Dias_Graph;
+  list-style-type: none;
+}
+
+.BP_Dias {
+  background-color: lavender;
+  grid-area: BP_Dias;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
+}
+
+.HRGraph {
+  background-color: aliceblue;
+  grid-area: HRGraph;
+  list-style-type: none;
+}
+
+.HR {
+  background-color: lavender;
+  grid-area: HR;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  color: #000;
+}
+
+.ECG {
+  background-color: aliceblue;
+  grid-area: ECG;
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.kontainer {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr ; */
+  /* 'RespGraph RespGraph RespGraph RespGraph RespGraph RespGraph RespRate RespRate RespRate RespRate'
+    'TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph Temp Temp'
+    'BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys BP_Sys'
+    'BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias BP_Dias'
+    'HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HR HR'
+    'ECG ECG ECG ECG ECG ECG ECG ECG ECG ECG'; */
+  grid-gap: 15px;
+  padding: 10px;
+  grid-template-areas:
+    "ECG ECG"
+    "RespGraph RespRate"
+    "TempGraph Temp"
+    "BP_Sys_Graph BP_Sys"
+    "BP_Dias_Graph BP_Dias"
+    "HRGraph HR";
+  text-align: Left;
+}
+
+/* end of reference */
+.stat-title {
+  margin: 1rem;
+  align-items: left;
+}
+.nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+.site-title {
+  font-size: 3vw;
+  text-decoration: none;
+}
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.nav li.active {
+  background-color: #777;
+}
+
+.nav li:hover {
+  background-color: #777;
+}

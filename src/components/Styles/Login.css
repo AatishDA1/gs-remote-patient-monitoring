@@ -47,7 +47,7 @@
 }
 
 .form h1 {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2vw, 2rem);
   text-align: start;
   width: 80%;
   margin-bottom: 1rem;
@@ -60,14 +60,14 @@
 }
 
 .form-inputs p {
-  font-size: 0.8rem;
+  font-size: clamp(0.6rem, 0.8vw, 0.8rem);
   margin-top: 0.5rem;
   color: #f00e0e;
 }
 
 .form-label {
   display: inline-block;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   margin-bottom: 6px;
   color: #fff;
 }
@@ -84,7 +84,7 @@
 
 .form-input::placeholder {
   color: #595959;
-  font-size: 12px;
+  font-size: clamp(0.6rem, 1vw, 1rem);
 }
 
 .form-input-btn {

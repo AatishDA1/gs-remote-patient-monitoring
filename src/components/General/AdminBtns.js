@@ -46,7 +46,7 @@ function AdminBtns() {
               src={Simulation}
               text="Simulation"
               label="Admin Only"
-              path="/SimulationPage"
+              path="/Simulation"
             />
           </ul>
         </div>

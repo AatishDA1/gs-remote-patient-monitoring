@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styles/Popup.css'
 import { GlobalStyle } from "../Styles/GlobalStyles";
-import GenClock from "../General/GenClock";
+
 
 function Popup(props) {
     return (props.trigger) ? (

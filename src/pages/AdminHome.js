@@ -12,7 +12,6 @@ const AdminHome = () => (
     <HPHeader />
     <Seo title="AdminHome" />
     <AdminBtns />
-    <PopupTest />
     <HPFooter />
   </>
 );

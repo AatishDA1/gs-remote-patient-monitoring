@@ -1,10 +1,74 @@
 import React from 'react'
-import styled from 'styled-components'
+import {useTable} from 'react-table'
+import {currentRRC, currentTRC, currentSRC, currentHRC, currentDRC}from '../Simulation/SimDataCrit'
+import AlertTime from './AlertTime'
+const critData = React.useMemo(() =>
+ [
+ {
+ name: 'Respiratory Rate',
+ value: currentRRC,
+ threshold: 25 ,
+ time : <AlertTime />
+ 
+ },
+ {
+ name: 'Temperature',
+ value: currentTRC,
+ threshold: 43.2,
+ time : <AlertTime />
+ },
+ {
+ name: 'Systolic BP',
+ value: currentSRC,
+ threshold: 169,
+ time : <AlertTime />
+ },
+ {
+ name: 'Diastolic BP',
+ value: currentDRC,
+ threshold: 109,
+ time : <AlertTime />
+ },
+ {
+ name: 'Heart Rate',
+ value: currentHRC,
+ threshold: 174,
+ time : <AlertTime />
+ },
+ ],
+ []
+)
 
+const columns = React.useMemo(() => [
+    {
+    Header: 'Vital',
+    accessor: 'name',    
+    },
+    {
+    Header: 'Value',
+    accessor: 'value',    
+    },
+    {
+    Header: 'Threshold',
+    accessor: 'threshold',    
+    },
+    {
+        Header: 'Time',
+        accessor: <AlertTime/>,    
+    }
+    
+])
+
+const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+   } = useTable({ columns, critData })
 function AlertTable() {
   return (
-    <div >
-        <Styles>
+    <>
         <table>
             <thead>
                 <th>Type</th>
@@ -26,47 +90,12 @@ function AlertTable() {
             </tbody>
 
         </table>
-        </Styles>
+        
 
-    </div>
+    </>
+        
   )
 }
 
 export default AlertTable
-const Styles = styled.div`
-    table {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    border-spacing: 0;
-    border: 1px solid black;
-    font-size: clamp(0.5rem, 2.5vw, 2.5rem);
-    letter-spacing: 1px;
-   
-    tr {
-        :last-child {
-        td {
-            border-bottom: 0;
-        }
-        }
-    }
-    th,
-    td {
-        padding:  1rem;
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
-        :last-child {
-        border-right: 0;
-        }
-    }
-    
-    th {
-        background: green;
-        border-bottom: 3px solid blue;
-        color: white;
-        
-    }
-    }
-    `
+

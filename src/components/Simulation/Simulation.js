@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import Popup from '../General/Popup'
+import PopupCritical from '../General/PopupCritical';
+import AlertTime from "../General/AlertTime";
 import RandomRespRate, {
   RandomTemp,
   RandomSys,
   RandomDias,
   RandomHR,
+  respR,
 } from "./SimDataNorm";
 import RespGraph, {
   DiasGraph,
@@ -39,11 +43,14 @@ import RandomRespRateC, {
   RandomHRC,
 } from "./SimDataCrit";
 import "../Styles/Simulation.css";
+import { respRCcrit, tempRCcrit} from "./SimCritExtract";
 
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);
   const [Critical, setCritical] = useState(false);
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [buttonCritPopup, setButtonCritPopup] = useState(false);
   const NormalHandler = () => {
     setNormal(true);
     setWarning(false);
@@ -53,11 +60,13 @@ export default function Simulation() {
     setNormal(false);
     setWarning(true);
     setCritical(false);
+    setButtonPopup(true)
   };
   const CriticalHandler = () => {
     setNormal(false);
     setWarning(false);
     setCritical(true);
+    setButtonCritPopup(true)
   };
 
   return (
@@ -66,7 +75,16 @@ export default function Simulation() {
       <div className="button_holder">
         <button onClick={NormalHandler}>Normal</button>
         <button onClick={WarningHandler}>Warning</button>
+        <Popup trigger = {buttonPopup} setTrigger = {setButtonPopup}>
+            <h2> Warning at Time: <AlertTime/> </h2>
+            <h2>  ''</h2>
+        </Popup>
         <button onClick={CriticalHandler}>Critical</button>
+        <PopupCritical trigger = {buttonCritPopup} setTrigger = {setButtonCritPopup}>
+                <h2> Simulated Patient Warning at Time: <AlertTime/> </h2>
+                <h2> Respiratory rate:  {respRCcrit} </h2>
+                <h2> Tempertaure :  {tempRCcrit} </h2>
+        </PopupCritical>
       </div>
       {Normal && (
         <div>

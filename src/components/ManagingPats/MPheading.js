@@ -4,19 +4,17 @@ import "../Styles/styles.css";
 
 const MPHeader = () => {
   return (
-    <div>
-        <Nav>
-                <div className="left-section">
-                    Patient Name
-                </div>
-                {/* <div className="center-section">
-                    Room
-                </div> */}
-                <div className="right-section">
-                    Age Gender Bed#
-                </div>
-        </Nav>
+    <Nav>
+    <div className="mpflex-container">
+        <li>yo</li>
+        <span>
+          Patient Name
+        </span>
+        <div> Age </div>
+        <div> Gender </div>
+        <div> Bed #</div>
     </div>
+    </Nav>
   );
 };
 
@@ -33,10 +31,6 @@ const Nav = styled.nav`
   align-items: center;
   text-align:center;
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
 `;

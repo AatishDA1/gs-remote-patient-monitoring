@@ -1,13 +1,10 @@
 
 import React, { useState, useEffect } from "react";
-import db from "./firebase";
-import PatientSelectPage from "../components/HomePages/PatientSelectPageButton";
-import "../components/Styles/styles.css"
-import "../components/Styles/Popup.css"
-import { navigate } from "gatsby";
-import noscroll from "../components/ManagingPats/noscroll";
+import db from "../../pages/firebase";
+import "../Styles/styles.css"
+import "../Styles/Popup.css"
 
-function PatientAdd(props){
+function APpopup(props){
 	// access database here
     const [patientName, setPatientName] = useState("");
     const [patientAge, setPatientAge] = useState("");
@@ -109,4 +106,4 @@ function PatientAdd(props){
 	) : "";
 }
 
-export default PatientAdd;
+export default APpopup;

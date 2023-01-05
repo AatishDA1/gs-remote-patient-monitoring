@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../components/Styles/firebasestyle.css";
 import db from "./firebase";
-import AddPatient from "./AddPatient";
+import AddPatient from "../components/ManagingPats/APats";
 
 function PatientSelect(){
 

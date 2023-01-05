@@ -13,7 +13,7 @@ const GenHeader = () => {
   return (
     <Nav>
       <div className="left-section">
-      <button className="btnstyle" onClick={() => navigate("/AdminHome")}>
+      <button className="btnstyle" onClick={() => navigate("/AdminHome/")}>
           <FaHome/>
         </button>
         {/* reference: https://www.appsloveworld.com/reactjs/100/16/how-do-i-go-to-previous-page-in-gatsby-history-goback */}
@@ -25,7 +25,7 @@ const GenHeader = () => {
         <GenClock />
       </div>
       <div className="right-section">
-        <LOButton primary round to="/">
+        <LOButton primary="true" round="true" to="/">
           Logout
         </LOButton>
       </div>

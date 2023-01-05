@@ -1,68 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 // import { AEDButton } from "../ManagingDrs/AEDButton";
-import { allpatients } from "./ListPats";
 import "../Styles/styles.css";
 import { navigate } from "gatsby";
-import AddPatient from "../../pages/AddPatient";
 import db from "../../pages/firebase";
+import MPHeader from "./MPheading";
+import ManPatient from "./Mpats";
+import APats from "./APats";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
 //                  https://blog.logrocket.com/building-custom-checkbox-react/
 
 export default function MPActions() {
-    // firebase Patient Select part
-    const [patData, setPatData] = useState([]);
-
-    useEffect(() => {
-        db.collection("patientsData").onSnapshot((snapshot) => {
-        setPatData(
-            snapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-            }))
-        );
-        });
-        }, 
-    []);
-
-    const [readData, setreadData] = useState("");
-	const [getName, setGetName] = useState("");
-	const [getResp, setGetResp] = useState("");
-	const [getHR, setGetHR] = useState("");
-	const [getSys, setGetSys] = useState("");
-	const [getDia, setGetDia] = useState("");
-	const [getTemp, setGetTemp] = useState("");
-
-	const getData = (e) => {
-		e.preventDefault();
-		const please = db.collection("patientsData").doc(readData)
-		const doc = please.get({
-			name : getName,
-			resp: getResp,
-			temp: getTemp,
-			sys: getSys,
-			dia: getDia,
-			hr: getHR
-		});
-
-		if (!doc.exists) {
-			<>'No such document!'</>;
-		  } else {
-			setGetName(doc.name);
-			setGetResp(doc.resp);
-			setGetTemp(doc.temp);
-			setGetSys(doc.sys);
-			setGetDia(doc.dia);
-			setGetHR(doc.hr);
-			setreadData("");
-		  }
-    };
-    
-    // firebase update and delete?
     const [buttonPopup, setButtonPopup] = useState(false);
-    const [patientsData, setPatientsData] = useState([]);
+    const [patientsData, setPatientsData] = useState(new Array());
 	const [updatedPatientName, setUpdatedPatientName] = useState("");
 	const [updatedPatientAge, setUpdatedPatientAge] = useState("");
 	const [updatedPatientGender, setUpdatedPatientGender] = useState("");
@@ -77,10 +29,11 @@ export default function MPActions() {
             data: doc.data(),
             }))
         );
+        
         });
         }, 
     []);
-
+    
 	const updateData = (e) => {
 		e.preventDefault();
 		db.collection("patientsData").doc(dataIdToBeUpdated).update({
@@ -101,27 +54,30 @@ export default function MPActions() {
         db.collection("patientsData").doc(id).delete();
     }
     
-    
     // checkbox part
-
-
-    const getFormattedPrice = (price) => `$${price.toFixed(2)}`;
-
-    const [checkedState, setCheckedState] = useState(
-        new Array(patData.length).fill(false)
-      );
+    var patdata = patientsData.length
+    const [checkedState, setCheckedState] = useState( Array(patdata).fill(false))
+    
+    useEffect(() => {
+        setCheckedState(new Array(patientsData.length).fill(false))
+        // patdata=patientsData
+    },[patientsData]);
     
     const [total, setTotal] = useState(0);
 
+    const [patID, setpatID] = useState([])
+
+    console.log(patID)
+    // console.log(patdata[patID].data.age)
     const handleOnChange = (position) => {
+        setpatID(position);
         const updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
         );
-
         setCheckedState(updatedCheckedState);
 
         const totalPrice = updatedCheckedState.filter((value) => value === true).length;
-        
+
         setTotal(totalPrice);
     };
 
@@ -143,38 +99,63 @@ export default function MPActions() {
 
 
     return(
+        <>
+        {!dataIdToBeUpdated ? (
+            <div className="App__buttons">
+            {/* <button className="aedbtnstyle" onClick={() => navigate("/AddPatient")}>Add</button> */}
+            </div>
+            ) : (
+            <div className="App__Updateform">
+            <input
+                type="text"
+                placeholder="Name"
+                value={updatedPatientName}
+                onChange={(e) => setUpdatedPatientName(e.target.value)}
+            />
+            <input
+                type="text"
+                placeholder="Age"
+                value={updatedPatientAge}
+                onChange={(e) => setUpdatedPatientAge(e.target.value)}
+            />
+            <input
+                type="text"
+                placeholder="Gender"
+                value={updatedPatientGender}
+                onChange={(e) => setUpdatedPatientGender(e.target.value)}
+            />
+                    <input
+                type="text"
+                placeholder="Bed Number"
+                value={updatedPatientBedNO}
+                onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
+            />
+            <button onClick={updateData}>UPDATE</button>
+            </div>
+		)}
         <div className="ChangeBtnState">
             <ul className="doctors-list">
+                <MPHeader/>
                 <div className="scroll">
-                {patData.map(({id,data}) => {
+                {patientsData.map(({id,data}, index) => {
                     return (
-                        <li key={id}>
+                        <li key={index}>
                             <span className="flex-container">
-                                <li>
+                                <div>
                                     <span className="checkbox-wrapper">
                                         <input
                                         type="checkbox"
-                                        chekbxid={`custom-checkbox-{id}`}
-                                        checked={checkedState[id]}
-                                        onChange={()=>handleOnChange(id)}
+                                        cbid={`custom-checkbox-${index}`}
+                                        checked={checkedState[index]}
+                                        onChange={()=>handleOnChange(index)}
                                         className={checkedState? "checked" : ""}
                                         />
                                     </span>
-                                </li>
+                                </div>
                                 <span>{data.name}</span>
-                                <div>{data.age}</div>
-                                <div>{data.gender}</div>
-                                <div>{data.bedNO}</div>
-                                    <button className="aedbtnstyle"
-                                    onClick={() => {
-                                        setDataIdToBeUpdated(id);
-                                        setUpdatedPatientAge(data.age);
-                                        setUpdatedPatientName(data.name);
-                                        setUpdatedPatientGender(data.gender);
-                                        setUpdatedPatientBedNO(data.bedNO);
-                                    }}>
-                                    update
-                                    </button>
+                                <p>{data.age}</p>
+                                <p>{data.gender}</p>
+                                <p>{data.bedNO}</p>
                             </span>
                         </li>
                     );
@@ -183,19 +164,27 @@ export default function MPActions() {
                 <li>
                     <div>
                         <AEDBtn>
-                            <AddPatient/>
-                            <li>{getFormattedPrice(total)}</li>
-                            {/* <button className="aedbtnstyle" disabled={editDisabled()} onClick={() => navigate("/EditPatient")}>
+                            <button className="aedbtnstyle"
+                                disabled={editDisabled()}
+                                onClick={() => {
+                                    setDataIdToBeUpdated(patientsData[patID].id);
+                                    setUpdatedPatientAge(patientsData[patID].data.age);
+                                    setUpdatedPatientName(patientsData[patID].data.name);
+                                    setUpdatedPatientGender(patientsData[patID].data.gender);
+                                    setUpdatedPatientBedNO(patientsData[patID].data.bedNO);
+                                }}>
                                 EDIT
                             </button>
-                            <button className="aedbtnstyle" disabled={deleteDisabled2()} onClick={() => navigate("/DeletePatient")}>
+                            <button className="aedbtnstyle" disabled={deleteDisabled()} onClick={() => navigate("/DeletePatient")}>
                                 DELETE
-                            </button> */}
+                            </button>
+                            <APats/>
                         </AEDBtn>
                     </div>
                 </li>
             </ul>
         </div>
+    </>
     )
 };
 

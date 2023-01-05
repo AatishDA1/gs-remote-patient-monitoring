@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 import ListPage from './ListPage'
 import "../Styles/styles.css";
 import MPHeader from './MPheading'
-import AddPatient from '../../pages/AddPatient';
+import AddPatient from './APats';
 
 // reference(this file, api, searchbar, post): https://github.com/gitdagray/react_search_filter
 

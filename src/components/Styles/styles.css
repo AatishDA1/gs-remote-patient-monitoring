@@ -1,8 +1,9 @@
 .ChangeBtnState {
     font-family: sans-serif;
-    margin: 4rem auto;
+    /* margin: 4rem auto; */
     padding: 20px;
-    border: 1px solid #c6c6c6;
+    border: none;
+    border-bottom: 1px solid #9e9292;
     font-weight: bold;
   }
   
@@ -28,7 +29,7 @@ h3 {
 
 .doctors-list,
 .total {
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   font-size: clamp(0.5rem, 2.5vw, 1.5rem);
 }
@@ -90,10 +91,11 @@ h3 {
   margin-top: 1rem;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 1200px) {
+/* @media screen and (max-width: 800px) { */
   .doctors-list,
   .total {
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -121,11 +123,9 @@ label + p {
 .checkbox-wrapper input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.2em;
-  margin-right: 1.4em;
   border: 0.15em solid #09369B;
   outline: none;
   cursor: pointer;
@@ -138,7 +138,7 @@ input:checked {
 
 input:checked::before {
   content: "\2714";
-  font-size: 1.5em;
+  font-size: 0.7em;
   color: #fff;
   position: absolute;
   right: 2px;
@@ -193,31 +193,67 @@ input:checked::before {
   text-align: center;
   vertical-align: middle;
 }
-.flex-container > div {
+.flex-container > p {
   background-color: #fff;
   margin:5px;
-  width: 10%;
+  width: 15%;
   align-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
-
   text-align: center;
 }
-.flex-container > li {
+.flex-container > div {
   background-color: #fff;
   margin:5px;
-  width: 10%;
+  width: 7%;
   padding: none;
   text-align: center;
 }
 
 .flex-container > button {
   /* background-color: #fff; */
-  /* margin:5px;
-  width: 10%; */
+  margin:5px;
+  width: 10%;
+  border-radius: 0px;
   padding: none;
   text-align: center;
 }
+
+/* MPHeader flex styles */
+.mpflex-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mpflex-container > span {
+  margin: 5px;
+  width: 50%;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.mpflex-container > div {
+  margin:5px;
+  width: 15%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+.mpflex-container > li {
+  margin:5px;
+  width: 7%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
 
 /* Manage Doctors flex styles */
 .flex-containerdr {
@@ -336,6 +372,7 @@ input:checked::before {
 
 .search {
   width: 60%;
+  height: 4rem;
   border: 2px solid #000;
   border-radius: 3em;
   overflow: hidden;
@@ -344,7 +381,7 @@ input:checked::before {
   flex-flow: row nowrap;
 }
 
-.search:focus-within {
+.search:hover {
   box-shadow: 2px 2px 5px #000;
 }
 
@@ -354,10 +391,11 @@ input:checked::before {
   border: none;
   outline: none;
   font-size: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .search__input {
-  padding: 0.05em;
+  /* padding: 0.05em; */
   width: 85%;
 }
 
@@ -365,7 +403,7 @@ input:checked::before {
   width: 15%;
   font-size: 1.5rem;
   padding-right: 5rem;
-  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   color: gray;
   display: grid;
   place-content: center;
@@ -399,12 +437,15 @@ div.scroll {
   margin:4px, 4px;
   padding:4px 4px;
   background-color: #c5cee2;
-  width: 100%;
-  height: 50rem;
+  height: 50vh;
   overflow-x: hidden;
   overflow-y: auto;
   text-align:justify;
   justify-content: center;
   align-self: center;
   scroll-behavior: smooth;
+}
+
+div.scroll:hover {
+  box-shadow: 2px 2px 2px rgb(226, 226, 226);
 }

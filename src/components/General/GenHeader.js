@@ -37,7 +37,7 @@ export default GenHeader;
 
 const Nav = styled.nav`
   background: #1f1f1f;
-  height: 80px;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

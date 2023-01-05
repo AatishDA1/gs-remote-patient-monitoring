@@ -4,21 +4,14 @@ import "../Styles/styles.css";
 
 const MDHeader = () => {
   return (
-    <div>
-        <div>
-            <h3>
-                searchbar here
-            </h3>
-        </div>
-        <Nav>
-                <div className="left-section">
-                    Doctor Name
-                </div>
-                <div className="right-section">
-                    Office Number
-                </div>
-        </Nav>
-    </div>
+    <Nav>
+      <div className="mdflex-container">
+        <li>yo</li>
+          <span>Doctor Name</span>
+          <div>Office Number</div>
+          <div>Pat. List</div>
+      </div>
+    </Nav>
   );
 };
 
@@ -27,7 +20,7 @@ export default MDHeader;
 const Nav = styled.nav`
   background: #09369B;
   color: #ffffff;
-  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(0.5rem, 2.5vw, 2.0rem);
   font-weight: bold;
   height: 80px;
   display: flex;
@@ -35,10 +28,6 @@ const Nav = styled.nav`
   align-items: center;
   text-align:center;
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
 `;

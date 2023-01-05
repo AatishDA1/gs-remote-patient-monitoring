@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-// import { AEDButton } from "../ManagingDrs/AEDButton";
 import "../Styles/styles.css";
 import { navigate } from "gatsby";
 import db from "../../pages/firebase";
 import MPHeader from "./MPheading";
-import ManPatient from "./Mpats";
 import APats from "./APats";
+import { BsSearch } from "react-icons/Bs";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -60,15 +59,12 @@ export default function MPActions() {
     
     useEffect(() => {
         setCheckedState(new Array(patientsData.length).fill(false))
-        // patdata=patientsData
     },[patientsData]);
     
     const [total, setTotal] = useState(0);
 
     const [patID, setpatID] = useState([])
 
-    console.log(patID)
-    // console.log(patdata[patID].data.age)
     const handleOnChange = (position) => {
         setpatID(position);
         const updatedCheckedState = checkedState.map((item, index) =>
@@ -97,6 +93,9 @@ export default function MPActions() {
         return total === 0
     }
 
+    //search
+    const [query, setQuery] = useState("");
+
 
     return(
         <>
@@ -124,20 +123,31 @@ export default function MPActions() {
                 value={updatedPatientGender}
                 onChange={(e) => setUpdatedPatientGender(e.target.value)}
             />
-                    <input
-                type="text"
-                placeholder="Bed Number"
-                value={updatedPatientBedNO}
-                onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
+                <input
+            type="text"
+            placeholder="Bed Number"
+            value={updatedPatientBedNO}
+            onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
             />
-            <button onClick={updateData}>UPDATE</button>
+            <button className="aedbtnstyle" onClick={updateData}>UPDATE</button>
             </div>
 		)}
         <div className="ChangeBtnState">
             <ul className="doctors-list">
+                <form className="search">
+                    <input
+                        type="text"
+                        placeholder="search patient name..."
+                        className="search__input"
+                        onChange={(e) => setQuery(e.target.value)}        
+                    />
+                    <button className='search__button'><BsSearch/></button>
+                </form>
                 <MPHeader/>
                 <div className="scroll">
-                {patientsData.map(({id,data}, index) => {
+                {patientsData.filter(user=>
+                user.data.name.toLowerCase().includes(query)
+                ).map(({id,data}, index) => {
                     return (
                         <li key={index}>
                             <span className="flex-container">

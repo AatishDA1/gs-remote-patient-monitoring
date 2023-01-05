@@ -4,8 +4,6 @@ import db from "./firebase";
 import Popup from '../components/General/popupPTV'
 import "../components/Styles/styles.css";
 import { navigate } from "gatsby";
-import PatientAddButton from  "../components/HomePages/PatientAddButton";
-import ManPatient from "../components/ManagingPats/Mpats";
 
 function PatientManage(){
 	const [buttonPopup, setButtonPopup] = useState(false);

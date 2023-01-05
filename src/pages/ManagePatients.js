@@ -4,7 +4,6 @@ import { GlobalStyle } from "../components/Styles/GlobalStyles";
 import GenHeader from "../components/General/GenHeader";
 import GenFooter from "../components/General/GenFooter";
 import MPActions from "../components/ManagingPats/MPActions";
-import InitialSearchState from "../components/ManagingPats/InitialSearchState";
 
 
 const ManagePatients = () => (
@@ -13,7 +12,6 @@ const ManagePatients = () => (
         <GenHeader />
         <Seo title="ManagePatients" />
         <MPActions/>
-        {/* <InitialSearchState/> */}
         <GenFooter />  
     </>
 );

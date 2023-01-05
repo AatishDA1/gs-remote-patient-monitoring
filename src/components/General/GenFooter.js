@@ -20,6 +20,7 @@ const HPFooter = () => {
 export default HPFooter;
 
 const Foot = styled.nav`
+  height: 90px;
   background: rgba(8, 8, 8, 0.9);
   padding: 1rem calc((100vw - 1300px) / 2);
   display: flex;

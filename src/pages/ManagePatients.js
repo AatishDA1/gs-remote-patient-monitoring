@@ -13,7 +13,7 @@ const ManagePatients = () => (
         <GenHeader />
         <Seo title="ManagePatients" />
         <MPActions/>
-        <InitialSearchState/>
+        {/* <InitialSearchState/> */}
         <GenFooter />  
     </>
 );

@@ -4,7 +4,6 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css"
 
-
 function MPpopup(props){
 	const [buttonPopup, setButtonPopup] = useState(false);
     const [patientsData, setPatientsData] = useState([]);
@@ -14,7 +13,24 @@ function MPpopup(props){
 	const [updatedPatientBedNO, setUpdatedPatientBedNO] = useState("");
 	const [dataIdToBeUpdated, setDataIdToBeUpdated] = useState("");
 
+    const [patProps, setPatProps] = useState(props.info)
+    
+    useEffect(()=> {
+        (props.info === undefined) ? console.log('props notdefined') : setPatProps(props.info);
+    })
 
+    useEffect(()=> {
+        if(patProps.data === undefined) {
+            console.log('pat not defined');
+        } else {
+            setDataIdToBeUpdated(patProps.id)
+            setUpdatedPatientAge(patProps.data.age)
+            setUpdatedPatientName(patProps.data.name)
+            setUpdatedPatientGender(patProps.data.gender)
+            setUpdatedPatientBedNO(patProps.data.bedNO)
+        }
+    },[patProps])
+    
     useEffect(() => {
         db.collection("patientsData").onSnapshot((snapshot) => {
         setPatientsData(
@@ -41,13 +57,17 @@ function MPpopup(props){
 		setUpdatedPatientGender("");
 		setUpdatedPatientBedNO("");
 		setDataIdToBeUpdated("");
+        props.setTrigger(false)
 	};
+
     return(props.trigger) ? (
         <div className="popup">
 		<div className="popup-addpersonnel">
         <div className="App">
 	    {!dataIdToBeUpdated ? (
             <div>
+                ERROR
+                <button className="aedbtnstyle" onClick={() => props.setTrigger(false)}>BACK</button>
             </div>
             ) : (
             <div>
@@ -78,7 +98,7 @@ function MPpopup(props){
                     onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
                 />
                 </div>
-                <button onClick={updateData}>UPDATE</button>
+                <button className="aedbtnstyle" onClick={updateData} >UPDATE</button>
                 <button className="aedbtnstyle" onClick={() => props.setTrigger(false)}>CANCEL</button>
             </div>
         )}

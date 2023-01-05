@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import db from "../../pages/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
+import { BsSearch } from "react-icons/Bs";
 import { navigate } from "gatsby";
-import db from "../../pages/firebase";
 import MPHeader from "./MPheading";
 import APats from "./APats";
-import { BsSearch } from "react-icons/Bs";
+import MPpopup from "./MPatPopup";
+import DPpopup from "./DPatpopup";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -13,6 +15,7 @@ import { BsSearch } from "react-icons/Bs";
 
 export default function MPActions() {
     const [buttonPopup, setButtonPopup] = useState(false);
+    const [delbtnPopup, setDelBtnPopup] = useState(false);
     const [patientsData, setPatientsData] = useState([]);
 	const [updatedPatientName, setUpdatedPatientName] = useState("");
 	const [updatedPatientAge, setUpdatedPatientAge] = useState("");
@@ -33,21 +36,6 @@ export default function MPActions() {
         }, 
     []);
     
-	const updateData = (e) => {
-		e.preventDefault();
-		db.collection("patientsData").doc(dataIdToBeUpdated).update({
-		name: updatedPatientName,
-		age: updatedPatientAge,
-		gender: updatedPatientGender,
-		bedNO: updatedPatientBedNO
-		});
-	
-		setUpdatedPatientAge("");
-		setUpdatedPatientName("");
-		setUpdatedPatientGender("");
-		setUpdatedPatientBedNO("");
-		setDataIdToBeUpdated("");
-	};
 
 	const deleteData = (id) => {
         db.collection("patientsData").doc(id).delete();
@@ -64,9 +52,47 @@ export default function MPActions() {
     const [total, setTotal] = useState(0);
 
     const [patID, setpatID] = useState([])
+    const [patIDdel, setPatIDDel] = useState([])
+
+    const [popedi, setPopEdi] = useState([])
+    const [popdel, setPopDel] = useState([])
+
+    const [pop, setPop] = useState([])
+    
+    console.log(popdel)
+    console.log(popedi)
+    console.log(pop)
+
+    useEffect(()=>{
+        if (popedi.length===1) {
+            for (const data of popedi){
+                console.log("data: "+data)
+                setPop(data)
+            }
+        }
+    }, [patID])
+
 
     const handleOnChange = (position) => {
         setpatID(position);
+
+        if(patientsData[position]===undefined) {
+        } else {
+            const index = popdel.findIndex( delId => delId === patientsData[position].id);
+            if (index === -1) {
+                console.log("id not found")
+                popedi.push(patientsData[position])
+                popdel.push(patientsData[position].id)
+            } else {
+                console.log("id found!!!!!!")
+                const updatedArray = popdel.filter(ids => ids !== patientsData[position].id);
+                const updatedEdit = popedi.filter(ids => ids !== patientsData[position]);
+                setPopEdi(updatedEdit)
+                setPopDel(updatedArray)
+                console.log(updatedEdit.length)
+                
+            };
+        }
         const updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
         );
@@ -75,6 +101,7 @@ export default function MPActions() {
         const totalPrice = updatedCheckedState.filter((value) => value === true).length;
 
         setTotal(totalPrice);
+        console.log("end of handlechange")
     };
 
     // const [checkedstate, setcheckedstate] = useState([]);
@@ -96,12 +123,10 @@ export default function MPActions() {
     //search
     const [query, setQuery] = useState("");
 
-
     return(
         <>
-        {!dataIdToBeUpdated ? (
+        {/* {!dataIdToBeUpdated ? (
             <div className="App__buttons">
-            {/* <button className="aedbtnstyle" onClick={() => navigate("/AddPatient")}>Add</button> */}
             </div>
             ) : (
             <div className="App__Updateform">
@@ -131,7 +156,7 @@ export default function MPActions() {
             />
             <button className="aedbtnstyle" onClick={updateData}>UPDATE</button>
             </div>
-		)}
+		)} */}
         <div className="ChangeBtnState">
             <ul className="doctors-list">
                 <form className="search">
@@ -177,17 +202,24 @@ export default function MPActions() {
                             <button className="aedbtnstyle"
                                 disabled={editDisabled()}
                                 onClick={() => {
-                                    setDataIdToBeUpdated(patientsData[patID].id);
-                                    setUpdatedPatientAge(patientsData[patID].data.age);
-                                    setUpdatedPatientName(patientsData[patID].data.name);
-                                    setUpdatedPatientGender(patientsData[patID].data.gender);
-                                    setUpdatedPatientBedNO(patientsData[patID].data.bedNO);
-                                }}>
+                                    setButtonPopup(true);}}>
                                 EDIT
                             </button>
-                            <button className="aedbtnstyle" disabled={deleteDisabled()} onClick={() => navigate("/DeletePatient")}>
+                            <MPpopup
+                                trigger={buttonPopup}
+                                setTrigger = {setButtonPopup}
+                                info = {pop}>
+                            </MPpopup>
+                            <button className="aedbtnstyle"
+                                disabled={deleteDisabled()}
+                                onClick={() => {setDelBtnPopup(true)}}>
                                 DELETE
                             </button>
+                            <DPpopup
+                                trigger={delbtnPopup}
+                                setTrigger = {setDelBtnPopup}
+                                info = {popdel}>
+                            </DPpopup>
                             <APats/>
                         </AEDBtn>
                     </div>

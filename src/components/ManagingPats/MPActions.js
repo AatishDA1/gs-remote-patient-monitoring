@@ -13,7 +13,7 @@ import { BsSearch } from "react-icons/Bs";
 
 export default function MPActions() {
     const [buttonPopup, setButtonPopup] = useState(false);
-    const [patientsData, setPatientsData] = useState(new Array());
+    const [patientsData, setPatientsData] = useState([]);
 	const [updatedPatientName, setUpdatedPatientName] = useState("");
 	const [updatedPatientAge, setUpdatedPatientAge] = useState("");
 	const [updatedPatientGender, setUpdatedPatientGender] = useState("");

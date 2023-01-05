@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../components/Styles/firebasestyle.css";
 import db from "./firebase";
-
-import DoctorAddButton from  "../components/HomePages/DoctorAddButton";
+import "../components/Styles/styles.css";
+import { navigate } from "gatsby";
 
 function DoctorManage(){
     const [DoctorsData, setDoctorsData] = useState([]);
@@ -46,7 +46,7 @@ function DoctorManage(){
 	return (<>
 	<div className="App">
 	{!dataIdToBeUpdated ? (
-		<DoctorAddButton/>
+		<button className="aedbtnstyle" onClick={() => navigate("/AddDoctor")}>Add</button>
 		) : (
 		<div className="App__Updateform">
 		<input
@@ -88,7 +88,7 @@ function DoctorManage(){
                     setDataIdToBeUpdated(id);
                     setUpdatedDoctorOffice(data.office);
                     setUpdatedDoctorName(data.name);
-					<DoctorAddButton/>
+					// <button className="aedbtnstyle" onClick={() => navigate("/AddDoctor")}>Add</button>
 				}}
 				>
 				Update

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../components/Styles/firebasestyle.css";
 import db from "./firebase";
-import AddPatient from "../components/ManagingPats/APats";
+import APpopup from "../components/ManagingPats/APatpopup";
 
 function PatientSelect(){
-
+	const [addbtnPopup, setAddBtnPopup] = useState(false)
     const [patientsData, setPatientsData] = useState([]);
 
     useEffect(() => {
@@ -18,7 +18,6 @@ function PatientSelect(){
         });
         }, 
     []);
-
 
 	const [readData, setreadData] = useState("");
 	const [getName, setGetName] = useState("");
@@ -41,8 +40,6 @@ function PatientSelect(){
 			hr: getHR
 		});
 
-
-
 		if (!doc.exists) {
 			<>'No such document!'</>;
 		  } else {
@@ -55,9 +52,6 @@ function PatientSelect(){
 			setGetHR(doc.hr);
 			setreadData("");
 		  }
-		  
-	
-
 	};
 
 
@@ -65,7 +59,16 @@ return(<>
 	
 	<div className="App">
 	{!readData ? (
-		<AddPatient/>
+		<div>
+		<button className="aedbtnstyle"
+			onClick={() => {setAddBtnPopup(true)}}>
+			ADD
+		</button>
+		<APpopup
+			trigger={addbtnPopup}
+			setTrigger = {setAddBtnPopup}>
+		</APpopup>
+		</div>
 		) : (
 			/*PLOT GRAPHS UNDER HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 		<div className="App__Updateform">
@@ -121,6 +124,4 @@ return(<>
 }
 
 
-
-	
 export default PatientSelect;

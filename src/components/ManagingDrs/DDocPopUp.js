@@ -4,26 +4,26 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css"
 
-function DPpopup(props){
-    const [patProps, setPatProps] = useState(props)
+function DDpopup(props){
+    const [docProps, setDocProps] = useState(props)
     const [delID, setDelID] = useState("")
 
     useEffect(()=> {
-        (props.info === undefined) ? console.log('props notdefined') : setPatProps(props.info);
+        (props.info === undefined) ? console.log('props notdefined') : setDocProps(props.info);
     })
 
     useEffect(()=> {
-        if(patProps === undefined) {
-            console.log('pat not defined');
+        if(docProps === undefined) {
+            console.log('doc not defined');
         } else {
-            setDelID(patProps)
+            setDelID(docProps)
         }
-    },[patProps])
+    },[docProps])
 
 	const deleteData = (e) => {
 		e.preventDefault();
         for (const id of delID) {
-            db.collection("patientsData").doc(id).delete();
+            db.collection("DoctorsData").doc(id).delete();
         };
         props.setTrigger(false)
 	};
@@ -44,4 +44,4 @@ function DPpopup(props){
     ) : "";
 }
 
-export default DPpopup;
+export default DDpopup;

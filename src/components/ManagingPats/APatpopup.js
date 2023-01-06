@@ -4,13 +4,10 @@ import "../Styles/styles.css"
 import "../Styles/Popup.css"
 
 function APpopup(props){
-	// access database here
     const [patientName, setPatientName] = useState("");
     const [patientAge, setPatientAge] = useState("");
     const [patientGender, setPatientGender] = useState("");
     const [patientBedNO, setPatientBedNO] = useState("");
-
-    const [patientsData, setPatientsData] = useState([]);
 	const [dataIdToBeUpdated, setDataIdToBeUpdated] = useState("");
 	const [time, setTime] = useState([]);
 	const [respRate, setRespRate] = useState([]);
@@ -19,18 +16,6 @@ function APpopup(props){
 	const [HR, setHR] = useState([]);
 	const [temp, setTemp] = useState([]);
 
-
-	useEffect(() => {
-        db.collection("patientsData").onSnapshot((snapshot) => {
-        setPatientsData(
-            snapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-            }))
-        );
-        });
-        }, 
-    []);
 
 	const submit = (e) => {
         e.preventDefault();
@@ -62,6 +47,7 @@ function APpopup(props){
   
     };
 
+	
 	return(props.trigger) ? (
 		<div className="popup">
 		<div className="popup-addpersonnel">

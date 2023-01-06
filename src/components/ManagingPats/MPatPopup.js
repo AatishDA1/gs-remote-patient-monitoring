@@ -5,8 +5,6 @@ import "../Styles/styles.css";
 import "../Styles/Popup.css"
 
 function MPpopup(props){
-	const [buttonPopup, setButtonPopup] = useState(false);
-    const [patientsData, setPatientsData] = useState([]);
 	const [updatedPatientName, setUpdatedPatientName] = useState("");
 	const [updatedPatientAge, setUpdatedPatientAge] = useState("");
 	const [updatedPatientGender, setUpdatedPatientGender] = useState("");
@@ -31,20 +29,8 @@ function MPpopup(props){
         }
     },[patProps])
     
-    useEffect(() => {
-        db.collection("patientsData").onSnapshot((snapshot) => {
-        setPatientsData(
-            snapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-            }))
-        );
-        });
-        }, 
-    []);
 
 	const updateData = (e) => {
-		e.preventDefault();
 		db.collection("patientsData").doc(dataIdToBeUpdated).update({
 		name: updatedPatientName,
 		age: updatedPatientAge,
@@ -60,6 +46,7 @@ function MPpopup(props){
         props.setTrigger(false)
 	};
 
+    
     return(props.trigger) ? (
         <div className="popup">
 		<div className="popup-addpersonnel">

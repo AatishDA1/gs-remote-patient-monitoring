@@ -5,15 +5,14 @@ import GenHeader from "../components/General/GenHeader";
 import GenFooter from "../components/General/GenFooter";
 import MDActions from "../components/ManagingDrs/MDActions";
 
-
 const ManageDoctors = () => (
-    <>
-        <GlobalStyle />
-        <GenHeader />
-        <Seo title="ManageDoctors" />
-        <MDActions/>
-        <GenFooter />    
-    </>
+  <>
+    <GlobalStyle />
+    <GenHeader />
+    <Seo title="ManageDoctors" />
+    <MDActions />
+    <GenFooter />
+  </>
 );
 
 export default ManageDoctors;

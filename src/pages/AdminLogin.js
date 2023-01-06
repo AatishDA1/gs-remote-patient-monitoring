@@ -18,7 +18,7 @@ const Form = () => {
   return (
     <>
       <GlobalStyle />
-      <HPHeader/>
+      <HPHeader />
       <h2>Admin Login Page</h2>
       <div className="form-container">
         <div className="form-content-left"></div>

@@ -1,80 +1,81 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
-    margin:0;
+    margin: 0;
 }
 
 /* Reference https://www.youtube.com/watch?v=sA_glquejwE*/
 
-.RespGraph{
+.RespGraph {
     background-color: aliceblue;
     grid-area: RespGraph;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.RespRate{
+.RespRate {
     background-color: lavender;
     grid-area: RespRate;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.TempGraph{
+.TempGraph {
     background-color: aliceblue;
     grid-area: TempGraph;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.Temp{
+.Temp {
     background-color: lavender;
     grid-area: Temp;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.BP_Sys_Graph{
+.BP_Sys_Graph {
     background-color: aliceblue;
     grid-area: BP_Sys_Graph;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.BP_Sys{
+.BP_Sys {
     background-color: lavender;
     grid-area: BP_Sys;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.BP_Dias_Graph{
+.BP_Dias_Graph {
     background-color: aliceblue;
     grid-area: BP_Dias_Graph;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.BP_Dias{
+.BP_Dias {
     background-color: lavender;
     grid-area: BP_Dias;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.HRGraph{
+.HRGraph {
     background-color: aliceblue;
     grid-area: HRGraph;
-    list-style-type:none;
-    
+    list-style-type: none;
+
 }
 
-.HR{
+.HR {
     background-color: lavender;
     grid-area: HR;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.ECG{
+.ECG {
     background-color: aliceblue;
     grid-area: ECG;
-    list-style-type:none;
+    list-style-type: none;
 }
 
-.kontainer{
+.kontainer {
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr;
     /* 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr ; */
@@ -86,39 +87,42 @@ body {
     'ECG ECG ECG ECG ECG ECG ECG ECG ECG ECG'; */
     grid-gap: 15px;
     padding: 10px;
-    grid-template-areas: 
-    "RespGraph RespRate"
-    "TempGraph Temp"
-    "BP_Sys_Graph BP_Sys"
-    "BP_Dias_Graph BP_Dias"
-    "HRGraph HR"
-    "ECG ECG"
+    grid-template-areas:
+        "RespGraph RespRate"
+        "TempGraph Temp"
+        "BP_Sys_Graph BP_Sys"
+        "BP_Dias_Graph BP_Dias"
+        "HRGraph HR"
+        "ECG ECG"
     ;
     text-align: Left;
 }
 
 /* end of reference */
 .stat-title {
-    margin:1rem;
+    margin: 1rem;
     align-items: left;
 }
-.nav{
+
+.nav {
     background-color: #333;
     color: white;
     display: flex;
     justify-content: space-between;
-    align-items:stretch;
-    gap:2rem;
-    padding:0 1rem;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
 }
-.site-title{
+
+.site-title {
     font-size: 3vw;
     text-decoration: none;
 }
+
 .nav ul {
-    padding:0;
-    margin:0;
-    list-style:none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
     gap: 1rem;
     text-align: center;
@@ -126,7 +130,7 @@ body {
 }
 
 .nav a {
-    color:inherit;
+    color: inherit;
     text-decoration: none;
     height: 100%;
     display: flex;
@@ -134,11 +138,10 @@ body {
     padding: .25rem;
 }
 
-.nav li.active{
+.nav li.active {
     background-color: #777;
 }
 
-.nav li:hover{
+.nav li:hover {
     background-color: #777;
 }
-

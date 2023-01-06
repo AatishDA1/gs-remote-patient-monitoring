@@ -3,15 +3,16 @@ import React, { useState, useEffect } from "react";
 export default function RandomRespRate() {
   const [currentRR, updatedRR] = useState(RandomRespR());
   useEffect(() => {
-      setInterval(() => {
+    setInterval(() => {
       const RR = RandomRespR();
       updatedRR(RR);
-      }, 1000);
+    }, 1000);
   }, []);
-  respR = currentRR
-return (currentRR)}
+  respR = currentRR;
+  return currentRR;
+}
 
-export var respR = 0
+export var respR = 0;
 
 function RandomRespR() {
   let min = 12;
@@ -28,15 +29,16 @@ function RandomTempR() {
 export function RandomTemp() {
   const [currentTR, updatedTR] = useState(RandomTempR());
   useEffect(() => {
-      setInterval(() => {
+    setInterval(() => {
       const TR = RandomTempR();
       updatedTR(TR);
-      }, 1000);
+    }, 1000);
   }, []);
-  tempR = currentTR
-return (currentTR)}
+  tempR = currentTR;
+  return currentTR;
+}
 
-export var tempR = 0
+export var tempR = 0;
 
 function RandomSysR() {
   let min = 90;
@@ -47,15 +49,16 @@ function RandomSysR() {
 export function RandomSys() {
   const [currentSR, updatedSR] = useState(RandomSysR());
   useEffect(() => {
-      setInterval(() => {
+    setInterval(() => {
       const SR = RandomSysR();
       updatedSR(SR);
-      }, 1000);
+    }, 1000);
   }, []);
-  sysR = currentSR
-return (currentSR)}
+  sysR = currentSR;
+  return currentSR;
+}
 
-export var sysR = 0
+export var sysR = 0;
 
 function RandomDiasRate() {
   let min = 60;
@@ -66,15 +69,16 @@ function RandomDiasRate() {
 export function RandomDias() {
   const [currentDR, updatedDR] = useState(RandomDiasRate());
   useEffect(() => {
-      setInterval(() => {
+    setInterval(() => {
       const DR = RandomDiasRate();
       updatedDR(DR);
-      }, 1000);
+    }, 1000);
   }, []);
-  diasR = currentDR
-return (currentDR)}
+  diasR = currentDR;
+  return currentDR;
+}
 
-export var diasR = 0
+export var diasR = 0;
 
 function RandomHRate() {
   let min = 60;
@@ -85,12 +89,13 @@ function RandomHRate() {
 export function RandomHR() {
   const [currentHR, updatedHR] = useState(RandomHRate());
   useEffect(() => {
-      setInterval(() => {
+    setInterval(() => {
       const HR = RandomHRate();
       updatedHR(HR);
-      }, 1000);
+    }, 1000);
   }, []);
-  heartR = currentHR
-return (currentHR)}
+  heartR = currentHR;
+  return currentHR;
+}
 
-export var heartR = 0
+export var heartR = 0;

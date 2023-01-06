@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
 }
+
 button {
   top: 10px;
   right: 10px;
@@ -159,6 +161,7 @@ button {
   margin: 1rem;
   align-items: left;
 }
+
 .nav {
   background-color: #333;
   color: white;
@@ -168,10 +171,12 @@ button {
   gap: 2rem;
   padding: 0 1rem;
 }
+
 .site-title {
   font-size: 3vw;
   text-decoration: none;
 }
+
 .nav ul {
   padding: 0;
   margin: 0;

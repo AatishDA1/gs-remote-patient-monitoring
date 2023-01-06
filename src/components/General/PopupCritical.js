@@ -1,20 +1,24 @@
-import React  from 'react'
-import '../Styles/Popup.css'
+import React from "react";
+import "../Styles/Popup.css";
 import { GlobalStyle } from "../Styles/GlobalStyles";
 
 function PopupCritical(props) {
-    return (props.trigger) ? (
-        <> 
-           <GlobalStyle />
-           <div className='popup'>
-            <div className='popup-inner-critical'>
-               <button className='close-btn' onClick = {() => props.setTrigger(false)}> Dismiss  </button>
-               {props.children}
-            </div>
-
-           </div>   
-       </> 
-     ) : "";
+  return props.trigger ? (
+    <>
+      <GlobalStyle />
+      <div className="popup">
+        <div className="popup-inner-critical">
+          <button className="close-btn" onClick={() => props.setTrigger(false)}>
+            {" "}
+            Dismiss{" "}
+          </button>
+          {props.children}
+        </div>
+      </div>
+    </>
+  ) : (
+    ""
+  );
 }
 
-export default PopupCritical
+export default PopupCritical;

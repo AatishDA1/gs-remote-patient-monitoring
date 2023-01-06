@@ -1,12 +1,12 @@
 .ChangeBtnState {
-    font-family: sans-serif;
-    /* margin: 4rem auto; */
-    padding: 20px;
-    border: none;
-    border-bottom: 1px solid #9e9292;
-    font-weight: bold;
-  }
-  
+  font-family: sans-serif;
+  /* margin: 4rem auto; */
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid #9e9292;
+  font-weight: bold;
+}
+
 h3 {
   text-align: center;
   justify-content: space-between;
@@ -80,11 +80,11 @@ h3 {
 }
 
 .alignleft {
-  float:left;
+  float: left;
 }
 
 .alignright {
-  float:right;
+  float: right;
 }
 
 .total {
@@ -92,7 +92,8 @@ h3 {
 }
 
 @media (max-width: 1200px) {
-/* @media screen and (max-width: 800px) { */
+
+  /* @media screen and (max-width: 800px) { */
   .doctors-list,
   .total {
     width: 95%;
@@ -116,7 +117,7 @@ h3 {
   align-items: center;
 }
 
-label + p {
+label+p {
   color: grey;
 }
 
@@ -150,7 +151,7 @@ input:checked::before {
   background-color: #c0c0c0;
 }
 
-.checkbox-wrapper input[type="checkbox"]:disabled + span {
+.checkbox-wrapper input[type="checkbox"]:disabled+span {
   color: #c0c0c0;
 }
 
@@ -165,12 +166,12 @@ input:checked::before {
 }
 
 .column {
-  flex:33%;
+  flex: 33%;
   max-width: 33%;
   padding: 0 4px;
 }
 
-.column > span {
+.column>span {
   margin-top: 8px;
   vertical-align: middle;
 }
@@ -184,7 +185,7 @@ input:checked::before {
   align-items: center;
 }
 
-.flex-container > span {
+.flex-container>span {
   background-color: #fff;
   margin: 5px;
   width: 50%;
@@ -193,26 +194,28 @@ input:checked::before {
   text-align: center;
   vertical-align: middle;
 }
-.flex-container > p {
+
+.flex-container>p {
   background-color: #fff;
-  margin:5px;
+  margin: 5px;
   width: 15%;
   align-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
   text-align: center;
 }
-.flex-container > div {
+
+.flex-container>div {
   background-color: #fff;
-  margin:5px;
+  margin: 5px;
   width: 7%;
   padding: none;
   text-align: center;
 }
 
-.flex-container > button {
+.flex-container>button {
   /* background-color: #fff; */
-  margin:5px;
+  margin: 5px;
   width: 10%;
   border-radius: 0px;
   padding: none;
@@ -229,7 +232,7 @@ input:checked::before {
   align-items: center;
 }
 
-.mpflex-container > span {
+.mpflex-container>span {
   margin: 5px;
   width: 50%;
   padding-top: 1.4rem;
@@ -237,16 +240,18 @@ input:checked::before {
   text-align: center;
   vertical-align: middle;
 }
-.mpflex-container > div {
-  margin:5px;
+
+.mpflex-container>div {
+  margin: 5px;
   width: 15%;
   align-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
   text-align: center;
 }
-.mpflex-container > li {
-  margin:5px;
+
+.mpflex-container>li {
+  margin: 5px;
   width: 7%;
   align-content: center;
   padding-top: 1.4rem;
@@ -264,7 +269,7 @@ input:checked::before {
   align-items: center;
 }
 
-.flex-containerdr > span {
+.flex-containerdr>span {
   background-color: #fff;
   margin: 5px;
   width: 50%;
@@ -273,18 +278,20 @@ input:checked::before {
   text-align: center;
   vertical-align: middle;
 }
-.flex-containerdr > p {
+
+.flex-containerdr>p {
   background-color: #fff;
-  margin:5px;
+  margin: 5px;
   width: 20%;
   align-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
   text-align: center;
 }
-.flex-containerdr > div {
+
+.flex-containerdr>div {
   background-color: #fff;
-  margin:5px;
+  margin: 5px;
   width: 7%;
   padding: none;
   text-align: center;
@@ -300,7 +307,7 @@ input:checked::before {
   align-items: center;
 }
 
-.mdflex-container > span {
+.mdflex-container>span {
   margin: 5px;
   width: 50%;
   padding-top: 1.4rem;
@@ -308,16 +315,18 @@ input:checked::before {
   text-align: center;
   vertical-align: middle;
 }
-.mdflex-container > div {
-  margin:5px;
+
+.mdflex-container>div {
+  margin: 5px;
   width: 20%;
   align-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
   text-align: center;
 }
-.mdflex-container > li {
-  margin:5px;
+
+.mdflex-container>li {
+  margin: 5px;
   width: 7%;
   align-content: center;
   padding-top: 1.4rem;
@@ -347,6 +356,7 @@ input:checked::before {
   min-width: 10px;
   text-align: center;
 }
+
 .btnstyle:hover {
   cursor: pointer;
   background: #b4b4b4;
@@ -375,11 +385,13 @@ input:checked::before {
   min-width: 10px;
   text-align: center;
 }
+
 .aedbtnstyle:disabled {
   color: #A9A9A9;
   opacity: 0.7;
   cursor: default;
 }
+
 .aedbtnstyle:hover:enabled {
   cursor: pointer;
   background: #077BF1;
@@ -395,9 +407,10 @@ input:checked::before {
   background-color: #c5cee2;
   align-items: stretch;
 }
-.flex-containerex > span {
+
+.flex-containerex>span {
   background-color: #fff;
-  margin:5px;
+  margin: 5px;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -489,13 +502,13 @@ input:checked::before {
 
 /* reference:  https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ */
 div.scroll {
-  margin:4px, 4px;
-  padding:4px 4px;
+  margin: 4px, 4px;
+  padding: 4px 4px;
   background-color: #c5cee2;
-  height: 55vh;
+  height: 60vh;
   overflow-x: hidden;
   overflow-y: auto;
-  text-align:justify;
+  text-align: justify;
   justify-content: center;
   align-self: center;
   scroll-behavior: smooth;

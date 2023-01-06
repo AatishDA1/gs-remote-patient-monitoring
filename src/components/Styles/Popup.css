@@ -27,15 +27,15 @@
   color: #000;
 }
 
-.popup-vitals{
-    position: relative;
-    padding: 70px;
-    width: 100%;
-    background-color: white;
-    color: #000;
+.popup-vitals {
+  position: relative;
+  padding: 70px;
+  width: 100%;
+  background-color: white;
+  color: #000;
 }
 
-.popup-addpersonnel{
+.popup-addpersonnel {
   position: relative;
   padding: 70px;
   width: 60vw;
@@ -65,6 +65,7 @@
   margin-bottom: 10px;
   min-width: 100px;
 }
+
 .close-btn:hover {
   cursor: pointer;
   background-color: rgba(29, 28, 28, 0.9);

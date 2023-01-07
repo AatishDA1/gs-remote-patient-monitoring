@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import db from "../../pages/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
-import { BsSearch } from "react-icons/Bs";
+import { BsSearch } from "react-icons/bs";
 import MDHeading from "./MDHeading";
 import ADocPopUp from "./ADocPopUp";
 import DDocPopUp from "./DDocPopUp";

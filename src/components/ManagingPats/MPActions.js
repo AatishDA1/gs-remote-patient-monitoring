@@ -3,7 +3,7 @@ import db from "../../pages/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
 import { BsSearch } from "react-icons/bs";
-import MPHeading from "./MPHeading";
+import MPHeader from "./MPHeader";
 import AddPatPopUp from "./AddPatPopUp";
 import DelPatPopUp from "./DelPatPopUp";
 import EdiPatPopUp from "./EdiPatPopUp";
@@ -107,7 +107,7 @@ export default function MPActions() {
               <BsSearch />
             </button>
           </form>
-          <MPHeading />
+          <MPHeader />
           <div className="scroll">
             {patientsData
               .filter((user) => user.data.name.toLowerCase().includes(query))

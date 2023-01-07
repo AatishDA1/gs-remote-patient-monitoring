@@ -4,9 +4,9 @@ import styled from "styled-components";
 import "../Styles/styles.css";
 import { BsSearch } from "react-icons/bs";
 import MDHeading from "./MDHeading";
-import ADocPopUp from "./ADocPopUp";
-import DDocPopUp from "./DDocPopUp";
-import MDocPopUp from "./MDocPopUp";
+import AddDocPopUp from "./AddDocPopUp";
+import DelDocPopUp from "./DelDocPopUp";
+import EdiDocPopUp from "./EdiDocPopUp";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -146,11 +146,10 @@ export default function MPActions() {
                 >
                   EDIT
                 </button>
-                <MDocPopUp
+                <EdiDocPopUp
                   trigger={edtbtnPopup}
                   setTrigger={setEdtBtnPopup}
-                  info={edit}
-                ></MDocPopUp>
+                  info={edit}/>
                 <button
                   className="aedbtnstyle"
                   disabled={deleteDisabled()}
@@ -160,24 +159,21 @@ export default function MPActions() {
                 >
                   DELETE
                 </button>
-                <DDocPopUp
+                <DelDocPopUp
                   trigger={delbtnPopup}
                   setTrigger={setDelBtnPopup}
-                  info={idString}
-                ></DDocPopUp>
+                  info={idString}/>
                 <button
                   className="aedbtnstyle"
-                  // disabled={deleteDisabled()}
                   onClick={() => {
                     setAddBtnPopup(true);
                   }}
                 >
                   ADD
                 </button>
-                <ADocPopUp
+                <AddDocPopUp
                   trigger={addbtnPopup}
-                  setTrigger={setAddBtnPopup}
-                ></ADocPopUp>
+                  setTrigger={setAddBtnPopup}/>
               </AEDBtn>
             </div>
           </li>

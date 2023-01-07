@@ -4,7 +4,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-export default function DDocPopUp(props) {
+export default function DelDocPopUp(props) {
   const [docProps, setDocProps] = useState(props);
   const [delID, setDelID] = useState("");
 

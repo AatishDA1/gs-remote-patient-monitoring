@@ -3,7 +3,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-export default function ADocPopUp(props) {
+export default function AddDocPopUp(props) {
   const [doctorName, setDoctorName] = useState("");
   const [doctorOffice, setDoctorOffice] = useState("");
   const [patientList, setPatientList] = useState([]);

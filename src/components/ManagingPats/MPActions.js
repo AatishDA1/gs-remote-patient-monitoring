@@ -4,9 +4,9 @@ import styled from "styled-components";
 import "../Styles/styles.css";
 import { BsSearch } from "react-icons/bs";
 import MPHeading from "./MPHeading";
-import APatPopUp from "./APatPopUp";
-import DPatPopUp from "./DPatPopUp";
-import MPatPopUp from "./MPatPopUp";
+import AddPatPopUp from "./AddPatPopUp";
+import DelPatPopUp from "./DelPatPopUp";
+import EdiPatPopUp from "./EdiPatPopUp";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -147,7 +147,7 @@ export default function MPActions() {
                 >
                   EDIT
                 </button>
-                <MPatPopUp
+                <EdiPatPopUp
                   trigger={buttonPopup}
                   setTrigger={setButtonPopup}
                   info={edit}
@@ -161,7 +161,7 @@ export default function MPActions() {
                 >
                   DELETE
                 </button>
-                <DPatPopUp
+                <DelPatPopUp
                   trigger={delbtnPopup}
                   setTrigger={setDelBtnPopup}
                   info={idString}
@@ -175,7 +175,7 @@ export default function MPActions() {
                 >
                   ADD
                 </button>
-                <APatPopUp trigger={addbtnPopup} setTrigger={setAddBtnPopup} />
+                <AddPatPopUp trigger={addbtnPopup} setTrigger={setAddBtnPopup} />
               </AEDBtn>
             </div>
           </li>

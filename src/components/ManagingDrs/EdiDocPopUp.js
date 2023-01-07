@@ -4,7 +4,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-export default function MDocPopUp(props) {
+export default function EdiDocPopUp(props) {
   const [updatedDoctorName, setUpdatedDoctorName] = useState("");
   const [updatedDoctorOffice, setUpdatedDoctorOffice] = useState("");
   const [updatedPatientList, setUpdatedPatientList] = useState([]);

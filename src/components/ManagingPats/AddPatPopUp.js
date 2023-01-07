@@ -3,7 +3,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-export default function APatPopUp(props) {
+export default function AddPatPopUp(props) {
   const [patientName, setPatientName] = useState("");
   const [patientAge, setPatientAge] = useState("");
   const [patientGender, setPatientGender] = useState("");

@@ -3,10 +3,10 @@ import db from "../../pages/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
 import { BsSearch } from "react-icons/Bs";
-import MDHeader from "./MDheading";
-import ADpopup from "./ADocPopUp";
-import MDpopup from "./MDocPopUp";
-import DDpopup from "./DDocPopUp";
+import MDHeading from "./MDHeading";
+import ADocPopUp from "./ADocPopUp";
+import DDocPopUp from "./DDocPopUp";
+import MDocPopUp from "./MDocPopUp";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -107,7 +107,7 @@ export default function MPActions() {
               <BsSearch />
             </button>
           </form>
-          <MDHeader />
+          <MDHeading />
           <div className="scroll">
             {doctorsData
               .filter((user) => user.data.name.toLowerCase().includes(query))
@@ -146,11 +146,11 @@ export default function MPActions() {
                 >
                   EDIT
                 </button>
-                <MDpopup
+                <MDocPopUp
                   trigger={edtbtnPopup}
                   setTrigger={setEdtBtnPopup}
                   info={edit}
-                ></MDpopup>
+                ></MDocPopUp>
                 <button
                   className="aedbtnstyle"
                   disabled={deleteDisabled()}
@@ -160,11 +160,11 @@ export default function MPActions() {
                 >
                   DELETE
                 </button>
-                <DDpopup
+                <DDocPopUp
                   trigger={delbtnPopup}
                   setTrigger={setDelBtnPopup}
                   info={idString}
-                ></DDpopup>
+                ></DDocPopUp>
                 <button
                   className="aedbtnstyle"
                   // disabled={deleteDisabled()}
@@ -174,10 +174,10 @@ export default function MPActions() {
                 >
                   ADD
                 </button>
-                <ADpopup
+                <ADocPopUp
                   trigger={addbtnPopup}
                   setTrigger={setAddBtnPopup}
-                ></ADpopup>
+                ></ADocPopUp>
               </AEDBtn>
             </div>
           </li>

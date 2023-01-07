@@ -3,7 +3,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-function ADpopup(props) {
+export default function ADocPopUp(props) {
   const [doctorName, setDoctorName] = useState("");
   const [doctorOffice, setDoctorOffice] = useState("");
   const [patientList, setPatientList] = useState([]);
@@ -71,5 +71,3 @@ function ADpopup(props) {
     ""
   );
 }
-
-export default ADpopup;

@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import "../Styles/styles.css";
 
-const MPHeader = () => {
+const MPHeading = () => {
   return (
     <Nav>
       <div className="mpflex-container">
@@ -16,7 +16,7 @@ const MPHeader = () => {
   );
 };
 
-export default MPHeader;
+export default MPHeading;
 
 const Nav = styled.nav`
   background: #09369b;

@@ -4,7 +4,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-function MPpopup(props) {
+export default function MPatPopUp(props) {
   const [updatedPatientName, setUpdatedPatientName] = useState("");
   const [updatedPatientAge, setUpdatedPatientAge] = useState("");
   const [updatedPatientGender, setUpdatedPatientGender] = useState("");
@@ -113,5 +113,3 @@ function MPpopup(props) {
     ""
   );
 }
-
-export default MPpopup;

@@ -4,7 +4,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-function DDpopup(props) {
+export default function DDocPopUp(props) {
   const [docProps, setDocProps] = useState(props);
   const [delID, setDelID] = useState("");
 
@@ -53,5 +53,3 @@ function DDpopup(props) {
     ""
   );
 }
-
-export default DDpopup;

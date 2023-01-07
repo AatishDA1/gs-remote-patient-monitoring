@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import "../Styles/styles.css";
 
-const MDHeader = () => {
+const MDHeading = () => {
   return (
     <Nav>
       <div className="mdflex-container">
@@ -15,7 +15,7 @@ const MDHeader = () => {
   );
 };
 
-export default MDHeader;
+export default MDHeading;
 
 const Nav = styled.nav`
   background: #09369b;

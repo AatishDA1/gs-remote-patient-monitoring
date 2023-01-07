@@ -3,10 +3,10 @@ import db from "../../pages/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
 import { BsSearch } from "react-icons/Bs";
-import MPHeader from "./MPheading";
-import MPpopup from "./MPatPopUp";
-import DPpopup from "./DPatPopUp";
-import APpopup from "./APatPopUp";
+import MPHeading from "./MPHeading";
+import APatPopUp from "./APatPopUp";
+import DPatPopUp from "./DPatPopUp";
+import MPatPopUp from "./MPatPopUp";
 
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -107,7 +107,7 @@ export default function MPActions() {
               <BsSearch />
             </button>
           </form>
-          <MPHeader />
+          <MPHeading />
           <div className="scroll">
             {patientsData
               .filter((user) => user.data.name.toLowerCase().includes(query))
@@ -147,11 +147,11 @@ export default function MPActions() {
                 >
                   EDIT
                 </button>
-                <MPpopup
+                <MPatPopUp
                   trigger={buttonPopup}
                   setTrigger={setButtonPopup}
                   info={edit}
-                ></MPpopup>
+                ></MPatPopUp>
                 <button
                   className="aedbtnstyle"
                   disabled={deleteDisabled()}
@@ -161,11 +161,11 @@ export default function MPActions() {
                 >
                   DELETE
                 </button>
-                <DPpopup
+                <DPatPopUp
                   trigger={delbtnPopup}
                   setTrigger={setDelBtnPopup}
                   info={idString}
-                ></DPpopup>
+                ></DPatPopUp>
                 <button
                   className="aedbtnstyle"
                   // disabled={deleteDisabled()}
@@ -175,10 +175,10 @@ export default function MPActions() {
                 >
                   ADD
                 </button>
-                <APpopup
+                <APatPopUp
                   trigger={addbtnPopup}
                   setTrigger={setAddBtnPopup}
-                ></APpopup>
+                ></APatPopUp>
               </AEDBtn>
             </div>
           </li>

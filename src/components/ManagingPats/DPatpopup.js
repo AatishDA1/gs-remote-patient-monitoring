@@ -4,7 +4,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-function DPpopup(props) {
+export default function DPatPopUp(props) {
   const [patProps, setPatProps] = useState(props);
   const [delID, setDelID] = useState("");
 
@@ -53,5 +53,3 @@ function DPpopup(props) {
     ""
   );
 }
-
-export default DPpopup;

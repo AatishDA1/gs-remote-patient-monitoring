@@ -4,7 +4,7 @@ import db from "../../pages/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
-function MDpopup(props) {
+export default function MDocPopUp(props) {
   const [updatedDoctorName, setUpdatedDoctorName] = useState("");
   const [updatedDoctorOffice, setUpdatedDoctorOffice] = useState("");
   const [updatedPatientList, setUpdatedPatientList] = useState([]);
@@ -103,5 +103,3 @@ function MDpopup(props) {
     ""
   );
 }
-
-export default MDpopup;

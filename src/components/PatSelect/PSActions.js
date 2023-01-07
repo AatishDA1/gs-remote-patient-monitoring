@@ -4,10 +4,9 @@ import db from "../../pages/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
 import "../Styles/firebasestyle.css";
-import { BsSearch } from "react-icons/Bs";
-import MPHeader from "../ManagingPats/MPheading";
-import PSDudpage from "../../pages/PSDudPage";
-import PatientDud from "../../pages/PatientDud";
+import { BsSearch } from "react-icons/bs";
+import MPHeading from "../ManagingPats/MPheading";
+import PSDudpage from "./PSDudPage";
 
 export default function PSActions() {
   const [buttonPopup, setButtonPopup] = useState(false);
@@ -132,7 +131,7 @@ export default function PSActions() {
               <BsSearch />
             </button>
           </form>
-          <MPHeader />
+          <MPHeading />
           <div className="scroll">
             {patientsData
               .filter((user) => user.data.name.toLowerCase().includes(query))

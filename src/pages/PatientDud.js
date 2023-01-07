@@ -7,8 +7,7 @@ import RespGraph, {
   TempGraph,
 } from "../components/Vitals/RandomVitalGraphDud";
 import "../components/Styles/selectpats.css"
-import PSDudpage from "./PSDudPage";
-import { name } from "./PSDudPage";
+import { name } from "../components/PatSelect/PSDudPage";
 // import RandomRespRate, {
 //   RandomTemp,
 //   RandomSys,

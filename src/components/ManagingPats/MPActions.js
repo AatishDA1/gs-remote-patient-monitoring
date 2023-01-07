@@ -151,7 +151,7 @@ export default function MPActions() {
                   trigger={buttonPopup}
                   setTrigger={setButtonPopup}
                   info={edit}
-                ></MPatPopUp>
+                />
                 <button
                   className="aedbtnstyle"
                   disabled={deleteDisabled()}
@@ -165,7 +165,7 @@ export default function MPActions() {
                   trigger={delbtnPopup}
                   setTrigger={setDelBtnPopup}
                   info={idString}
-                ></DPatPopUp>
+                />
                 <button
                   className="aedbtnstyle"
                   // disabled={deleteDisabled()}
@@ -175,10 +175,7 @@ export default function MPActions() {
                 >
                   ADD
                 </button>
-                <APatPopUp
-                  trigger={addbtnPopup}
-                  setTrigger={setAddBtnPopup}
-                ></APatPopUp>
+                <APatPopUp trigger={addbtnPopup} setTrigger={setAddBtnPopup} />
               </AEDBtn>
             </div>
           </li>

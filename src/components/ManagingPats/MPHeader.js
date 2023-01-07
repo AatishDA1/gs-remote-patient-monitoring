@@ -6,7 +6,7 @@ const MPHeader = () => {
   return (
     <Nav>
       <div className="mpflex-container">
-        <li>select</li>
+        <li>Select</li>
         <span>Patient Name</span>
         <div> Age </div>
         <div> Gender </div>

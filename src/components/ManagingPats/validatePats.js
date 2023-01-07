@@ -1,22 +1,28 @@
 export default function validatePats(values) {
     let errors = {};
   
-    if (!values.username.trim()) {
-      errors.username = "Username required";
+    if (!values.name.trim()) {
+      errors.name = "Name required";
     }
   
-    if (!values.email) {
-      errors.email = "Email required";
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = "Email address is invalid";
+    if (!values.gender) {
+      errors.gender = "Gender required";
+    } else if (!/F/.test(values.gender) || !/M/.text(values.gender)) {
+      errors.gender = "Gender is invalid";
     }
   
-    if (!values.password) {
-      errors.password = "Password is required";
-    } else if (values.password.length < 8) {
-      errors.password = "Password needs to be 8 characters or more";
+    if (!values.age) {
+      errors.age = "Age required";
+    } else if (typeof values.age === 'string' || values.age instanceof String) {
+      errors.age = "age must be a number"
     }
   
+    if (!values.bedNO) {
+      errors.bedNO = "Gender required";
+    } else if (!/F/.test(values.bedNO) || !/M/.text(values.bedNO)) {
+      errors.bedNO = "Gender is invalid";
+    }
+
     return errors;
   }
 

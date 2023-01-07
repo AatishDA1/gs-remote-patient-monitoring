@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "../Styles/styles.css";
 import "../Styles/firebasestyle.css";
 import { BsSearch } from "react-icons/bs";
-import MPHeading from "../ManagingPats/MPheading";
+import MPHeader from "../ManagingPats/MPheader";
 import PSDudpage from "./PSDudPage";
 
 export default function PSActions() {
@@ -131,7 +131,7 @@ export default function PSActions() {
               <BsSearch />
             </button>
           </form>
-          <MPHeading />
+          <MPHeader />
           <div className="scroll">
             {patientsData
               .filter((user) => user.data.name.toLowerCase().includes(query))

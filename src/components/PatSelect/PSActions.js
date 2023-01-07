@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
-import db from "../../pages/firebase";
+import db from "../General/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
 import "../Styles/firebasestyle.css";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import db from "../../pages/firebase";
+import db from "../General/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import db from "../../pages/firebase";
+import db from "../General/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
 import { BsSearch } from "react-icons/bs";

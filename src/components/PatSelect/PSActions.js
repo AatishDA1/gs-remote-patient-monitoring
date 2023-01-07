@@ -5,8 +5,8 @@ import styled from "styled-components";
 import "../Styles/styles.css";
 import "../Styles/firebasestyle.css";
 import { BsSearch } from "react-icons/bs";
-import MPHeader from "../ManagingPats/MPheader";
 import PSDudpage from "./PSDudPage";
+import MPHeader from "../ManagingPats/MPHeader";
 
 export default function PSActions() {
   const [buttonPopup, setButtonPopup] = useState(false);

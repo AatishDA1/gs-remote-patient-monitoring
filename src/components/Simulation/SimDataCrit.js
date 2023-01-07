@@ -15,11 +15,9 @@ export default function RandomRespRateC() {
     }, 1000);
   }, []);
   respRC = currentRRC;
-  return currentRRC;
+  return currentRRC;  
 }
-
 export var respRC = 0;
-
 function RandomTempRC() {
   let min = 38.1;
   let max = 43.2;

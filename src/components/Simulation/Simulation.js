@@ -43,7 +43,7 @@ import RandomRespRateC, {
   RandomHRC,
 } from "./SimDataCrit";
 import "../Styles/Simulation.css";
-import { respRCcrit, tempRCcrit} from "./SimCritExtract";
+import RandomRespRateCcrit from "./SimCritExtract";
 
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
@@ -82,8 +82,8 @@ export default function Simulation() {
         <button onClick={CriticalHandler}>Critical</button>
         <PopupCritical trigger = {buttonCritPopup} setTrigger = {setButtonCritPopup}>
                 <h2> Simulated Patient Warning at Time: <AlertTime/> </h2>
-                <h2> Respiratory rate:  {respRCcrit} </h2>
-                <h2> Tempertaure :  {tempRCcrit} </h2>
+                <h2> Respiratory rate: <RandomRespRateCcrit/> </h2>
+                <h2> Tempertaure : </h2>
         </PopupCritical>
       </div>
       {Normal && (

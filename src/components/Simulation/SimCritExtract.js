@@ -6,13 +6,13 @@ function RandomRespRC() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default function RandomRespRateC() {
+export default function RandomRespRateCcrit() {
   const [currentRRCcrit, updatedRRC] = useState(RandomRespRC());
   useEffect(() => {
     setTimeout(() => {
       const RRC = RandomRespRC();
       updatedRRC(RRC);
-    }, 2500);
+    }, 1);
   }, []);
   respRCcrit = currentRRCcrit;
   return currentRRCcrit
@@ -29,15 +29,15 @@ function RandomTempRC() {
 }
 
 export function RandomTempC() {
-  const [currentRRCcrit, updatedTRC] = useState(RandomTempRC());
+  const [currentTRCcrit, updatedTRC] = useState(RandomTempRC());
   useEffect(() => {
     setTimeout(() => {
       const TR = RandomTempRC();
       updatedTRC(TR);
     }, 1000);
   }, []);
-  tempRCcrit = currentRRCcrit;
-  return currentRRCcrit;
+  tempRCcrit = currentTRCcrit;
+  return currentTRCcrit;
 }
 
 export var tempRCcrit = 0;

@@ -122,7 +122,7 @@ export default function RespGraphCrit() {
     </div>
   );
 }
-
+console.log(respRC)
 export function TempGraphCrit() {
   return (
     <div

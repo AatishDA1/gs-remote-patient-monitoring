@@ -78,70 +78,97 @@ body {
 .kontainer {
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr;
-    /* 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr ; */
-    /* 'RespGraph RespGraph RespGraph RespGraph RespGraph RespGraph RespRate RespRate RespRate RespRate'
-    'TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph Temp Temp'
-    'BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys BP_Sys'
-    'BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias BP_Dias'
-    'HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HR HR'
-    'ECG ECG ECG ECG ECG ECG ECG ECG ECG ECG'; */
     grid-gap: 15px;
     padding: 10px;
     grid-template-areas:
+        "ECG ECG"
         "RespGraph RespRate"
         "TempGraph Temp"
         "BP_Sys_Graph BP_Sys"
         "BP_Dias_Graph BP_Dias"
         "HRGraph HR"
-        "ECG ECG"
     ;
     text-align: Left;
 }
 
 /* end of reference */
-.stat-title {
-    margin: 1rem;
-    align-items: left;
+.Nav{
+    /* padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem; */
+    /* background: rgb(192, 228, 207); */
+    background-color: aliceblue;
+    ;
 }
 
-.nav {
-    background-color: #333;
-    color: white;
+.Nav_container{
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 0 1rem;
-}
-
-.site-title {
-    font-size: 3vw;
-    text-decoration: none;
-}
-
-.nav ul {
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+   /* flex-flow: row wrap; */
+   flex-wrap: nowrap;
+  
+  /* Then we define how is distributed the remaining space */
+  
+    justify-content: flex-end;
+    
     padding: 0;
     margin: 0;
     list-style: none;
-    display: flex;
-    gap: 1rem;
-    text-align: center;
-    font-size: 2vw;
+  
+  
 }
 
-.nav a {
-    color: inherit;
-    text-decoration: none;
+.Nav_items{
+    /* order:6 ; */
+    /* margin-bottom: 1rem; */
+    /* gap: 5px; */
+}
+
+.Nav_item {
+    background: lavender;
+    padding: 5px;
+    width: 100%;
     height: 100%;
+    margin-top: 0;
+    line-height: 0;
     display: flex;
-    align-items: center;
-    padding: .25rem;
+    flex: 1;
+    margin: 0 0rem;
+    border-radius: 0px;
+  }
+  .Nav_item:hover{
+    background: aliceblue;
+  }
+
+  .Nav_text {
+    color: #252e48;
+    font-size: clamp(1rem, 2vw, 2rem);
+    line-height: 25px;
+  }
+
+.Nav_link {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    overflow: hidden;
+  text-decoration: none;
 }
 
-.nav li.active {
-    background-color: #777;
-}
-
-.nav li:hover {
-    background-color: #777;
-}
+@media only screen and (min-width: 400px) {
+    .Nav_items {
+      display: flex;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .Nav_item {
+      margin-bottom: 0rem;
+    }
+  }

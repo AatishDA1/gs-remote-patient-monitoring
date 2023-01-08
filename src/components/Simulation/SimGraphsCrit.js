@@ -12,6 +12,7 @@ import "chartjs-adapter-luxon";
 import Chart from "chart.js/auto";
 import React from "react";
 import { respRC, tempRC, sysRC, diasRC, heartRC } from "./SimDataCrit";
+import { getECGvalue } from "./ECG";
 ChartJS.register(
   LineElement,
   CategoryScale,
@@ -40,6 +41,8 @@ export function ECGGraphCrit() {
               label: "ECG",
               backgroundColor: "rgba(255, 0, 0, 0.5)",
               borderColor: "rgb(255, 0, 0)",
+              pointRadius: 0,
+              showLine:true,
               fill: false,
               data: [],
             },
@@ -49,17 +52,18 @@ export function ECGGraphCrit() {
           responsive: true,
           maintainAspectRatio: false,
           scales: {
-            y: { min: 59, max: 1012 },
+            y: { min: -1600, max: 1000 },
             x: {
               type: "realtime",
               realtime: {
-                delay: 1000, // how much earlier the code finds the next value
-                refresh: 1000, // how often the chart plots a point
+                delay: 0, // how much earlier the code finds the next value
+                refresh: 0.001, // how often the chart plots a point
+                duration: 50000,
                 onRefresh: (chart) => {
                   chart.data.datasets.forEach((dataset) => {
                     dataset.data.push({
                       x: Date.now(),
-                      y: 1,
+                      y: 0,
                     });
                   });
                 },

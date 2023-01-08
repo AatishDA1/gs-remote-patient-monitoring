@@ -12,11 +12,9 @@ const FormSignup = ({ submitForm }) => {
   );
 
   return (
-    <div className="form-content-right"> 
+    <div className="form-content-right">
       <form onSubmit={handleSubmit} className="form" noValidate>
-        <h1>
-          Please input your credentials
-        </h1>
+        <h1>Please input your credentials</h1>
         <div className="form-inputs">
           <label className="form-label">Username</label>
           <input

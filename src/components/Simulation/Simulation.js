@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
+import useSound from 'use-sound';
+import tindeck_1 from '../../Assets/Sounds/tindeck_1.mp3';
+import Popup from '../General/Popup'
+import PopupCritical from '../General/PopupCritical';
+import AlertTime from "../General/AlertTime";
 import RandomRespRate, {
   RandomTemp,
   RandomSys,
@@ -39,25 +44,49 @@ import RandomRespRateC, {
   RandomHRC,
 } from "./SimDataCrit";
 import "../Styles/Simulation.css";
+import RandomRespRateCcrit, {
+  RandomTempCcrit,
+  RandomSysCcrit,
+  RandomDiasCcrit,
+  RandomHRCcrit
+} from "./SimCritExtract";
+import RandomRespRateWwarn ,{
+  RandomTempWwarn,
+  RandomSysWwarn,
+  RandomDiasWwarn,
+  RandomHRWwarn
+} from './SimWarnExtract'
 
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);
   const [Critical, setCritical] = useState(false);
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [buttonCritPopup, setButtonCritPopup] = useState(false);
+  const [play] = useSound(tindeck_1);
   const NormalHandler = () => {
     setNormal(true);
     setWarning(false);
     setCritical(false);
   };
   const WarningHandler = () => {
+    
     setNormal(false);
     setWarning(true);
     setCritical(false);
+    setTimeout(() => {
+      setButtonPopup(true),play();
+      },10000);
+    ;
   };
   const CriticalHandler = () => {
     setNormal(false);
     setWarning(false);
     setCritical(true);
+    setTimeout(() => {
+      setButtonCritPopup(true),play();
+    },10000);
+  
   };
 
   return (
@@ -66,7 +95,23 @@ export default function Simulation() {
       <div className="button_holder">
         <button onClick={NormalHandler}>Normal</button>
         <button onClick={WarningHandler}>Warning</button>
+        <Popup trigger = {buttonPopup} setTrigger = {setButtonPopup}>
+            <h1> Simulated Patient Warning at Time: <AlertTime/> </h1>
+            <h2> Respiratory Rate: <RandomRespRateWwarn/> bpm</h2>
+            <h2> Temperature : <RandomTempWwarn /> °C</h2>
+            <h2> Systolic BP : <RandomSysWwarn/> mmHg</h2>
+            <h2> Diastolic BP : < RandomDiasWwarn/> mmHg</h2>
+            <h2> Heart Rate : <RandomHRWwarn /> bpm</h2>
+        </Popup>
         <button onClick={CriticalHandler}>Critical</button>
+        <PopupCritical trigger = {buttonCritPopup} setTrigger = {setButtonCritPopup}>
+                <h1> Simulated Patient Warning at Time: <AlertTime/> </h1>
+                <h2> Respiratory Rate: <RandomRespRateCcrit/> bpm</h2>
+                <h2> Temperature : <RandomTempCcrit /> °C</h2>
+                <h2> Systolic BP : <RandomSysCcrit/> mmHg</h2>
+                <h2> Diastolic BP : <RandomDiasCcrit/> mmHg</h2>
+                <h2> Heart Rate : <RandomHRCcrit /> bpm</h2>
+        </PopupCritical>
       </div>
       {Normal && (
         <div>

@@ -48,7 +48,7 @@ export default function MPActions() {
 
   useEffect(() => {
     if (doctorsData === undefined) {
-      console.log("undefineddd");
+      console.log("undefined");
     } else {
       const list = [];
       const listID = [];
@@ -119,7 +119,7 @@ export default function MPActions() {
                         <span className="checkbox-wrapper">
                           <input
                             type="checkbox"
-                            id={"custom-checkbox-{index}"}
+                            id={`custom-checkbox-${index}`}
                             checked={checkedState[index]}
                             onChange={() => handleOnChange(index)}
                             className={checkedState ? "checked" : ""}
@@ -149,7 +149,8 @@ export default function MPActions() {
                 <EdiDocPopUp
                   trigger={edtbtnPopup}
                   setTrigger={setEdtBtnPopup}
-                  info={edit}/>
+                  info={edit}
+                />
                 <button
                   className="aedbtnstyle"
                   disabled={deleteDisabled()}
@@ -162,7 +163,8 @@ export default function MPActions() {
                 <DelDocPopUp
                   trigger={delbtnPopup}
                   setTrigger={setDelBtnPopup}
-                  info={idString}/>
+                  info={idString}
+                />
                 <button
                   className="aedbtnstyle"
                   onClick={() => {
@@ -173,7 +175,8 @@ export default function MPActions() {
                 </button>
                 <AddDocPopUp
                   trigger={addbtnPopup}
-                  setTrigger={setAddBtnPopup}/>
+                  setTrigger={setAddBtnPopup}
+                />
               </AEDBtn>
             </div>
           </li>

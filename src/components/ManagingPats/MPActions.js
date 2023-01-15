@@ -13,7 +13,7 @@ import EdiPatPopUp from "./EdiPatPopUp";
 //                  https://blog.logrocket.com/building-custom-checkbox-react/
 
 export default function MPActions() {
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const [edibtnPopup, setEdiBtnPopup] = useState(false);
   const [delbtnPopup, setDelBtnPopup] = useState(false);
   const [addbtnPopup, setAddBtnPopup] = useState(false);
   const [patientsData, setPatientsData] = useState([]);
@@ -48,7 +48,7 @@ export default function MPActions() {
 
   useEffect(() => {
     if (patientsData === undefined) {
-      console.log("undefineddd");
+      console.log("undefined");
     } else {
       const list = [];
       const listID = [];
@@ -119,7 +119,7 @@ export default function MPActions() {
                         <span className="checkbox-wrapper">
                           <input
                             type="checkbox"
-                            cbid={`custom-checkbox-${index}`}
+                            id={`custom-checkbox-${index}`}
                             checked={checkedState[index]}
                             onChange={() => handleOnChange(index)}
                             className={checkedState ? "checked" : ""}
@@ -142,14 +142,14 @@ export default function MPActions() {
                   className="aedbtnstyle"
                   disabled={editDisabled()}
                   onClick={() => {
-                    setButtonPopup(true);
+                    setEdiBtnPopup(true);
                   }}
                 >
                   EDIT
                 </button>
                 <EdiPatPopUp
-                  trigger={buttonPopup}
-                  setTrigger={setButtonPopup}
+                  trigger={edibtnPopup}
+                  setTrigger={setEdiBtnPopup}
                   info={edit}
                 />
                 <button
@@ -192,19 +192,3 @@ const AEDBtn = styled.div`
   margin: 5px;
   margin-right: 5px;
 `;
-
-// const Listbox = styled.nav`
-//   background: #A9A9A9;
-//   color: rgb(0,0,0);
-//   font-weight: bold;
-//   display: inline;
-//   justify-content: space-between;
-//   text-align:left;
-//   position: relative;
-//   padding-top: 1rem;
-//   padding-bottom: 1rem;
-//   padding-left: 3.2rem;
-//   padding-right: 3.2rem;
-//   width: 100px;
-//   margin: 0 auto;
-// `;

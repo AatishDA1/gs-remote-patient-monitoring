@@ -1,0 +1,519 @@
+.ChangeBtnState {
+  font-family: sans-serif;
+  /* margin: 4rem auto; */
+  padding: 20px;
+  border: none;
+  border-bottom: 1px solid #9e9292;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+  justify-content: space-between;
+  font-size: clamp(0.5rem, 2.5vw, 3.0rem);
+}
+
+.doctor {
+  margin-top: 0.3rem;
+  vertical-align: text-bottom;
+}
+
+.result {
+  margin-top: 1rem;
+}
+
+.gen-list {
+  margin: 0 auto;
+  font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+}
+
+.doctors-list,
+.total {
+  width: 70%;
+  margin: 0 auto;
+  font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+}
+
+.doctors-list {
+  list-style: none;
+  padding: 0;
+}
+
+.doctors-list li {
+  margin-bottom: 0.1rem;
+}
+
+.doctors-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* .doctors-list li:last-child {
+  border-top: 1px solid rgb(255, 255, 255);
+  margin-top: 1rem;
+  padding-top: 1rem;
+} */
+
+.doctors-list-item label {
+  vertical-align: text-bottom;
+  margin-left: 5.5rem;
+}
+
+.left-section {
+  text-align: left;
+  justify-content: left;
+}
+
+.center-section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-section {
+  text-align: right;
+  align-items: right;
+  justify-content: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.total {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1200px) {
+
+  /* @media screen and (max-width: 800px) { */
+  .doctors-list,
+  .total {
+    width: 95%;
+  }
+}
+
+/* checkbox styles */
+.checkbox-wrapper {
+  border-bottom: 1px solid #c6c6c6;
+  margin-bottom: 20px;
+}
+
+/* .checkbox-wrapper:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+} */
+
+.checkbox-wrapper label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+label+p {
+  color: grey;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.2em;
+  border: 0.15em solid #09369B;
+  outline: none;
+  cursor: pointer;
+}
+
+input:checked {
+  background-color: #09369B;
+  position: relative;
+}
+
+input:checked::before {
+  content: "\2714";
+  font-size: 0.7em;
+  color: #fff;
+  position: absolute;
+  right: 2px;
+  top: -4px;
+}
+
+.checkbox-wrapper input[type="checkbox"]:disabled {
+  border-color: #c0c0c0;
+  background-color: #c0c0c0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:disabled+span {
+  color: #c0c0c0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:hover {
+  box-shadow: 0 0 20px #09369B;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
+}
+
+.column>span {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Manage Patients flex styles */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c5cee2;
+  align-items: center;
+}
+
+.flex-container>span {
+  background-color: #fff;
+  margin: 5px;
+  width: 50%;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.flex-container>p {
+  background-color: #fff;
+  margin: 5px;
+  width: 15%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+.flex-container>div {
+  background-color: #fff;
+  margin: 5px;
+  width: 7%;
+  padding: none;
+  text-align: center;
+}
+
+.flex-container>button {
+  /* background-color: #fff; */
+  margin: 5px;
+  width: 10%;
+  border-radius: 0px;
+  padding: none;
+  text-align: center;
+}
+
+/* MPHeader flex styles */
+.mpflex-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mpflex-container>span {
+  margin: 5px;
+  width: 50%;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mpflex-container>div {
+  margin: 5px;
+  width: 15%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+.mpflex-container>li {
+  margin: 5px;
+  width: 7%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+
+/* Manage Doctors flex styles */
+.flex-containerdr {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c5cee2;
+  align-items: center;
+}
+
+.flex-containerdr>span {
+  background-color: #fff;
+  margin: 5px;
+  width: 50%;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.flex-containerdr>p {
+  background-color: #fff;
+  margin: 5px;
+  width: 20%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+.flex-containerdr>div {
+  background-color: #fff;
+  margin: 5px;
+  width: 7%;
+  padding: none;
+  text-align: center;
+}
+
+/* MDHeader flex styles */
+.mdflex-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mdflex-container>span {
+  margin: 5px;
+  width: 50%;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.mdflex-container>div {
+  margin: 5px;
+  width: 20%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+.mdflex-container>li {
+  margin: 5px;
+  width: 7%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+
+/* nav button style */
+.btnstyle {
+  background: #1f1f1f;
+  width: 3.5rem;
+  height: 3rem;
+  /* padding: 15px 30px; */
+  border-radius: 40px;
+  border-radius: "none";
+  color: #fff;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 10px;
+  text-align: center;
+}
+
+.btnstyle:hover {
+  cursor: pointer;
+  background: #b4b4b4;
+  transition: all 0.4s ease-out;
+  transform: translateY(-2px);
+}
+
+/* aed button style */
+.aedbtnstyle {
+  background: #09369B;
+  width: 10rem;
+  height: 4rem;
+  border-radius: 50px;
+  border-radius: "none";
+  color: #fff;
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
+  font-weight: bold;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-width: 10px;
+  text-align: center;
+}
+
+.aedbtnstyle:disabled {
+  color: #A9A9A9;
+  opacity: 0.7;
+  cursor: default;
+}
+
+.aedbtnstyle:hover:enabled {
+  cursor: pointer;
+  background: #077BF1;
+  transition: all 0.4s ease-out;
+  transform: translateY(-2px);
+}
+
+/* search test style */
+.flex-containerex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #c5cee2;
+  align-items: stretch;
+}
+
+.flex-containerex>span {
+  background-color: #fff;
+  margin: 5px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+
+.sixty {
+  width: 60%;
+}
+
+.search {
+  width: 60%;
+  height: 4rem;
+  border: 2px solid #000;
+  border-radius: 3em;
+  overflow: hidden;
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  display: flex;
+  flex-flow: row nowrap;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.search:hover {
+  box-shadow: 2px 2px 5px #000;
+}
+
+.search__button,
+.search__input {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+}
+
+.search__input {
+  /* padding: 0.05em; */
+  width: 85%;
+}
+
+.search__button {
+  width: 15%;
+  font-size: 1.5rem;
+  padding-right: 5rem;
+  padding-bottom: 0.8rem;
+  color: gray;
+  display: grid;
+  place-content: center;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.listItem {
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: #444;
+  font-weight: 300;
+}
+
+@media (min-width: 576px) {
+  .search {
+    font-size: 1.5rem;
+  }
+
+  .search__button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .search {
+    width: 75%;
+    font-size: 2rem;
+  }
+
+  .search__button {
+    padding-right: 0.5em;
+    font-size: 3rem;
+  }
+}
+
+
+/* reference:  https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ */
+div.scroll {
+  margin: 4px, 4px;
+  padding: 4px 4px;
+  background-color: #c5cee2;
+  height: 60vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  justify-content: center;
+  align-self: center;
+  scroll-behavior: smooth;
+}
+
+div.scroll:hover {
+  box-shadow: 2px 2px 2px rgb(226, 226, 226);
+}

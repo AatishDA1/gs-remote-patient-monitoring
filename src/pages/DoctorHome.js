@@ -5,7 +5,6 @@ import HPHeader from "../components/HomePages/HPHeader";
 import HPFooter from "../components/HomePages/HPFooter";
 import AdminBtns from "../components/HomePages/DoctorBtns";
 
-
 const DoctorHome = () => (
   <>
     <GlobalStyle />

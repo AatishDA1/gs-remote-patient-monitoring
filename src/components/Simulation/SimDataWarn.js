@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import db from "../General/firebase";
 
+const patientkey = "xu9s02m4Y5n1MadwgaDD"
+
+
+
 function RandomRespRW() {
   let min = 16;
   let max = 19;
@@ -15,7 +19,7 @@ export default function RandomRespRateW() {
       const RRW = RandomRespRW();
       updatedRRW(RRW);
       RRWlist.push(RRW)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         resp: RRWlist
       })
     }, 1000);
@@ -40,7 +44,7 @@ export function RandomTempW() {
       const TR = RandomTempRW();
       updatedTRW(TR);
       TRWlist.push(TR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         temp: TRWlist
       })
     }, 1000);
@@ -65,7 +69,7 @@ export function RandomSysW() {
       const SR = RandomSysRW();
       updatedSRW(SR);
       SRWlist.push(SR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         sys: SRWlist
       })
     }, 1000);
@@ -90,7 +94,7 @@ export function RandomDiasW() {
       const DR = RandomDiasRateW();
       updatedDRW(DR);
       DRWlist.push(DR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         dia: DRWlist
       })
     }, 1000);
@@ -115,7 +119,7 @@ export function RandomHRW() {
       const HR = RandomHRateW();
       updatedHRW(HR);
       HRWlist.push(HR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         hr: HRWlist
       })
     }, 1000);

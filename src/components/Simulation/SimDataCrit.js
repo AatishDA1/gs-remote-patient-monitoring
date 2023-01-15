@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import db from "../General/firebase";
 
+const patientkey = "xu9s02m4Y5n1MadwgaDD"
+
+
 function RandomRespRC() {
   let min = 20;
   let max = 25;
@@ -15,7 +18,7 @@ export default function RandomRespRateC() {
       const RRC = RandomRespRC();
       updatedRRC(RRC);
       RRClist.push(RRC)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         resp: RRClist
       })
     }, 1000);
@@ -38,7 +41,7 @@ export function RandomTempC() {
       const TR = RandomTempRC();
       updatedTRC(TR);
       TRlist.push(TR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         temp: TRlist
       })
     }, 1000);
@@ -63,7 +66,7 @@ export function RandomSysC() {
       const SR = RandomSysRC();
       updatedSRC(SR);
       SRClist.push(SR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         sys: SRClist
       })
     }, 1000);
@@ -88,7 +91,7 @@ export function RandomDiasC() {
       const DR = RandomDiasRateC();
       updatedDRC(DR);
       DRlist.push(DR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         dia: DRlist
       })
     }, 1000);
@@ -113,7 +116,7 @@ export function RandomHRC() {
       const HR = RandomHRateC();
       updatedHRC(HR);
       HRClist.push(HR)
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         hr: HRClist
       })
     }, 1000);

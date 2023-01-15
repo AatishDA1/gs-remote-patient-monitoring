@@ -23,7 +23,6 @@ export default function PSActions() {
     });
   }, []);
 
-
   //AEDButton disabled
   function editDisabled() {
     return indices.length === 0 || indices.length > 1;

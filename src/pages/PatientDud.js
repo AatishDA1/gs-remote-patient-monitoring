@@ -18,14 +18,14 @@ import NoSignal from "../components/PatSelect/NoSignal";
 // import Navbar from "../components/Vitals/NavBar";
 
 export default function PatientDud() {
-  const [buttonPopup, setButtonPopup] = useState(true);
+  const [noSignalPopup, setNoSignalPopup] = useState(true);
 
   return (
     <Layout>
       {/* <Navbar /> */}
       <h1>Patient: {name}</h1>
       <div className="kontainer">
-        <NoSignal trigger = {buttonPopup} setTrigger = {setButtonPopup} />
+        <NoSignal trigger = {noSignalPopup} setTrigger = {setNoSignalPopup} />
         <RespGraph />
         <div className="RespRate">
           <li>Resp Rate:</li>

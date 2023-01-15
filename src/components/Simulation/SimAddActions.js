@@ -78,7 +78,7 @@ export default function SimAddActions(props) {
   console.log(timestring)
   const submit = (e) => {
     e.preventDefault();
-    db.collection("patientsData").add({
+    db.collection("simAlertData").add({
       name: patientName,
       age: patientAge,
       gender: patientGender,

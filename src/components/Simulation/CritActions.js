@@ -11,7 +11,7 @@ export default function CritActions() {
   const [patientsData, setPatientsData] = useState([]);
 
   useEffect(() => {
-    db.collection("patientsData").onSnapshot((snapshot) => {
+    db.collection("simAlertData").onSnapshot((snapshot) => {
       setPatientsData(
         snapshot.docs.map((doc) => ({
           id: doc.id,

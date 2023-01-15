@@ -20,9 +20,6 @@ export default function CritActions() {
       );
     });
   }, []);
-
-
-  //AEDButton disabled
   
 
   return (

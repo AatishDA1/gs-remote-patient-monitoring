@@ -75,7 +75,7 @@ export default function Simulation() {
     setWarning(true);
     setCritical(false);
     setTimeout(() => {
-      setButtonPopup(true),play();
+      setButtonPopup(true).play();
       },10000);
     ;
   };
@@ -84,7 +84,7 @@ export default function Simulation() {
     setWarning(false);
     setCritical(true);
     setTimeout(() => {
-      setButtonCritPopup(true),play();
+      setButtonCritPopup(true).play();
     },10000);
   
   };

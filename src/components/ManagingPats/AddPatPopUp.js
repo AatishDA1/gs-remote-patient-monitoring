@@ -62,10 +62,12 @@ export default function AddPatPopUp(props) {
                   type="text"
                   placeholder="Name"
                   value={patientName}
-                  onChange={(e) => setPatientName(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
+                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)) setPatientName(e.target.value)}}
                 />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Age"
                   value={patientAge}
                   onChange={(e) => setPatientAge(e.target.value)}
@@ -74,10 +76,12 @@ export default function AddPatPopUp(props) {
                   type="text"
                   placeholder="Gender"
                   value={patientGender}
-                  onChange={(e) => setPatientGender(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
+                    if ((finalChar == 70) || (finalChar == 77)) setPatientGender(e.target.value)}}
                 />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Bed Number"
                   value={patientBedNO}
                   onChange={(e) => setPatientBedNO(e.target.value)}

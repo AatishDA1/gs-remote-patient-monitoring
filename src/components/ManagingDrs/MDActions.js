@@ -128,7 +128,7 @@ export default function MPActions() {
                       </div>
                       <span>{data.name}</span>
                       <p>{data.office}</p>
-                      <p>view (patlist)</p>
+                      {/* <p>view (patlist)</p> */}
                     </span>
                   </li>
                 );

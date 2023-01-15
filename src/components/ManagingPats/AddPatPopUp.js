@@ -66,7 +66,7 @@ export default function AddPatPopUp(props) {
                   value={patientName}
                   onChange={(e) => {
                     const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
-                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)  || isNaN(finalChar)) setPatientName(e.target.value)
+                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)  ||  finalChar ===32|| isNaN(finalChar)) setPatientName(e.target.value)
                     
                   }}
                 />

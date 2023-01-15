@@ -48,13 +48,8 @@ export default function AddDocPopUp(props) {
                   type="number"
                   placeholder="Office #"
                   value={doctorOffice}
-                  onChange={(e) => setDoctorOffice(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Pat. List"
-                  value={patientList}
-                  onChange={(e) => setPatientList(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value.length <= 3) setDoctorOffice(e.target.value)}}
                 />
               </div>
               <button className="aedbtnstyle" onClick={submit}>

@@ -78,14 +78,9 @@ export default function EdiDocPopUp(props) {
                   type="number"
                   placeholder="Office #"
                   value={updatedDoctorOffice}
-                  onChange={(e) => setUpdatedDoctorOffice(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value.length <= 3) setUpdatedDoctorOffice(e.target.value)}}
                 />
-                {/* <input
-                  type="text"
-                  placeholder="Pat. List"
-                  value={updatedPatientList}
-                  onChange={(e) => setUpdatedPatientList(e.target.value)}
-                /> */}
               </div>
               <button className="aedbtnstyle" onClick={updateData}>
                 UPDATE

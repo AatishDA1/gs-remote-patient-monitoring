@@ -84,7 +84,6 @@ export default function AddPatPopUp(props) {
                   onChange={(e) => {
                     const finalChar = e.target.value.charCodeAt(e.target.value.length-1);
                     if ((finalChar === 70 && e.target.value.length ===1) || (finalChar === 77 && e.target.value.length ===1   || isNaN(finalChar))) setPatientGender(e.target.value)
-                    
                   }}
                 />
                 <input

@@ -82,7 +82,8 @@ export default function EdiPatPopUp(props) {
                   type="number"
                   placeholder="Age"
                   value={updatedPatientAge}
-                  onChange={(e) => setUpdatedPatientAge(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value.length <= 3) setUpdatedPatientAge(e.target.value)}}
                 />
                 <input
                   type="text"
@@ -96,7 +97,8 @@ export default function EdiPatPopUp(props) {
                   type="number"
                   placeholder="Bed Number"
                   value={updatedPatientBedNO}
-                  onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
+                  onChange={(e) => {
+                    if(e.target.value.length <= 4) setUpdatedPatientBedNO(e.target.value)}}
                 />
               </div>
               <button className="aedbtnstyle" onClick={updateData}>

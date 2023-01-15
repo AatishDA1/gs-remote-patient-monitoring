@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import db from "../General/firebase";
-// import "../Styles/firebasestyle.css";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
+import "../Styles/firebasestyle.css"
 
 export default function EdiPatPopUp(props) {
   const [updatedPatientName, setUpdatedPatientName] = useState("");
@@ -74,22 +74,26 @@ export default function EdiPatPopUp(props) {
                   type="text"
                   placeholder="Name"
                   value={updatedPatientName}
-                  onChange={(e) => setUpdatedPatientName(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
+                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)) setUpdatedPatientName(e.target.value)}}
                 />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Age"
                   value={updatedPatientAge}
                   onChange={(e) => setUpdatedPatientAge(e.target.value)}
                 />
                 <input
                   type="text"
-                  placeholder="Gender"
+                  placeholder="Gender (F/M)"
                   value={updatedPatientGender}
-                  onChange={(e) => setUpdatedPatientGender(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length-1);
+                    if ((finalChar === 70 && e.target.value.length ===1) || (finalChar === 77 && e.target.value.length ===1   || isNaN(finalChar))) setUpdatedPatientGender(e.target.value)}}
                 />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Bed Number"
                   value={updatedPatientBedNO}
                   onChange={(e) => setUpdatedPatientBedNO(e.target.value)}

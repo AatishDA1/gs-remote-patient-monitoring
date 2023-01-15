@@ -46,9 +46,6 @@ export default function AddPatPopUp(props) {
   }
 
   
- // hello
-  
-  
   return props.trigger ? (
     <div className="popup">
       <div className="popup-addpersonnel">

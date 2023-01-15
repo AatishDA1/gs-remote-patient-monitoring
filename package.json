@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "axios": "^1.2.2",
     "babel-plugin-styled-components": "^2.0.7",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.1.2",
@@ -38,7 +39,8 @@
     "react-router-dom": "^6.6.0",
     "react-scripts": "^5.0.1",
     "react-table": "^7.8.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "use-sound": "^4.0.1"
   },
   "repository": {
     "type": "git",
@@ -46,5 +48,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "prettier": "2.8.1"
   }
 }

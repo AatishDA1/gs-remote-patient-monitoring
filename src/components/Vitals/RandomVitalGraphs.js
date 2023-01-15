@@ -20,7 +20,6 @@ ChartJS.register(
   Tooltip
 );
 Chart.register(StreamingPlugin);
-// import { normduration } from "../Simulation/Simulation";
 
 export default function RespGraph() {
   return (

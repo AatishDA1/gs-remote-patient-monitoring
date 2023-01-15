@@ -1,6 +1,5 @@
 .ChangeBtnState {
   font-family: sans-serif;
-  /* margin: 4rem auto; */
   padding: 20px;
   border: none;
   border-bottom: 1px solid #9e9292;
@@ -50,12 +49,6 @@ h3 {
   position: relative;
 }
 
-/* .doctors-list li:last-child {
-  border-top: 1px solid rgb(255, 255, 255);
-  margin-top: 1rem;
-  padding-top: 1rem;
-} */
-
 .doctors-list-item label {
   vertical-align: text-bottom;
   margin-left: 5.5rem;
@@ -102,14 +95,12 @@ h3 {
 
 /* checkbox styles */
 .checkbox-wrapper {
-  border-bottom: 1px solid #c6c6c6;
-  margin-bottom: 20px;
+  /* border-bottom: 1px solid #ffffff; */
+  /* margin-bottom: 1.0rem; */
+  margin-right: auto;
+  margin-left: auto;
+  width: clamp(0.5rem, 3vw, 1.5rem);
 }
-
-/* .checkbox-wrapper:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-} */
 
 .checkbox-wrapper label {
   cursor: pointer;
@@ -124,9 +115,11 @@ label+p {
 .checkbox-wrapper input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: clamp(0.5rem, 3vw, 1.5rem);
+  height: clamp(0.5rem, 3vw, 1.5rem);
   border-radius: 0.2em;
+  margin-right: auto;
+  margin-left: auto;
   border: 0.15em solid #09369B;
   outline: none;
   cursor: pointer;
@@ -139,7 +132,7 @@ input:checked {
 
 input:checked::before {
   content: "\2714";
-  font-size: 0.7em;
+  font-size: clamp(0.5rem, 3vw, 1.1rem);
   color: #fff;
   position: absolute;
   right: 2px;
@@ -282,7 +275,7 @@ input:checked::before {
 .flex-containerdr>p {
   background-color: #fff;
   margin: 5px;
-  width: 20%;
+  width: 40%;
   align-content: center;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
@@ -292,7 +285,7 @@ input:checked::before {
 .flex-containerdr>div {
   background-color: #fff;
   margin: 5px;
-  width: 7%;
+  width: 10%;
   padding: none;
   text-align: center;
 }
@@ -367,8 +360,8 @@ input:checked::before {
 /* aed button style */
 .aedbtnstyle {
   background: #09369B;
-  width: 10rem;
-  height: 4rem;
+  width: clamp(5rem, 11vw, 10rem);
+  height: clamp(2.5rem, 5vw, 4rem);
   border-radius: 50px;
   border-radius: "none";
   color: #fff;
@@ -425,15 +418,16 @@ input:checked::before {
 
 .search {
   width: 60%;
-  height: 4rem;
+  height: clamp(2.5rem, 5vw, 4rem);
   border: 2px solid #000;
   border-radius: 3em;
   overflow: hidden;
   font-size: clamp(0.5rem, 2vw, 2rem);
   display: flex;
   flex-flow: row nowrap;
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .search:hover {
@@ -445,23 +439,23 @@ input:checked::before {
   background-color: #fff;
   border: none;
   outline: none;
-  font-size: 1.7rem;
   padding-bottom: 1rem;
 }
 
 .search__input {
   /* padding: 0.05em; */
   width: 85%;
+  padding-top: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 1.5rem);
 }
 
 .search__button {
   width: 15%;
-  font-size: 1.5rem;
-  padding-right: 5rem;
-  padding-bottom: 0.8rem;
+  font-size: clamp(0.5rem, 4vh, 2.5rem);
+  padding-top: clamp(0.5rem, 2vh, 1rem);
   color: gray;
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .list {
@@ -477,7 +471,7 @@ input:checked::before {
   font-weight: 300;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .search {
     font-size: 1.5rem;
   }
@@ -497,7 +491,7 @@ input:checked::before {
     padding-right: 0.5em;
     font-size: 3rem;
   }
-}
+} */
 
 
 /* reference:  https://www.geeksforgeeks.org/making-a-div-vertically-scrollable-using-css/ */

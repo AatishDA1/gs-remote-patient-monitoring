@@ -130,7 +130,7 @@ export default function Simulation() {
         </Popup>
         <button onClick={CriticalHandler}>Critical</button>
         <PopupCritical trigger = {buttonCritPopup} setTrigger = {setButtonCritPopup}>
-                <h1> Simulated Patient Warning at Time: <AlertTime/> </h1>
+                <h1> Simulated Critical Alert at Time: <AlertTime/> </h1>
                 <h2> Respiratory Rate: <RandomRespRateCcrit/> bpm</h2>
                 <h2> Temperature : <RandomTempCcrit /> °C</h2>
                 <h2> Systolic BP : <RandomSysCcrit/> mmHg</h2>

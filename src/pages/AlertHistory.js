@@ -1,13 +1,13 @@
 import * as React from "react";
 import Seo from "../components/General/seo";
 import { GlobalStyle } from "../components/Styles/GlobalStyles";
-import HPHeader from "../components/HomePages/HPHeader";
+import GenHeader from "../components/General/GenHeader"
 import GenFooter from "../components/General/GenFooter";
 import CritActions from "../components/Simulation/CritActions";
 const AlertHistory = () =>(
     <>
         <GlobalStyle/>
-        <HPHeader/>
+        <GenHeader/>
         <Seo title="AlertHistory" />
         <CritActions />
         <GenFooter/>

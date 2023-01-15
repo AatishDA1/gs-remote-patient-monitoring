@@ -99,6 +99,7 @@ export default function SimWarnActions(props) {
     setSysPressure([]);
     setDiaPressure([]);
     setHR([]);
+    props.setTrigger(false);
   };
   
   return props.trigger ? (

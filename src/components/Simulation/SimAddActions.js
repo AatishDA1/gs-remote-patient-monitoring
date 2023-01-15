@@ -8,6 +8,7 @@ import RandomRespRateCcrit, {
   RandomDiasCcrit,
   RandomHRCcrit
 } from "./SimCritExtract";
+import { ProgressBar } from "react-bootstrap";
 
 export default function SimAddActions(props) {
   // defines useStates 
@@ -102,6 +103,7 @@ export default function SimAddActions(props) {
     setSysPressure([]);
     setDiaPressure([]);
     setHR([]);
+    props.setTrigger(false)
   };
   
   return props.trigger ? (

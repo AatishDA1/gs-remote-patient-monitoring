@@ -60,27 +60,55 @@ export default function AddPatPopUp(props) {
               <div className="App__form">
                 <input
                   type="text"
+                  //onKeyPress={event => (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122)}
                   placeholder="Name"
                   value={patientName}
-                  onChange={(e) => setPatientName(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar >= 65 && finalChar <= 90) ||
+                      (finalChar >= 97 && finalChar <= 122) ||
+                      finalChar === 32 ||
+                      isNaN(finalChar)
+                    )
+                      setPatientName(e.target.value);
+                  }}
                 />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Age"
                   value={patientAge}
-                  onChange={(e) => setPatientAge(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value.length <= 3)
+                      setPatientAge(e.target.value);
+                  }}
                 />
                 <input
                   type="text"
-                  placeholder="Gender"
+                  placeholder="Gender (F/M)"
                   value={patientGender}
-                  onChange={(e) => setPatientGender(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar === 70 && e.target.value.length === 1) ||
+                      (finalChar === 77 && e.target.value.length === 1) ||
+                      isNaN(finalChar)
+                    )
+                      setPatientGender(e.target.value);
+                  }}
                 />
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Bed Number"
                   value={patientBedNO}
-                  onChange={(e) => setPatientBedNO(e.target.value)}
+                  onChange={(e) => {
+                    if (e.target.value.length <= 4)
+                      setPatientBedNO(e.target.value);
+                  }}
                 />
               </div>
               <button className="aedbtnstyle" onClick={submit}>

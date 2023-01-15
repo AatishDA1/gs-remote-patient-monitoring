@@ -5,10 +5,10 @@ import styled from "styled-components";
 import "../Styles/styles.css";
 import "../Styles/firebasestyle.css";
 import { BsSearch } from "react-icons/bs";
-import PSDudpage from "./PSDudPage";
+import PAConnect from "./PAConnect";
 import MPHeader from "../ManagingPats/MPHeader";
 
-export default function PSActions() {
+export default function PAActions() {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [patientsData, setPatientsData] = useState([]);
 
@@ -132,16 +132,16 @@ export default function PSActions() {
                   disabled={editDisabled()}
                   onClick={() => {
                     setButtonPopup(true);
-                    navigate("/PatientDud/");
+                    navigate("/PatientHistory/");
                   }}
                 >
                   VIEW
                 </button>
-                <PSDudpage
+                <PAConnect
                   trigger={buttonPopup}
                   setTrigger={setButtonPopup}
                   info={edit}
-                ></PSDudpage>
+                ></PAConnect>
               </AEDBtn>
             </div>
           </li>

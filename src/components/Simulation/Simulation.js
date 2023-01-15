@@ -1,8 +1,8 @@
-import React, {useState } from "react";
-import useSound from 'use-sound';
-import tindeck_1 from '../../Assets/Sounds/tindeck_1.mp3';
-import Popup from '../General/Popup'
-import PopupCritical from '../General/PopupCritical';
+import React, { useState } from "react";
+import useSound from "use-sound";
+import tindeck_1 from "../../Assets/Sounds/tindeck_1.mp3";
+import Popup from "../General/Popup";
+import PopupCritical from "../General/PopupCritical";
 import AlertTime from "../General/AlertTime";
 import RandomRespRate, {
   RandomTemp,
@@ -48,9 +48,9 @@ import RandomRespRateCcrit, {
   RandomTempCcrit,
   RandomSysCcrit,
   RandomDiasCcrit,
-  RandomHRCcrit
+  RandomHRCcrit,
 } from "./SimCritExtract";
-import RandomRespRateWwarn ,{
+import RandomRespRateWwarn, {
   RandomTempWwarn,
   RandomSysWwarn,
   RandomDiasWwarn,
@@ -63,18 +63,37 @@ export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);
   const [Critical, setCritical] = useState(false);
+  const setZoomIn = useState(false);
+  const setOriginal = useState(true);
+  const setZoomOut = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [submitwarnPopup, setsubmitwarnPopup] = useState(false);
   const [buttonCritPopup, setButtonCritPopup] = useState(false);
   const [submitbtnPopup, setsubmitBtnPopup] = useState(false);
   const [play] = useSound(tindeck_1);
+
+  const ZoomInHandler = () => {
+    setZoomIn(true);
+    setOriginal(false);
+    setZoomOut(false);
+  };
+  const ZoomOutHandler = () => {
+    setZoomIn(false);
+    setOriginal(false);
+    setZoomOut(true);
+  };
+  const OriginalHandler = () => {
+    setZoomIn(false);
+    setOriginal(true);
+    setZoomOut(false);
+  };
+
   const NormalHandler = () => {
     setNormal(true);
     setWarning(false);
     setCritical(false);
   };
   const WarningHandler = () => {
-    
     setNormal(false);
     setWarning(true);
     setCritical(false);
@@ -120,6 +139,11 @@ export default function Simulation() {
                 <h2><SimAddActions trigger = {submitbtnPopup} setTrigger = {setsubmitBtnPopup}> </SimAddActions> </h2>
 
         </PopupCritical>
+      </div>
+      <div className="button_holder">
+        <button onClick={ZoomInHandler}>Zoom in</button>
+        <button onClick={OriginalHandler}>Original</button>
+        <button onClick={ZoomOutHandler}>Zoom out</button>
       </div>
       {Normal && (
         <div>
@@ -256,3 +280,10 @@ export default function Simulation() {
     </>
   );
 }
+
+export var ECGduration = 100000;
+export var Respduration = 10000;
+export var Tempduration = 10000;
+export var Sysduration = 10000;
+export var Diasduration = 10000;
+export var Heartduration = 10000;

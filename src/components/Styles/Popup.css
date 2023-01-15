@@ -47,6 +47,11 @@
   color: #000;
 }
 
+
+.popup-addpersonnel input {
+  width: 40vw;
+}
+
 .close-btn {
   position: absolute;
   top: 10px;

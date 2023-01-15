@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export var name = "";
 
-export default function PSDudpage(props) {
+export default function PAConnect(props) {
   const [patName, setPatName] = useState("");
   const [patProps, setPatProps] = useState("");
   useEffect(() => {

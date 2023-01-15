@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import db from "../General/firebase";
+import PatUseForm from "./PatUseForm";
+import validatePats from "./validatePats";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
@@ -15,7 +17,20 @@ export default function AddPatPopUp(props) {
   const [diaPressure, setDiaPressure] = useState([]);
   const [HR, setHR] = useState([]);
   const [temp, setTemp] = useState([]);
-
+  const [patientData, setPatientData] = useState("")
+  
+  // const { handleChange, handleSubmit, values, errors } = PatUseForm(
+  //   // submitForm,
+  //   validatePats
+  // );
+  
+  // useEffect(() => {
+  //   setPatientName(values.name)
+  //   setPatientAge(values.age)
+  //   setPatientGender(values.gender)
+  //   setPatientBedNO(values.bedNO)
+  // },[values])
+  
   // add patient to firebase
   const submit = (e) => {
     e.preventDefault();
@@ -69,7 +84,7 @@ export default function AddPatPopUp(props) {
                   type="text"
                   placeholder="Age"
                   value={patientAge}
-                  onChange={(e) => setPatientAge(e.target.value)}
+                  onChange={(e) => setPatientAge(parseInt(e.target.value))}
                 />
                 <input
                   type="text"
@@ -81,7 +96,7 @@ export default function AddPatPopUp(props) {
                   type="text"
                   placeholder="Bed Number"
                   value={patientBedNO}
-                  onChange={(e) => setPatientBedNO(e.target.value)}
+                  onChange={(e) => setPatientBedNO(parseInt(e.target.value))}
                 />
               </div>
               <button className="aedbtnstyle" onClick={submit}>

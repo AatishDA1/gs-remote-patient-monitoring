@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useForm = (callback, validate) => {
+const PatUseForm = (validate) => {
   const [values, setValues] = useState({
     name: "",
     gender: "",
@@ -8,10 +8,10 @@ const useForm = (callback, validate) => {
     bedNO: "",
   });
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target.value;
     setValues({
       ...values,
       [name]: value,
@@ -22,16 +22,16 @@ const useForm = (callback, validate) => {
     e.preventDefault();
 
     setErrors(validate(values));
-    setIsSubmitting(true);
+    // setIsSubmitting(true);
   };
 
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
-    }
-  }, [errors]);
+  // useEffect(() => {
+  //   if (Object.keys(errors).length === 0 && isSubmitting) {
+  //     callback();
+  //   }
+  // }, [errors]);
 
   return { handleChange, handleSubmit, values, errors };
 };
 
-export default useForm;
+export default PatUseForm;

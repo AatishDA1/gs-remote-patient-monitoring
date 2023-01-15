@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import db from "../General/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
+import "../Styles/firebasestyle.css"
 
 export default function EdiPatPopUp(props) {
   const [updatedPatientName, setUpdatedPatientName] = useState("");

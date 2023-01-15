@@ -40,10 +40,32 @@ import RandomRespRateC, {
 } from "./SimDataCrit";
 import "../Styles/Simulation.css";
 
+
+
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);
   const [Critical, setCritical] = useState(false);
+  const setZoomIn = useState(false)
+  const setOriginal = useState(true)
+  const setZoomOut = useState(false)
+
+  const ZoomInHandler = () => {
+    setZoomIn(true)
+    setOriginal(false)
+    setZoomOut(false)
+  }
+  const ZoomOutHandler = () => {
+    setZoomIn(false)
+    setOriginal(false)
+    setZoomOut(true)
+  }
+  const OriginalHandler = () => {
+    setZoomIn(false)
+    setOriginal(true)
+    setZoomOut(false)
+  }
+
   const NormalHandler = () => {
     setNormal(true);
     setWarning(false);
@@ -59,7 +81,30 @@ export default function Simulation() {
     setWarning(false);
     setCritical(true);
   };
-
+  // if (setOriginal(true)) {
+  //   ECGduration = 100000
+  //   Respduration = 10000
+  //   Tempduration = 10000
+  //   Sysduration = 10000
+  //   Diasduration = 10000
+  //   Heartduration = 10000
+  // }
+  // else if (setZoomIn(true)) {
+  //   ECGduration = 100000
+  //   Respduration = 1000
+  //   Tempduration = 1000
+  //   Sysduration = 1000
+  //   Diasduration = 1000
+  //   Heartduration = 1000
+  // }
+  // else if (setZoomOut(true)){
+  //   ECGduration = 100000
+  //   Respduration = 10000
+  //   Tempduration = 10000
+  //   Sysduration = 10000
+  //   Diasduration = 10000
+  //   Heartduration = 10000
+  // }
   return (
     <>
       <h2>Simulation Page</h2>
@@ -67,6 +112,11 @@ export default function Simulation() {
         <button onClick={NormalHandler}>Normal</button>
         <button onClick={WarningHandler}>Warning</button>
         <button onClick={CriticalHandler}>Critical</button>
+      </div>
+      <div className="button_holder">
+        <button onClick={ZoomInHandler}>Zoom in</button>
+        <button onClick={OriginalHandler}>Original</button>
+        <button onClick={ZoomOutHandler}>Zoom out</button>
       </div>
       {Normal && (
         <div>
@@ -203,3 +253,10 @@ export default function Simulation() {
     </>
   );
 }
+
+export var ECGduration = 100000
+export var Respduration = 10000
+export var Tempduration = 10000
+export var Sysduration = 10000
+export var Diasduration = 10000
+export var Heartduration = 10000

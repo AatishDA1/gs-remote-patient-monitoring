@@ -13,7 +13,14 @@ import Chart from "chart.js/auto";
 import React from "react";
 import { respR, tempR, sysR, diasR, heartR } from "./SimDataNorm";
 import { getECGvalue } from "./ECG";
-import { ECGduration, Respduration, Tempduration, Sysduration, Diasduration, Heartduration } from "./Simulation";
+import {
+  ECGduration,
+  Respduration,
+  Tempduration,
+  Sysduration,
+  Diasduration,
+  Heartduration,
+} from "./Simulation";
 ChartJS.register(
   LineElement,
   CategoryScale,

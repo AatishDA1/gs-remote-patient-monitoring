@@ -80,7 +80,7 @@ export default function PSActions() {
 
   //search
   const [query, setQuery] = useState("");
-  
+
   return (
     <>
       <div className="ChangeBtnState">
@@ -123,29 +123,29 @@ export default function PSActions() {
                   </li>
                 );
               })}
+          </div>
+          <li>
+            <div>
+              <AEDBtn>
+                <button
+                  className="aedbtnstyle"
+                  disabled={editDisabled()}
+                  onClick={() => {
+                    setButtonPopup(true);
+                    navigate("/PatientDud/");
+                  }}
+                >
+                  VIEW
+                </button>
+                <PSDudpage
+                  trigger={buttonPopup}
+                  setTrigger={setButtonPopup}
+                  info={edit}
+                ></PSDudpage>
+              </AEDBtn>
             </div>
-            <li>
-              <div>
-                <AEDBtn>
-                  <button
-                    className="aedbtnstyle"
-                    disabled={editDisabled()}
-                    onClick={() => {
-                      setButtonPopup(true);
-                      navigate("/PatientDud/")
-                    }}
-                  >
-                    VIEW
-                  </button>
-                  <PSDudpage
-                    trigger={buttonPopup}
-                    setTrigger={setButtonPopup}
-                    info={edit}
-                  ></PSDudpage>
-                  </AEDBtn>
-              </div>
-            </li>
-          </ul>
+          </li>
+        </ul>
       </div>
     </>
   );
@@ -155,4 +155,3 @@ const AEDBtn = styled.div`
   margin: 5px;
   margin-right: 5px;
 `;
-

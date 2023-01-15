@@ -39,9 +39,16 @@ export default function AddDocPopUp(props) {
                   placeholder="Name"
                   value={doctorName}
                   onChange={(e) => {
-                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
-                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122) || finalChar ===32  || isNaN(finalChar)) setDoctorName(e.target.value)
-                    
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar >= 65 && finalChar <= 90) ||
+                      (finalChar >= 97 && finalChar <= 122) ||
+                      finalChar === 32 ||
+                      isNaN(finalChar)
+                    )
+                      setDoctorName(e.target.value);
                   }}
                 />
                 <input
@@ -49,7 +56,9 @@ export default function AddDocPopUp(props) {
                   placeholder="Office #"
                   value={doctorOffice}
                   onChange={(e) => {
-                    if (e.target.value.length <= 3) setDoctorOffice(e.target.value)}}
+                    if (e.target.value.length <= 3)
+                      setDoctorOffice(e.target.value);
+                  }}
                 />
               </div>
               <button className="aedbtnstyle" onClick={submit}>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import db from "../General/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
-import "../Styles/firebasestyle.css"
+import "../Styles/firebasestyle.css";
 
 export default function EdiPatPopUp(props) {
   const [updatedPatientName, setUpdatedPatientName] = useState("");
@@ -75,30 +75,51 @@ export default function EdiPatPopUp(props) {
                   placeholder="Name"
                   value={updatedPatientName}
                   onChange={(e) => {
-                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
-                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)) setUpdatedPatientName(e.target.value)}}
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar >= 65 && finalChar <= 90) ||
+                      (finalChar >= 97 && finalChar <= 122) ||
+                      finalChar === 32 ||
+                      isNaN(finalChar)
+                    )
+                      setUpdatedPatientName(e.target.value);
+                  }}
                 />
                 <input
                   type="number"
                   placeholder="Age"
                   value={updatedPatientAge}
                   onChange={(e) => {
-                    if (e.target.value.length <= 3) setUpdatedPatientAge(e.target.value)}}
+                    if (e.target.value.length <= 3)
+                      setUpdatedPatientAge(e.target.value);
+                  }}
                 />
                 <input
                   type="text"
                   placeholder="Gender (F/M)"
                   value={updatedPatientGender}
                   onChange={(e) => {
-                    const finalChar = e.target.value.charCodeAt(e.target.value.length-1);
-                    if ((finalChar === 70 && e.target.value.length ===1) || (finalChar === 77 && e.target.value.length ===1   || isNaN(finalChar))) setUpdatedPatientGender(e.target.value)}}
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar === 70 && e.target.value.length === 1) ||
+                      (finalChar === 77 && e.target.value.length === 1) ||
+                      isNaN(finalChar)
+                    )
+                      setUpdatedPatientGender(e.target.value);
+                  }}
                 />
                 <input
                   type="number"
                   placeholder="Bed Number"
                   value={updatedPatientBedNO}
                   onChange={(e) => {
-                    if(e.target.value.length <= 4) setUpdatedPatientBedNO(e.target.value)}}
+                    if (e.target.value.length <= 4)
+                      setUpdatedPatientBedNO(e.target.value);
+                  }}
                 />
               </div>
               <button className="aedbtnstyle" onClick={updateData}>

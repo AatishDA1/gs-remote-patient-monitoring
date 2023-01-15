@@ -18,34 +18,33 @@ export default function AddPatPopUp(props) {
 
   const submit = (e) => {
     e.preventDefault();
-      db.collection("patientsData").add({
-        name: patientName,
-        age: patientAge,
-        gender: patientGender,
-        bedNO: patientBedNO,
+    db.collection("patientsData").add({
+      name: patientName,
+      age: patientAge,
+      gender: patientGender,
+      bedNO: patientBedNO,
 
-        time: time,
-        resp: respRate,
-        temp: temp,
-        sys: sysPressure,
-        dia: diaPressure,
-        hr: HR,
-    })
+      time: time,
+      resp: respRate,
+      temp: temp,
+      sys: sysPressure,
+      dia: diaPressure,
+      hr: HR,
+    });
 
     setPatientName("");
     setPatientAge("");
     setPatientGender("");
     setPatientBedNO("");
-    
+
     setTime([]);
     setRespRate([]);
     setTemp([]);
     setSysPressure([]);
     setDiaPressure([]);
     setHR([]);
-  }
+  };
 
-  
   return props.trigger ? (
     <div className="popup">
       <div className="popup-addpersonnel">
@@ -65,25 +64,41 @@ export default function AddPatPopUp(props) {
                   placeholder="Name"
                   value={patientName}
                   onChange={(e) => {
-                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
-                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)  ||  finalChar ===32|| isNaN(finalChar)) setPatientName(e.target.value)
-                    
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar >= 65 && finalChar <= 90) ||
+                      (finalChar >= 97 && finalChar <= 122) ||
+                      finalChar === 32 ||
+                      isNaN(finalChar)
+                    )
+                      setPatientName(e.target.value);
                   }}
                 />
                 <input
                   type="number"
                   placeholder="Age"
                   value={patientAge}
-                  onChange={(e) =>{
-                    if (e.target.value.length <= 3) setPatientAge(e.target.value)}}
+                  onChange={(e) => {
+                    if (e.target.value.length <= 3)
+                      setPatientAge(e.target.value);
+                  }}
                 />
                 <input
                   type="text"
-                  placeholder="Gender"
+                  placeholder="Gender (F/M)"
                   value={patientGender}
                   onChange={(e) => {
-                    const finalChar = e.target.value.charCodeAt(e.target.value.length-1);
-                    if ((finalChar === 70 && e.target.value.length ===1) || (finalChar === 77 && e.target.value.length ===1   || isNaN(finalChar))) setPatientGender(e.target.value)
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar === 70 && e.target.value.length === 1) ||
+                      (finalChar === 77 && e.target.value.length === 1) ||
+                      isNaN(finalChar)
+                    )
+                      setPatientGender(e.target.value);
                   }}
                 />
                 <input
@@ -91,7 +106,9 @@ export default function AddPatPopUp(props) {
                   placeholder="Bed Number"
                   value={patientBedNO}
                   onChange={(e) => {
-                    if(e.target.value.length <= 4) setPatientBedNO(e.target.value)}}
+                    if (e.target.value.length <= 4)
+                      setPatientBedNO(e.target.value);
+                  }}
                 />
               </div>
               <button className="aedbtnstyle" onClick={submit}>

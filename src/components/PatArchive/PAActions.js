@@ -80,7 +80,7 @@ export default function PAActions() {
 
   //search
   const [query, setQuery] = useState("");
-  
+
   return (
     <>
       <div className="ChangeBtnState">
@@ -123,29 +123,29 @@ export default function PAActions() {
                   </li>
                 );
               })}
+          </div>
+          <li>
+            <div>
+              <AEDBtn>
+                <button
+                  className="aedbtnstyle"
+                  disabled={editDisabled()}
+                  onClick={() => {
+                    setButtonPopup(true);
+                    navigate("/PatientHistory/");
+                  }}
+                >
+                  VIEW
+                </button>
+                <PAConnect
+                  trigger={buttonPopup}
+                  setTrigger={setButtonPopup}
+                  info={edit}
+                ></PAConnect>
+              </AEDBtn>
             </div>
-            <li>
-              <div>
-                <AEDBtn>
-                  <button
-                    className="aedbtnstyle"
-                    disabled={editDisabled()}
-                    onClick={() => {
-                      setButtonPopup(true);
-                      navigate("/PatientHistory/")
-                    }}
-                  >
-                    VIEW
-                  </button>
-                  <PAConnect
-                    trigger={buttonPopup}
-                    setTrigger={setButtonPopup}
-                    info={edit}
-                  ></PAConnect>
-                  </AEDBtn>
-              </div>
-            </li>
-          </ul>
+          </li>
+        </ul>
       </div>
     </>
   );
@@ -155,4 +155,3 @@ const AEDBtn = styled.div`
   margin: 5px;
   margin-right: 5px;
 `;
-

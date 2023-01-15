@@ -71,15 +71,26 @@ export default function EdiDocPopUp(props) {
                   placeholder="Name"
                   value={updatedDoctorName}
                   onChange={(e) => {
-                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
-                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)) setUpdatedDoctorName(e.target.value)}}
+                    const finalChar = e.target.value.charCodeAt(
+                      e.target.value.length - 1
+                    );
+                    if (
+                      (finalChar >= 65 && finalChar <= 90) ||
+                      (finalChar >= 97 && finalChar <= 122) ||
+                      finalChar === 32 ||
+                      isNaN(finalChar)
+                    )
+                      setUpdatedDoctorName(e.target.value);
+                  }}
                 />
                 <input
                   type="number"
                   placeholder="Office #"
                   value={updatedDoctorOffice}
                   onChange={(e) => {
-                    if (e.target.value.length <= 3) setUpdatedDoctorOffice(e.target.value)}}
+                    if (e.target.value.length <= 3)
+                      setUpdatedDoctorOffice(e.target.value);
+                  }}
                 />
               </div>
               <button className="aedbtnstyle" onClick={updateData}>

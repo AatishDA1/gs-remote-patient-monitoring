@@ -15,12 +15,11 @@ export default function RandomRespRateCcrit() {
     }, 1);
   }, []);
   respRCcrit = currentRRCcrit;
-  return currentRRCcrit
-
+  return currentRRCcrit;
 }
 
 export var respRCcrit = 0;
-console.log(respRCcrit)
+console.log(respRCcrit);
 
 function RandomTempRC() {
   let min = 38.1;

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import db from "../General/firebase";
 
-const patientkey = "xu9s02m4Y5n1MadwgaDD"
-
+const patientkey = "xu9s02m4Y5n1MadwgaDD";
 
 function RandomRespRC() {
   let min = 20;
@@ -12,19 +11,19 @@ function RandomRespRC() {
 
 export default function RandomRespRateC() {
   const [currentRRC, updatedRRC] = useState(RandomRespRC());
-  let RRClist = []; 
+  let RRClist = [];
   useEffect(() => {
     setInterval(() => {
       const RRC = RandomRespRC();
       updatedRRC(RRC);
-      RRClist.push(RRC)
+      RRClist.push(RRC);
       db.collection("patientsData").doc(patientkey).update({
-        resp: RRClist
-      })
+        resp: RRClist,
+      });
     }, 1000);
   }, []);
   respRC = currentRRC;
-  return currentRRC;  
+  return currentRRC;
 }
 export var respRC = 0;
 function RandomTempRC() {
@@ -40,10 +39,10 @@ export function RandomTempC() {
     setInterval(() => {
       const TR = RandomTempRC();
       updatedTRC(TR);
-      TRlist.push(TR)
+      TRlist.push(TR);
       db.collection("patientsData").doc(patientkey).update({
-        temp: TRlist
-      })
+        temp: TRlist,
+      });
     }, 1000);
   }, []);
   tempRC = currentTRC;
@@ -65,10 +64,10 @@ export function RandomSysC() {
     setInterval(() => {
       const SR = RandomSysRC();
       updatedSRC(SR);
-      SRClist.push(SR)
+      SRClist.push(SR);
       db.collection("patientsData").doc(patientkey).update({
-        sys: SRClist
-      })
+        sys: SRClist,
+      });
     }, 1000);
   }, []);
   sysRC = currentSRC;
@@ -90,10 +89,10 @@ export function RandomDiasC() {
     setInterval(() => {
       const DR = RandomDiasRateC();
       updatedDRC(DR);
-      DRlist.push(DR)
+      DRlist.push(DR);
       db.collection("patientsData").doc(patientkey).update({
-        dia: DRlist
-      })
+        dia: DRlist,
+      });
     }, 1000);
   }, []);
   diasRC = currentDRC;
@@ -110,15 +109,15 @@ function RandomHRateC() {
 
 export function RandomHRC() {
   const [currentHRC, updatedHRC] = useState(RandomHRateC());
-  let HRClist
+  let HRClist;
   useEffect(() => {
     setInterval(() => {
       const HR = RandomHRateC();
       updatedHRC(HR);
-      HRClist.push(HR)
+      HRClist.push(HR);
       db.collection("patientsData").doc(patientkey).update({
-        hr: HRClist
-      })
+        hr: HRClist,
+      });
     }, 1000);
   }, []);
   heartRC = currentHRC;

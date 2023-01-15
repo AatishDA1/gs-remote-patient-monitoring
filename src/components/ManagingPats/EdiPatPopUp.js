@@ -5,6 +5,7 @@ import "../Styles/styles.css";
 import "../Styles/Popup.css";
 
 export default function EdiPatPopUp(props) {
+  // adding constants
   const [updatedPatientName, setUpdatedPatientName] = useState("");
   const [updatedPatientAge, setUpdatedPatientAge] = useState("");
   const [updatedPatientGender, setUpdatedPatientGender] = useState("");
@@ -13,12 +14,12 @@ export default function EdiPatPopUp(props) {
 
   const [patProps, setPatProps] = useState(props.info);
 
+  // update temporary constants only when props is defined
   useEffect(() => {
     props.info === undefined
       ? console.log("props notdefined")
       : setPatProps(props.info);
   });
-
   useEffect(() => {
     if (patProps.data === undefined) {
       console.log("pat not defined");
@@ -31,6 +32,7 @@ export default function EdiPatPopUp(props) {
     }
   }, [patProps]);
 
+  // update firebase data
   const updateData = (e) => {
     db.collection("patientsData").doc(dataIdToBeUpdated).update({
       name: updatedPatientName,
@@ -38,7 +40,6 @@ export default function EdiPatPopUp(props) {
       gender: updatedPatientGender,
       bedNO: updatedPatientBedNO,
     });
-
     setUpdatedPatientAge("");
     setUpdatedPatientName("");
     setUpdatedPatientGender("");

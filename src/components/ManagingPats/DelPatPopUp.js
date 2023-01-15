@@ -8,6 +8,7 @@ export default function DelPatPopUp(props) {
   const [patProps, setPatProps] = useState(props);
   const [delID, setDelID] = useState("");
 
+  // update temporary constants only when props is defined
   useEffect(() => {
     props.info === undefined
       ? console.log("props notdefined")
@@ -22,6 +23,7 @@ export default function DelPatPopUp(props) {
     }
   }, [patProps]);
 
+  // delete data from database
   const deleteData = (e) => {
     e.preventDefault();
     for (const id of delID) {

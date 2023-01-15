@@ -18,6 +18,7 @@ export default function MPActions() {
   const [addbtnPopup, setAddBtnPopup] = useState(false);
   const [patientsData, setPatientsData] = useState([]);
 
+  // defining the nested list of patients
   useEffect(() => {
     db.collection("patientsData").onSnapshot((snapshot) => {
       setPatientsData(
@@ -29,7 +30,7 @@ export default function MPActions() {
     });
   }, []);
 
-  // checkbox
+  // creating checkbox feature
   const [checkedState, setCheckedState] = useState(
     Array(patientsData.length).fill(false)
   );
@@ -38,6 +39,14 @@ export default function MPActions() {
     setCheckedState(new Array(patientsData.length).fill(false));
   }, [patientsData]);
 
+  const handleOnChange = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
+  };
+
+  // corresponding checked patient with update/delete button
   const indices = checkedState.reduce(
     (out, bool, index) => (bool ? out.concat(index) : out),
     []
@@ -48,7 +57,7 @@ export default function MPActions() {
 
   useEffect(() => {
     if (patientsData === undefined) {
-      console.log("undefineddd");
+      console.log("undefined");
     } else {
       const list = [];
       const listID = [];
@@ -74,14 +83,8 @@ export default function MPActions() {
     }
   });
 
-  const handleOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updatedCheckedState);
-  };
 
-  //AEDButton disabled
+  //Add/Edit/Delete Button disable requirements
   function editDisabled() {
     return indices.length === 0 || indices.length > 1;
   }
@@ -189,19 +192,3 @@ const AEDBtn = styled.div`
   margin: 5px;
   margin-right: 5px;
 `;
-
-// const Listbox = styled.nav`
-//   background: #A9A9A9;
-//   color: rgb(0,0,0);
-//   font-weight: bold;
-//   display: inline;
-//   justify-content: space-between;
-//   text-align:left;
-//   position: relative;
-//   padding-top: 1rem;
-//   padding-bottom: 1rem;
-//   padding-left: 3.2rem;
-//   padding-right: 3.2rem;
-//   width: 100px;
-//   margin: 0 auto;
-// `;

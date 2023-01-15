@@ -16,6 +16,7 @@ export default function AddPatPopUp(props) {
   const [HR, setHR] = useState([]);
   const [temp, setTemp] = useState([]);
 
+  // add patient to firebase
   const submit = (e) => {
     e.preventDefault();
     db.collection("patientsData").add({

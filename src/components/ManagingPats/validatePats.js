@@ -1,29 +1,29 @@
 export default function validatePats(values) {
-    let errors = {};
+    let patErrors = {};
   
     if (!values.name.trim()) {
-      errors.name = "Name required";
+      patErrors.name = "Name required";
     }
   
     if (!values.gender) {
-      errors.gender = "Gender required";
+      patErrors.gender = "Gender required";
     } else if (!/F/.test(values.gender) || !/M/.text(values.gender)) {
-      errors.gender = "Gender is invalid";
+      patErrors.gender = "Gender is invalid";
     }
   
     if (!values.age) {
-      errors.age = "Age required";
-    } else if (typeof values.age === 'string' || values.age instanceof String) {
-      errors.age = "age must be a number"
+      patErrors.age = "Age required";
+    } else if (isNaN(values.age)) {
+      patErrors.age = "age must be a number"
     }
   
     if (!values.bedNO) {
-      errors.bedNO = "Gender required";
-    } else if (!/F/.test(values.bedNO) || !/M/.text(values.bedNO)) {
-      errors.bedNO = "Gender is invalid";
+      patErrors.bedNO = "bed number required";
+    } else if (isNaN(values.bedNO)) {
+      patErrors.bedNO = "bed number must be a number";
     }
 
-    return errors;
+    return patErrors;
   }
 
   

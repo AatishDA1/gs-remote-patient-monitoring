@@ -8,6 +8,7 @@ import RespGraph, {
 } from "../components/Vitals/RandomVitalGraphDud";
 import "../components/Styles/selectpats.css"
 import { name } from "../components/PatSelect/PSDudPage";
+import NoSignal from "../components/PatSelect/NoSignal";
 // import RandomRespRate, {
 //   RandomTemp,
 //   RandomSys,
@@ -17,12 +18,14 @@ import { name } from "../components/PatSelect/PSDudPage";
 // import Navbar from "../components/Vitals/NavBar";
 
 export default function PatientDud() {
+  const [buttonPopup, setButtonPopup] = useState(true);
 
   return (
     <Layout>
       {/* <Navbar /> */}
       <h1>Patient: {name}</h1>
       <div className="kontainer">
+        <NoSignal trigger = {buttonPopup} setTrigger = {setButtonPopup} />
         <RespGraph />
         <div className="RespRate">
           <li>Resp Rate:</li>

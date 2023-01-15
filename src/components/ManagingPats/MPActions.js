@@ -175,7 +175,10 @@ export default function MPActions() {
                 >
                   ADD
                 </button>
-                <AddPatPopUp trigger={addbtnPopup} setTrigger={setAddBtnPopup} />
+                <AddPatPopUp
+                  trigger={addbtnPopup}
+                  setTrigger={setAddBtnPopup}
+                />
               </AEDBtn>
             </div>
           </li>

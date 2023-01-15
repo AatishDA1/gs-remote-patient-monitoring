@@ -8,10 +8,15 @@ function RandomRespRW() {
 
 export default function RandomRespRateW() {
   const [currentRRW, updatedRRW] = useState(RandomRespRW());
+  let RRWlist = [];
   useEffect(() => {
     setInterval(() => {
       const RRW = RandomRespRW();
       updatedRRW(RRW);
+      RRWlist.push(RRW)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        resp: RRWlist
+      })
     }, 1000);
   }, []);
   respRW = currentRRW;
@@ -28,10 +33,15 @@ function RandomTempRW() {
 
 export function RandomTempW() {
   const [currentTRW, updatedTRW] = useState(RandomTempRW());
+  let TRWlist = [];
   useEffect(() => {
     setInterval(() => {
       const TR = RandomTempRW();
       updatedTRW(TR);
+      TRWlist.push(TR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        temp: TRWlist
+      })
     }, 1000);
   }, []);
   tempRW = currentTRW;
@@ -48,10 +58,15 @@ function RandomSysRW() {
 
 export function RandomSysW() {
   const [currentSRW, updatedSRW] = useState(RandomSysRW());
+  let SRWlist = [];
   useEffect(() => {
     setInterval(() => {
       const SR = RandomSysRW();
       updatedSRW(SR);
+      SRWlist.push(SR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        sys: SRWlist
+      })
     }, 1000);
   }, []);
   sysRW = currentSRW;
@@ -68,10 +83,15 @@ function RandomDiasRateW() {
 
 export function RandomDiasW() {
   const [currentDRW, updatedDRW] = useState(RandomDiasRateW());
+  let DRWlist = [];
   useEffect(() => {
     setInterval(() => {
       const DR = RandomDiasRateW();
       updatedDRW(DR);
+      DRWlist.push(DR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        dia: DRWlist
+      })
     }, 1000);
   }, []);
   diasRW = currentDRW;
@@ -88,10 +108,15 @@ function RandomHRateW() {
 
 export function RandomHRW() {
   const [currentHRW, updatedHRW] = useState(RandomHRateW());
+  let HRWlist = [];
   useEffect(() => {
     setInterval(() => {
       const HR = RandomHRateW();
       updatedHRW(HR);
+      HRWlist.push(HR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        hr: HRWlist
+      })
     }, 1000);
   }, []);
   heartRW = currentHRW;

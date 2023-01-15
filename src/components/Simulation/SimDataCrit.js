@@ -8,10 +8,15 @@ function RandomRespRC() {
 
 export default function RandomRespRateC() {
   const [currentRRC, updatedRRC] = useState(RandomRespRC());
+  let RRClist = []
   useEffect(() => {
     setInterval(() => {
       const RRC = RandomRespRC();
       updatedRRC(RRC);
+      RRClist.push(RRC)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        resp: RRClist
+      })
     }, 1000);
   }, []);
   respRC = currentRRC;
@@ -26,10 +31,15 @@ function RandomTempRC() {
 
 export function RandomTempC() {
   const [currentTRC, updatedTRC] = useState(RandomTempRC());
+  let TRlist = [];
   useEffect(() => {
     setInterval(() => {
       const TR = RandomTempRC();
       updatedTRC(TR);
+      TRlist.push(TR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        temp: TRlist
+      })
     }, 1000);
   }, []);
   tempRC = currentTRC;
@@ -46,10 +56,15 @@ function RandomSysRC() {
 
 export function RandomSysC() {
   const [currentSRC, updatedSRC] = useState(RandomSysRC());
+  let SRClist = [];
   useEffect(() => {
     setInterval(() => {
       const SR = RandomSysRC();
       updatedSRC(SR);
+      SRClist.push(SR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        sys: SRClist
+      })
     }, 1000);
   }, []);
   sysRC = currentSRC;
@@ -66,10 +81,15 @@ function RandomDiasRateC() {
 
 export function RandomDiasC() {
   const [currentDRC, updatedDRC] = useState(RandomDiasRateC());
+  let DRlist = [];
   useEffect(() => {
     setInterval(() => {
       const DR = RandomDiasRateC();
       updatedDRC(DR);
+      DRlist.push(DR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        dia: DRlist
+      })
     }, 1000);
   }, []);
   diasRC = currentDRC;
@@ -86,10 +106,15 @@ function RandomHRateC() {
 
 export function RandomHRC() {
   const [currentHRC, updatedHRC] = useState(RandomHRateC());
+  let HRClist
   useEffect(() => {
     setInterval(() => {
       const HR = RandomHRateC();
       updatedHRC(HR);
+      HRClist.push(HR)
+      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+        hr: HRClist
+      })
     }, 1000);
   }, []);
   heartRC = currentHRC;

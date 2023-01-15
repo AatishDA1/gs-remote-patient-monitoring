@@ -54,8 +54,10 @@ import RandomRespRateWwarn, {
   RandomTempWwarn,
   RandomSysWwarn,
   RandomDiasWwarn,
-  RandomHRWwarn,
-} from "./SimWarnExtract";
+  RandomHRWwarn
+} from './SimWarnExtract';
+import SimAddActions from "./SimAddActions";
+import SimWarnActions from "./SimWarnActions";
 
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
@@ -65,7 +67,9 @@ export default function Simulation() {
   const setOriginal = useState(true);
   const setZoomOut = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
+  const [submitwarnPopup, setsubmitwarnPopup] = useState(false);
   const [buttonCritPopup, setButtonCritPopup] = useState(false);
+  const [submitbtnPopup, setsubmitBtnPopup] = useState(false);
   const [play] = useSound(tindeck_1);
 
   const ZoomInHandler = () => {
@@ -94,79 +98,46 @@ export default function Simulation() {
     setWarning(true);
     setCritical(false);
     setTimeout(() => {
-      setButtonPopup(true).play();
-    }, 10000);
+      setButtonPopup(true),play(),setsubmitwarnPopup(true);
+    },10000);
+    ;
   };
   const CriticalHandler = () => {
     setNormal(false);
     setWarning(false);
     setCritical(true);
-    setTimeout(() => {
-      setButtonCritPopup(true).play();
-    }, 10000);
-  };
 
+    setTimeout(() => {
+      setButtonCritPopup(true),play(),setsubmitBtnPopup(true);
+    },10000);
+  
+  };
+// Button triggers popups, calls functions 
   return (
     <>
       <h2>Simulation Page</h2>
       <div className="button_holder">
         <button onClick={NormalHandler}>Normal</button>
         <button onClick={WarningHandler}>Warning</button>
-        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-          <h1>
-            {" "}
-            Simulated Patient Warning at Time: <AlertTime />{" "}
-          </h1>
-          <h2>
-            {" "}
-            Respiratory Rate: <RandomRespRateWwarn /> bpm
-          </h2>
-          <h2>
-            {" "}
-            Temperature : <RandomTempWwarn /> °C
-          </h2>
-          <h2>
-            {" "}
-            Systolic BP : <RandomSysWwarn /> mmHg
-          </h2>
-          <h2>
-            {" "}
-            Diastolic BP : <RandomDiasWwarn /> mmHg
-          </h2>
-          <h2>
-            {" "}
-            Heart Rate : <RandomHRWwarn /> bpm
-          </h2>
+        <Popup trigger = {buttonPopup} setTrigger = {setButtonPopup}>
+            <h1> Simulated Patient Warning at Time: <AlertTime/> </h1>
+            <h2> Respiratory Rate: <RandomRespRateWwarn/> bpm</h2>
+            <h2> Temperature : <RandomTempWwarn /> °C</h2>
+            <h2> Systolic BP : <RandomSysWwarn/> mmHg</h2>
+            <h2> Diastolic BP : < RandomDiasWwarn/> mmHg</h2>
+            <h2> Heart Rate : <RandomHRWwarn /> bpm</h2>
+            <h2><SimWarnActions trigger = {submitwarnPopup} setTrigger = {setsubmitwarnPopup}> </SimWarnActions></h2>
         </Popup>
         <button onClick={CriticalHandler}>Critical</button>
-        <PopupCritical
-          trigger={buttonCritPopup}
-          setTrigger={setButtonCritPopup}
-        >
-          <h1>
-            {" "}
-            Simulated Patient Warning at Time: <AlertTime />{" "}
-          </h1>
-          <h2>
-            {" "}
-            Respiratory Rate: <RandomRespRateCcrit /> bpm
-          </h2>
-          <h2>
-            {" "}
-            Temperature : <RandomTempCcrit /> °C
-          </h2>
-          <h2>
-            {" "}
-            Systolic BP : <RandomSysCcrit /> mmHg
-          </h2>
-          <h2>
-            {" "}
-            Diastolic BP : <RandomDiasCcrit /> mmHg
-          </h2>
-          <h2>
-            {" "}
-            Heart Rate : <RandomHRCcrit /> bpm
-          </h2>
+        <PopupCritical trigger = {buttonCritPopup} setTrigger = {setButtonCritPopup}>
+                <h1> Simulated Patient Warning at Time: <AlertTime/> </h1>
+                <h2> Respiratory Rate: <RandomRespRateCcrit/> bpm</h2>
+                <h2> Temperature : <RandomTempCcrit /> °C</h2>
+                <h2> Systolic BP : <RandomSysCcrit/> mmHg</h2>
+                <h2> Diastolic BP : <RandomDiasCcrit/> mmHg</h2>
+                <h2> Heart Rate : <RandomHRCcrit /> bpm</h2>
+                <h2><SimAddActions trigger = {submitbtnPopup} setTrigger = {setsubmitBtnPopup}> </SimAddActions> </h2>
+
         </PopupCritical>
       </div>
       <div className="button_holder">

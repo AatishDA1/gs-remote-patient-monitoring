@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import db from "../General/firebase";
 
+const patientkey = "xu9s02m4Y5n1MadwgaDD"
+
 function RandomRespR() {
   let min = 12;
   let max = 16;
@@ -18,7 +20,7 @@ export default function RandomRespRate(patient) {
       updatedRR(RR);
       resplist.push(RR)
       // 'iJhMrZxoYmvoPWf5XPH6' : the id of the patient called simulation
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         resp: resplist
       })
     }, 1000);
@@ -43,7 +45,7 @@ export function RandomTemp() {
       const TR = RandomTempR();
       updatedTR(TR);
       templist.push(TR);
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         temp: templist
       })
     }, 1000);
@@ -68,7 +70,7 @@ export function RandomSys() {
       const SR = RandomSysR();
       updatedSR(SR);
       syslist.push(SR);
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         sys: syslist
       })
     }, 1000);
@@ -93,7 +95,7 @@ export function RandomDias() {
       const DR = RandomDiasRate();
       updatedDR(DR);
       dialist.push(DR);
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         dia: dialist
       })
     }, 1000);
@@ -118,7 +120,7 @@ export function RandomHR() {
       const HR = RandomHRate();
       updatedHR(HR);
       HRlist.push(HR);
-      db.collection("patientsData").doc('iJhMrZxoYmvoPWf5XPH6').update({
+      db.collection("patientsData").doc(patientkey).update({
         hr: HRlist
       })
     }, 1000);

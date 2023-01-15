@@ -15,7 +15,6 @@ export default function RandomRespRate(patient) {
   useEffect(() => {
     setInterval(() => {
       const RR = RandomRespR();
-
       updatedRR(RR);
       resplist.push(RR)
       // 'iJhMrZxoYmvoPWf5XPH6' : the id of the patient called simulation
@@ -25,7 +24,6 @@ export default function RandomRespRate(patient) {
     }, 1000);
   }, []);
   respR = currentRR;
-  
   return currentRR;
 }
 

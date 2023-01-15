@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import db from "../General/firebase";
 
 function RandomRespRW() {
   let min = 16;

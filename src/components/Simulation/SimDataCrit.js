@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import db from "../General/firebase";
 
 function RandomRespRC() {
   let min = 20;
@@ -8,7 +9,7 @@ function RandomRespRC() {
 
 export default function RandomRespRateC() {
   const [currentRRC, updatedRRC] = useState(RandomRespRC());
-  let RRClist = []
+  let RRClist = []; 
   useEffect(() => {
     setInterval(() => {
       const RRC = RandomRespRC();

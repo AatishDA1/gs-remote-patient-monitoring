@@ -228,7 +228,7 @@ export function TenminRespGraphCrit() {
     </div>
   );
 }
-
+console.log(respRC);
 export function TempGraphCrit() {
   return (
     <div

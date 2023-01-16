@@ -7,11 +7,11 @@ import RespGraph, {
   TempGraph,
 } from "../components/Vitals/RandomVitalGraphDud";
 import "../components/Styles/selectpats.css"
-import { name } from "../components/PatSelect/PSDudPage";
+import { name } from "../components/PatArchive/PAConnect";
 import NoSignal from "../components/PatSelect/NoSignal";
 
 
-export default function PatientDud() {
+export default function PatientHistory() {
   const [noSignalPopup, setNoSignalPopup] = useState(true);
 
   return (

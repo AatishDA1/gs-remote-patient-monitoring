@@ -1,17 +1,28 @@
 import { useState, useEffect } from "react";
+import db from "../General/firebase";
+
+const patientkey = "xu9s02m4Y5n1MadwgaDD";
 
 function RandomRespR() {
   let min = 12;
   let max = 16;
+  let ret = [];
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default function RandomRespRate() {
+export default function RandomRespRate(patient) {
   const [currentRR, updatedRR] = useState(RandomRespR());
+  /* create empty list and append every new data to it and then override it everytime in the db*/
+  let resplist = [];
   useEffect(() => {
     setInterval(() => {
       const RR = RandomRespR();
       updatedRR(RR);
+      resplist.push(RR);
+      // 'iJhMrZxoYmvoPWf5XPH6' : the id of the patient called simulation
+      db.collection("patientsData").doc(patientkey).update({
+        resp: resplist,
+      });
     }, 1000);
   }, []);
   respR = currentRR;
@@ -28,10 +39,15 @@ function RandomTempR() {
 
 export function RandomTemp() {
   const [currentTR, updatedTR] = useState(RandomTempR());
+  let templist = [];
   useEffect(() => {
     setInterval(() => {
       const TR = RandomTempR();
       updatedTR(TR);
+      templist.push(TR);
+      db.collection("patientsData").doc(patientkey).update({
+        temp: templist,
+      });
     }, 1000);
   }, []);
   tempR = currentTR;
@@ -47,11 +63,16 @@ function RandomSysR() {
 }
 
 export function RandomSys() {
+  let syslist = [];
   const [currentSR, updatedSR] = useState(RandomSysR());
   useEffect(() => {
     setInterval(() => {
       const SR = RandomSysR();
       updatedSR(SR);
+      syslist.push(SR);
+      db.collection("patientsData").doc(patientkey).update({
+        sys: syslist,
+      });
     }, 1000);
   }, []);
   sysR = currentSR;
@@ -68,10 +89,15 @@ function RandomDiasRate() {
 
 export function RandomDias() {
   const [currentDR, updatedDR] = useState(RandomDiasRate());
+  let dialist = [];
   useEffect(() => {
     setInterval(() => {
       const DR = RandomDiasRate();
       updatedDR(DR);
+      dialist.push(DR);
+      db.collection("patientsData").doc(patientkey).update({
+        dia: dialist,
+      });
     }, 1000);
   }, []);
   diasR = currentDR;
@@ -88,10 +114,15 @@ function RandomHRate() {
 
 export function RandomHR() {
   const [currentHR, updatedHR] = useState(RandomHRate());
+  let HRlist = [];
   useEffect(() => {
     setInterval(() => {
       const HR = RandomHRate();
       updatedHR(HR);
+      HRlist.push(HR);
+      db.collection("patientsData").doc(patientkey).update({
+        hr: HRlist,
+      });
     }, 1000);
   }, []);
   heartR = currentHR;

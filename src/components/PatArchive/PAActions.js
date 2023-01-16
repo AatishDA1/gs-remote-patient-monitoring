@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { navigate } from "gatsby";
 import db from "../General/firebase";
 import styled from "styled-components";
 import "../Styles/styles.css";
+import "../Styles/firebasestyle.css";
 import { BsSearch } from "react-icons/bs";
-import MDHeading from "./MDHeading";
-import AddDocPopUp from "./AddDocPopUp";
-import DelDocPopUp from "./DelDocPopUp";
-import EdiDocPopUp from "./EdiDocPopUp";
+import PAConnect from "./PAConnect";
+import MPHeader from "../ManagingPats/MPHeader";
 
-//reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
-//                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
-//                  https://blog.logrocket.com/building-custom-checkbox-react/
-
-export default function MPActions() {
-  const [edtbtnPopup, setEdtBtnPopup] = useState(false);
-  const [delbtnPopup, setDelBtnPopup] = useState(false);
-  const [addbtnPopup, setAddBtnPopup] = useState(false);
-  const [doctorsData, setDoctorsData] = useState([]);
+export default function PAActions() {
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [patientsData, setPatientsData] = useState([]);
 
   useEffect(() => {
-    db.collection("DoctorsData").onSnapshot((snapshot) => {
-      setDoctorsData(
+    db.collection("patientsData").onSnapshot((snapshot) => {
+      setPatientsData(
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
@@ -29,14 +23,19 @@ export default function MPActions() {
     });
   }, []);
 
+  //AEDButton disabled
+  function editDisabled() {
+    return indices.length === 0 || indices.length > 1;
+  }
+
   // checkbox
   const [checkedState, setCheckedState] = useState(
-    Array(doctorsData.length).fill(false)
+    Array(patientsData.length).fill(false)
   );
 
   useEffect(() => {
-    setCheckedState(new Array(doctorsData.length).fill(false));
-  }, [doctorsData]);
+    setCheckedState(new Array(patientsData.length).fill(false));
+  }, [patientsData]);
 
   const indices = checkedState.reduce(
     (out, bool, index) => (bool ? out.concat(index) : out),
@@ -47,17 +46,16 @@ export default function MPActions() {
   const [edit, setEdit] = useState([]);
 
   useEffect(() => {
-    if (doctorsData === undefined) {
-      console.log("undefined");
+    if (patientsData === undefined) {
+      console.log("undefineddd");
     } else {
       const list = [];
       const listID = [];
       if (indices.length === 0) {
       } else {
         for (const indx of indices) {
-          console.log(doctorsData[indx]);
-          list.push(doctorsData[indx]);
-          listID.push(doctorsData[indx].id);
+          list.push(patientsData[indx]);
+          listID.push(patientsData[indx].id);
         }
       }
       setIdList(list);
@@ -68,7 +66,6 @@ export default function MPActions() {
   useEffect(() => {
     if (idList.length === 1) {
       for (const data of idList) {
-        console.log(data);
         setEdit(data);
       }
     }
@@ -81,14 +78,6 @@ export default function MPActions() {
     setCheckedState(updatedCheckedState);
   };
 
-  //AEDButton disabled
-  function editDisabled() {
-    return indices.length === 0 || indices.length > 1;
-  }
-  function deleteDisabled() {
-    return indices.length === 0;
-  }
-
   //search
   const [query, setQuery] = useState("");
 
@@ -99,7 +88,7 @@ export default function MPActions() {
           <form className="search">
             <input
               type="text"
-              placeholder="search doctor name..."
+              placeholder="search patient name..."
               className="search__input"
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -107,19 +96,19 @@ export default function MPActions() {
               <BsSearch />
             </button>
           </form>
-          <MDHeading />
+          <MPHeader />
           <div className="scroll">
-            {doctorsData
+            {patientsData
               .filter((user) => user.data.name.toLowerCase().includes(query))
               .map(({ id, data }, index) => {
                 return (
                   <li key={id}>
-                    <span className="flex-containerdr">
+                    <span className="flex-container">
                       <div>
                         <span className="checkbox-wrapper">
                           <input
                             type="checkbox"
-                            id={`custom-checkbox-${index}`}
+                            cbid={`custom-checkbox-${index}`}
                             checked={checkedState[index]}
                             onChange={() => handleOnChange(index)}
                             className={checkedState ? "checked" : ""}
@@ -127,8 +116,9 @@ export default function MPActions() {
                         </span>
                       </div>
                       <span>{data.name}</span>
-                      <p>{data.office}</p>
-                      {/* <p>view (patlist)</p> */}
+                      <p>{data.age}</p>
+                      <p>{data.gender}</p>
+                      <p>{data.bedNO}</p>
                     </span>
                   </li>
                 );
@@ -141,42 +131,17 @@ export default function MPActions() {
                   className="aedbtnstyle"
                   disabled={editDisabled()}
                   onClick={() => {
-                    setEdtBtnPopup(true);
+                    setButtonPopup(true);
+                    navigate("/PatientHistory/");
                   }}
                 >
-                  EDIT
+                  VIEW
                 </button>
-                <EdiDocPopUp
-                  trigger={edtbtnPopup}
-                  setTrigger={setEdtBtnPopup}
+                <PAConnect
+                  trigger={buttonPopup}
+                  setTrigger={setButtonPopup}
                   info={edit}
-                />
-                <button
-                  className="aedbtnstyle"
-                  disabled={deleteDisabled()}
-                  onClick={() => {
-                    setDelBtnPopup(true);
-                  }}
-                >
-                  DELETE
-                </button>
-                <DelDocPopUp
-                  trigger={delbtnPopup}
-                  setTrigger={setDelBtnPopup}
-                  info={idString}
-                />
-                <button
-                  className="aedbtnstyle"
-                  onClick={() => {
-                    setAddBtnPopup(true);
-                  }}
-                >
-                  ADD
-                </button>
-                <AddDocPopUp
-                  trigger={addbtnPopup}
-                  setTrigger={setAddBtnPopup}
-                />
+                ></PAConnect>
               </AEDBtn>
             </div>
           </li>

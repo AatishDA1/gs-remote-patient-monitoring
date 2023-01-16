@@ -1,4 +1,5 @@
 .popup {
+  z-index: 9997;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +13,8 @@
 }
 
 .popup-inner-warning {
-  position: relative;
+  position: relative  ;
+  z-index: 99999;
   padding: 70px;
   width: 100%;
   background-color: rgb(255, 191, 0);
@@ -21,6 +23,7 @@
 
 .popup-inner-critical {
   position: relative;
+  z-index: 9998;
   padding: 70px;
   width: 100%;
   background-color: red;
@@ -42,6 +45,11 @@
   height: 100vh;
   background-color: rgb(255, 255, 255);
   color: #000;
+}
+
+
+.popup-addpersonnel input {
+  width: 40vw;
 }
 
 .close-btn {

@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-import db from "../General/firebase";
-
-const patientkey = "xu9s02m4Y5n1MadwgaDD";
 
 function RandomRespRW() {
   let min = 16;
@@ -9,18 +6,13 @@ function RandomRespRW() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default function RandomRespRateW() {
+export default function RandomRespRateWwarn() {
   const [currentRRW, updatedRRW] = useState(RandomRespRW());
-  let RRWlist = [];
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       const RRW = RandomRespRW();
       updatedRRW(RRW);
-      RRWlist.push(RRW);
-      db.collection("patientsData").doc(patientkey).update({
-        resp: RRWlist,
-      });
-    }, 1000);
+    }, 1);
   }, []);
   respRW = currentRRW;
   return currentRRW;
@@ -34,18 +26,13 @@ function RandomTempRW() {
   return Math.round((Math.random() * (max - min) + min) * 10) / 10;
 }
 
-export function RandomTempW() {
+export function RandomTempWwarn() {
   const [currentTRW, updatedTRW] = useState(RandomTempRW());
-  let TRWlist = [];
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       const TR = RandomTempRW();
       updatedTRW(TR);
-      TRWlist.push(TR);
-      db.collection("patientsData").doc(patientkey).update({
-        temp: TRWlist,
-      });
-    }, 1000);
+    }, 1);
   }, []);
   tempRW = currentTRW;
   return currentTRW;
@@ -59,18 +46,13 @@ function RandomSysRW() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function RandomSysW() {
+export function RandomSysWwarn() {
   const [currentSRW, updatedSRW] = useState(RandomSysRW());
-  let SRWlist = [];
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       const SR = RandomSysRW();
       updatedSRW(SR);
-      SRWlist.push(SR);
-      db.collection("patientsData").doc(patientkey).update({
-        sys: SRWlist,
-      });
-    }, 1000);
+    }, 1);
   }, []);
   sysRW = currentSRW;
   return currentSRW;
@@ -84,18 +66,13 @@ function RandomDiasRateW() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function RandomDiasW() {
+export function RandomDiasWwarn() {
   const [currentDRW, updatedDRW] = useState(RandomDiasRateW());
-  let DRWlist = [];
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       const DR = RandomDiasRateW();
       updatedDRW(DR);
-      DRWlist.push(DR);
-      db.collection("patientsData").doc(patientkey).update({
-        dia: DRWlist,
-      });
-    }, 1000);
+    }, 1);
   }, []);
   diasRW = currentDRW;
   return currentDRW;
@@ -109,18 +86,13 @@ function RandomHRateW() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function RandomHRW() {
+export function RandomHRWwarn() {
   const [currentHRW, updatedHRW] = useState(RandomHRateW());
-  let HRWlist = [];
   useEffect(() => {
-    setInterval(() => {
+    setTimeout(() => {
       const HR = RandomHRateW();
       updatedHRW(HR);
-      HRWlist.push(HR);
-      db.collection("patientsData").doc(patientkey).update({
-        hr: HRWlist,
-      });
-    }, 1000);
+    }, 1);
   }, []);
   heartRW = currentHRW;
   return currentHRW;

@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import useSound from "use-sound";
+import tindeck_1 from "../../Assets/Sounds/tindeck_1.mp3";
+import Popup from "../General/Popup";
+import PopupCritical from "../General/PopupCritical";
+import AlertTime from "../General/AlertTime";
 import RandomRespRate, {
   RandomTemp,
   RandomSys,
@@ -71,31 +76,50 @@ import RandomRespRateC, {
   RandomHRC,
 } from "./SimDataCrit";
 import "../Styles/Simulation.css";
-import Navbar from "../Vitals/NavBar";
+import RandomRespRateCcrit, {
+  RandomTempCcrit,
+  RandomSysCcrit,
+  RandomDiasCcrit,
+  RandomHRCcrit,
+} from "./SimCritExtract";
+import RandomRespRateWwarn, {
+  RandomTempWwarn,
+  RandomSysWwarn,
+  RandomDiasWwarn,
+  RandomHRWwarn,
+} from "./SimWarnExtract";
+import SimAddActions from "./SimAddActions";
+import SimWarnActions from "./SimWarnActions";
 
 export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);
   const [Critical, setCritical] = useState(false);
-  const [ZoomIn,setZoomIn] = useState(false);
-  const [Original,setOriginal] = useState(true)
-  const [ZoomOut,setZoomOut] = useState(false)
+  const setZoomIn = useState(false);
+  const setOriginal = useState(true);
+  const setZoomOut = useState(false);
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [submitwarnPopup, setsubmitwarnPopup] = useState(false);
+  const [buttonCritPopup, setButtonCritPopup] = useState(false);
+  const [submitbtnPopup, setsubmitBtnPopup] = useState(false);
+  const [play] = useSound(tindeck_1);
 
   const ZoomInHandler = () => {
-    setZoomIn(true)
-    setOriginal(false)
-    setZoomOut(false)
-  }
+    setZoomIn(true);
+    setOriginal(false);
+    setZoomOut(false);
+  };
   const ZoomOutHandler = () => {
-    setZoomIn(false)
-    setOriginal(false)
-    setZoomOut(true)
-  }
+    setZoomIn(false);
+    setOriginal(false);
+    setZoomOut(true);
+  };
   const OriginalHandler = () => {
-    setZoomIn(false)
-    setOriginal(true)
-    setZoomOut(false)
-  }
+    setZoomIn(false);
+    setOriginal(true);
+    setZoomOut(false);
+  };
+
   const NormalHandler = () => {
     setNormal(true);
     setWarning(false);
@@ -105,55 +129,22 @@ export default function Simulation() {
     setNormal(false);
     setWarning(true);
     setCritical(false);
+    setTimeout(() => {
+      setButtonPopup(true).play()
+      setsubmitwarnPopup(true);
+    }, 10000);
   };
   const CriticalHandler = () => {
     setNormal(false);
     setWarning(false);
     setCritical(true);
-  };
-  // if (setOriginal(true)) {
-  //   ECGduration = 100000
-  //   Respduration = 10000
-  //   Tempduration = 10000
-  //   Sysduration = 10000
-  //   Diasduration = 10000
-  //   Heartduration = 10000
-  // }
-  // else if (setZoomIn(true)) {
-  //   ECGduration = 100000
-  //   Respduration = 1000
-  //   Tempduration = 1000
-  //   Sysduration = 1000
-  //   Diasduration = 1000
-  //   Heartduration = 1000
-  // }
-  // else if (setZoomOut(true)){
-  //   ECGduration = 100000
-  //   Respduration = 10000
-  //   Tempduration = 10000
-  //   Sysduration = 10000
-  //   Diasduration = 10000
-  //   Heartduration = 10000
-  // }
-  // function ZoomIning(){
-  //   ECGduration = 100000
-  //   Respduration = 10000
-  //   Tempduration = 10000
-  //   Sysduration = 10000
-  //   Diasduration = 10000
-  //   Heartduration = 10000
-  //   console.log("zoom in func")
-  //   return true
-  // }
-  
-  // function changestate(){
-  //   Respduration = 100000
-  //   console.log('respduration is '+Respduration)
-  // }
 
-  // function getgraph(){
-  //   return <sixtyRespGraph/>
-  // }
+    setTimeout(() => {
+      setButtonCritPopup(true).play()
+      setsubmitBtnPopup(true);
+    }, 10000);
+  };
+  // Button triggers popups, calls functions
   return (
     <>
       
@@ -162,7 +153,83 @@ export default function Simulation() {
         <div className="middle">Simulation Options:</div>
         <button onClick={NormalHandler}>Normal</button>
         <button onClick={WarningHandler}>Warning</button>
+        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+          <h1>
+            {" "}
+            Simulated Patient Warning at Time: <AlertTime />{" "}
+          </h1>
+          <h2>
+            {" "}
+            Respiratory Rate: <RandomRespRateWwarn /> bpm
+          </h2>
+          <h2>
+            {" "}
+            Temperature : <RandomTempWwarn /> °C
+          </h2>
+          <h2>
+            {" "}
+            Systolic BP : <RandomSysWwarn /> mmHg
+          </h2>
+          <h2>
+            {" "}
+            Diastolic BP : <RandomDiasWwarn /> mmHg
+          </h2>
+          <h2>
+            {" "}
+            Heart Rate : <RandomHRWwarn /> bpm
+          </h2>
+          <h2>
+            <SimWarnActions
+              trigger={submitwarnPopup}
+              setTrigger={setsubmitwarnPopup}
+            >
+              {" "}
+            </SimWarnActions>
+          </h2>
+        </Popup>
         <button onClick={CriticalHandler}>Critical</button>
+        <PopupCritical
+          trigger={buttonCritPopup}
+          setTrigger={setButtonCritPopup}
+        >
+          <h1>
+            {" "}
+            Simulated Critical Alert at Time: <AlertTime />{" "}
+          </h1>
+          <h2>
+            {" "}
+            Respiratory Rate: <RandomRespRateCcrit /> bpm
+          </h2>
+          <h2>
+            {" "}
+            Temperature : <RandomTempCcrit /> °C
+          </h2>
+          <h2>
+            {" "}
+            Systolic BP : <RandomSysCcrit /> mmHg
+          </h2>
+          <h2>
+            {" "}
+            Diastolic BP : <RandomDiasCcrit /> mmHg
+          </h2>
+          <h2>
+            {" "}
+            Heart Rate : <RandomHRCcrit /> bpm
+          </h2>
+          <h2>
+            <SimAddActions
+              trigger={submitbtnPopup}
+              setTrigger={setsubmitBtnPopup}
+            >
+              {" "}
+            </SimAddActions>{" "}
+          </h2>
+        </PopupCritical>
+      </div>
+      <div className="button_holder">
+        <button onClick={ZoomInHandler}>Zoom in</button>
+        <button onClick={OriginalHandler}>Original</button>
+        <button onClick={ZoomOutHandler}>Zoom out</button>
       </div>
       
       {Normal && (

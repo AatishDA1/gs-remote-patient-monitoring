@@ -114,7 +114,7 @@ export default function MPActions() {
               .map(({ id, data }, index) => {
                 return (
                   <li key={id}>
-                    <span className="flex-container">
+                    <span className="flex-containerpat">
                       <div>
                         <span className="checkbox-wrapper">
                           <input

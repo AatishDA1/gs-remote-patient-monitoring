@@ -170,7 +170,7 @@ input:checked::before {
 }
 
 /* Manage Patients flex styles */
-.flex-container {
+.flex-containerpat {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -178,7 +178,7 @@ input:checked::before {
   align-items: center;
 }
 
-.flex-container>span {
+.flex-containerpat>span {
   background-color: #fff;
   margin: 5px;
   width: 50%;
@@ -188,7 +188,7 @@ input:checked::before {
   vertical-align: middle;
 }
 
-.flex-container>p {
+.flex-containerpat>p {
   background-color: #fff;
   margin: 5px;
   width: 15%;
@@ -198,7 +198,7 @@ input:checked::before {
   text-align: center;
 }
 
-.flex-container>div {
+.flex-containerpat>div {
   background-color: #fff;
   margin: 5px;
   width: 7%;
@@ -206,7 +206,7 @@ input:checked::before {
   text-align: center;
 }
 
-.flex-container>button {
+.flex-containerpat>button {
   /* background-color: #fff; */
   margin: 5px;
   width: 10%;

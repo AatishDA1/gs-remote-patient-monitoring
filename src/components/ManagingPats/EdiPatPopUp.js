@@ -74,7 +74,9 @@ export default function EdiPatPopUp(props) {
                   type="text"
                   placeholder="Name"
                   value={updatedPatientName}
-                  onChange={(e) => setUpdatedPatientName(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
+                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122) || finalChar === 32 || isNaN(finalChar)) setUpdatedPatientName(e.target.value)}}
                 />
                 <input
                   type="number"
@@ -87,7 +89,9 @@ export default function EdiPatPopUp(props) {
                   type="text"
                   placeholder="Gender (F/M)"
                   value={updatedPatientGender}
-                  onChange={(e) => setUpdatedPatientGender(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length-1);
+                    if ((finalChar === 70 && e.target.value.length ===1) || (finalChar === 77 && e.target.value.length ===1   || isNaN(finalChar)))setUpdatedPatientGender(e.target.value)}}
                 />
                 <input
                   type="number"

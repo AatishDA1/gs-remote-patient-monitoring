@@ -54,7 +54,7 @@ import RandomRespRateWwarn, {
   RandomTempWwarn,
   RandomSysWwarn,
   RandomDiasWwarn,
-  RandomHRWwarn,
+  RandomHRWwarn
 } from "./SimWarnExtract";
 import SimAddActions from "./SimAddActions";
 import SimWarnActions from "./SimWarnActions";
@@ -98,7 +98,8 @@ export default function Simulation() {
     setWarning(true);
     setCritical(false);
     setTimeout(() => {
-      setButtonPopup(true).play()
+      setButtonPopup(true)
+      play()
       setsubmitwarnPopup(true);
     }, 10000);
   };
@@ -108,7 +109,8 @@ export default function Simulation() {
     setCritical(true);
 
     setTimeout(() => {
-      setButtonCritPopup(true).play()
+      setButtonCritPopup(true)
+      play()
       setsubmitBtnPopup(true);
     }, 10000);
   };

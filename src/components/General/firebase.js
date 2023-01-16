@@ -19,13 +19,7 @@ const firebaseConfig = {
   messagingSenderId: "498941917981",
   appId: "1:498941917981:web:d888d3b27b4ebd8e473ff4",
   measurementId: "G-R3ZVV31Y0R"
-  apiKey: "AIzaSyD7WqWV6_gd4vJelcg-AX6f1AFLreHU0Z4",
-  authDomain: "gilbert-98a99.firebaseapp.com",
-  projectId: "gilbert-98a99",
-  storageBucket: "gilbert-98a99.appspot.com",
-  messagingSenderId: "498941917981",
-  appId: "1:498941917981:web:d888d3b27b4ebd8e473ff4",
-  measurementId: "G-R3ZVV31Y0R"
+  
 };
 
 // Initialize Firebase

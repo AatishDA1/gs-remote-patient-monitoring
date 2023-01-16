@@ -14,8 +14,8 @@ const MPHeader = () => {
         <p> Resp Rate </p>
         <p> Sys BP </p>
         <p> Dias BP </p>
-        <p> Temp </p>
-        <p> Heart Rate </p>
+        <p> Temp <sup>o</sup>C</p>
+        <p> Heart Rate bpm</p>
       </div>
     </Nav>
   );
@@ -26,7 +26,7 @@ export default MPHeader;
 const Nav = styled.nav`
   background: #09369b;
   color: #ffffff;
-  font-size: clamp(0.5rem, 2.5vw, 2rem);
+  font-size: clamp(0.5rem, 2.5vw, 1.5rem);
   font-weight: bold;
   height: 80px;
   display: flex;

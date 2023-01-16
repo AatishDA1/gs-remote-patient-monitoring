@@ -88,7 +88,7 @@ export default function SimWarnActions(props) {
       hr: hrvar,
     });
 
-    setpatientName2("");
+    setpatientName("");
     setPatientAge("");
     setPatientGender("");
     setPatientBedNO("");

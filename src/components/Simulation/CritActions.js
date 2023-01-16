@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import db from "../General/firebase";
 import styled from "styled-components";
-import "../Styles/styles.css";
+import "../Styles/AlertTableStyle.css";
 import SimHeader from "./SimHeader"
 //reference from    https://stackoverflow.com/questions/70051729/how-to-disable-a-button-if-more-than-once-check-box-is-checked-in-react-js
 //                  https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
@@ -24,9 +24,8 @@ export default function CritActions() {
 
   return (
     <>
-      <div className="ChangeBtnState">
-        <ul className="doctors-list">
-         
+      <div className="CritStyle">
+        <ul className="personnel-list">
           <SimHeader />
           <div className="scroll">
             {patientsData
@@ -34,29 +33,21 @@ export default function CritActions() {
                 return (
                   <li key={id}>
                     <span className="flex-container">
-                      <div>
-                        
-                      </div>
                       <span>{data.name}</span>
                       <p>{data.age}</p>
                       <p>{data.gender}</p>
                       <p>{data.bedNO}</p>
-                      <p>{data.time}</p>
+                      <span>{data.time}</span>
                       <p>{data.resp}</p>
                       <p>{data.sys}</p>
                       <p>{data.dia}</p>
                       <p>{data.temp}</p>
                       <p>{data.hr}</p>
-
                     </span>
                   </li>
                 );
               })}
           </div>
-          <li>
-            <div>
-            </div>
-          </li>
         </ul>
       </div>
     </>

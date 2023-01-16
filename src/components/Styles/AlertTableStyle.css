@@ -1,0 +1,117 @@
+.CritStyle {
+    font-family: sans-serif;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #9e9292;
+    font-weight: bold;
+  }
+
+.personnel {
+margin-top: 0.3rem;
+vertical-align: text-bottom;
+}
+
+.personnel-list,
+.total {
+  width: 70%;
+  margin: 0 auto;
+  font-size: clamp(0.5rem, 2.5vw, 1.5rem);
+}
+
+.personnel-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .personnel-list li {
+    margin-bottom: 0.1rem;
+  }
+  
+  .personnel-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .personnel-list-item label {
+    vertical-align: text-bottom;
+    margin-left: 5.5rem;
+  }
+
+
+  /* CritTable flex styles */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #c5cee2;
+    align-items: center;
+  }
+  
+  .flex-container>span {
+    background-color: #fff;
+    margin: 5px;
+    width: 30%;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .flex-container>p {
+    background-color: #fff;
+    margin: 5px;
+    width: 15%;
+    align-content: center;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    text-align: center;
+  }
+
+/* CritHeader flex styles */
+.critflex-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.critflex-container>span {
+  margin: 5px;
+  width: 30%;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.critflex-container>p {
+  margin: 5px;
+  width: 16%;
+  align-content: center;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  text-align: center;
+}
+
+
+  /* scroll */
+  div.scroll {
+    margin: 4px, 4px;
+    padding: 4px 4px;
+    background-color: #c5cee2;
+    height: 60vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    justify-content: center;
+    align-self: center;
+    scroll-behavior: smooth;
+  }
+  
+  div.scroll:hover {
+    box-shadow: 2px 2px 2px rgb(226, 226, 226);
+  }

@@ -1,21 +1,21 @@
 import * as React from "react";
 import styled from "styled-components";
-import "../Styles/styles.css";
+import "../Styles/AlertTableStyle.css";
 
 const MPHeader = () => {
   return (
     <Nav>
-      <div className="mpflex-container">
-        <li> Name</li>
-        <span>Age</span>
-        <div> Gender </div>
-        <div> Bed # </div>
-        <div> Time </div>
-        <div> Resp Rate </div>
-        <div> Sys BP </div>
-        <div> Dias BP </div>
-        <div> Temp </div>
-        <div> Heart Rate </div>
+      <div className="critflex-container">
+        <span> Name</span>
+        <p>Age</p>
+        <p> Gender </p>
+        <p> Bed# </p>
+        <span> Time </span>
+        <p> Resp Rate </p>
+        <p> Sys BP </p>
+        <p> Dias BP </p>
+        <p> Temp </p>
+        <p> Heart Rate </p>
       </div>
     </Nav>
   );

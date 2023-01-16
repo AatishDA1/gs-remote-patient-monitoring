@@ -14,8 +14,8 @@ const MPHeader = () => {
         <p> Resp Rate </p>
         <p> Sys BP </p>
         <p> Dias BP </p>
-        <p> Temp </p>
-        <p> Heart Rate </p>
+        <p> Temp <sup>o</sup>C</p>
+        <p> Heart Rate bpm</p>
       </div>
     </Nav>
   );

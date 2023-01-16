@@ -8,7 +8,7 @@ import RespGraph, {
 } from "../components/Vitals/RandomVitalGraphDud";
 import "../components/Styles/selectpats.css"
 import { name } from "../components/PatArchive/PAConnect";
-import NoSignal from "../components/PatSelect/NoSignal";
+import NoHistory from "../components/PatArchive/NoHistory";
 
 
 export default function PatientHistory() {
@@ -19,7 +19,7 @@ export default function PatientHistory() {
       {/* <Navbar /> */}
       <h1>Patient: {name}</h1>
       <div className="kontainer">
-        <NoSignal trigger = {noSignalPopup} setTrigger = {setNoSignalPopup} />
+        <NoHistory trigger = {noSignalPopup} setTrigger = {setNoSignalPopup} />
         <RespGraph />
         <div className="RespRate">
           <li>Resp Rate:</li>

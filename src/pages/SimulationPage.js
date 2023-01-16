@@ -7,7 +7,8 @@ import Simulation from "../components/Simulation/Simulation";
 
 const SimulationPage = () => (
   <Layout>
-    <AddSimData/>
+    {/* <AddSimData/> */}
+    
     <Seo title="SimulationPage" />
     <Simulation />
   </Layout>

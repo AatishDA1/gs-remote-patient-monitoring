@@ -5,7 +5,6 @@ import "../Styles/styles.css";
 import "../Styles/Popup.css";
 import { respR, tempR, sysR, diasR, heartR } from "./SimDataNorm";
 
-
 export default function EdiPatPopUp(props) {
   const [updatedPatientName, setUpdatedPatientName] = useState("");
   const [updatedPatientAge, setUpdatedPatientAge] = useState("");

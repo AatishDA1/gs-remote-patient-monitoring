@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import db from "../General/firebase";
 import "../Styles/styles.css";
 import "../Styles/Popup.css";
+import RandomRespRate, {RandomDias, RandomHR, RandomSys, RandomTemp} from "../Simulation/SimDataNorm";
 
 export default function AddPatPopUp(props) {
   const [patientName, setPatientName] = useState("");
@@ -15,6 +16,12 @@ export default function AddPatPopUp(props) {
   const [diaPressure, setDiaPressure] = useState([]);
   const [HR, setHR] = useState([]);
   const [temp, setTemp] = useState([]);
+  // it would save around 700 values everytime a patient is added but this is only initiallizing here
+  respRate.push(RandomRespRate())
+  temp.push(RandomTemp())
+  sysPressure.push(RandomSys())
+  diaPressure.push(RandomDias())
+  HR.push(RandomHR())
 
   const submit = (e) => {
     e.preventDefault();
@@ -36,7 +43,7 @@ export default function AddPatPopUp(props) {
     setPatientAge("");
     setPatientGender("");
     setPatientBedNO("");
-
+    
     setTime([]);
     setRespRate([]);
     setTemp([]);
@@ -44,7 +51,8 @@ export default function AddPatPopUp(props) {
     setDiaPressure([]);
     setHR([]);
   };
-
+  
+  
   return props.trigger ? (
     <div className="popup">
       <div className="popup-addpersonnel">

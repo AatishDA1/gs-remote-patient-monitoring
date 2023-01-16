@@ -48,13 +48,13 @@ import RandomRespRateCcrit, {
   RandomTempCcrit,
   RandomSysCcrit,
   RandomDiasCcrit,
-  RandomHRCcrit,
+  RandomHRCcrit
 } from "./SimCritExtract";
 import RandomRespRateWwarn, {
   RandomTempWwarn,
   RandomSysWwarn,
   RandomDiasWwarn,
-  RandomHRWwarn,
+  RandomHRWwarn
 } from "./SimWarnExtract";
 import SimAddActions from "./SimAddActions";
 import SimWarnActions from "./SimWarnActions";

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import db from "../General/firebase";
 
-const patientkey = "xu9s02m4Y5n1MadwgaDD"
+const patientkey = "6a19KWPh2Kg7tor6IBjD";
+
 
 function RandomRespR() {
   let min = 12;
@@ -11,18 +12,23 @@ function RandomRespR() {
 }
 
 export default function RandomRespRate(patient) {
+
   const [currentRR, updatedRR] = useState(RandomRespR());
   /* create empty list and append every new data to it and then override it everytime in the db*/
-  let resplist = []
+  let resplist = [];
+  let timelist = [];
   useEffect(() => {
     setInterval(() => {
       const RR = RandomRespR();
       updatedRR(RR);
-      resplist.push(RR)
-      // 'iJhMrZxoYmvoPWf5XPH6' : the id of the patient called simulation
+      //const strtime = timevar.toLocaleDateString
+      timelist.push((new Date).getSeconds())
+      resplist.push(RR);
+
       db.collection("patientsData").doc(patientkey).update({
-        resp: resplist
-      })
+        resp: resplist,
+        time: timelist
+      });
     }, 1000);
   }, []);
   respR = currentRR;
@@ -46,8 +52,8 @@ export function RandomTemp() {
       updatedTR(TR);
       templist.push(TR);
       db.collection("patientsData").doc(patientkey).update({
-        temp: templist
-      })
+        temp: templist,
+      });
     }, 1000);
   }, []);
   tempR = currentTR;
@@ -71,8 +77,8 @@ export function RandomSys() {
       updatedSR(SR);
       syslist.push(SR);
       db.collection("patientsData").doc(patientkey).update({
-        sys: syslist
-      })
+        sys: syslist,
+      });
     }, 1000);
   }, []);
   sysR = currentSR;
@@ -96,8 +102,8 @@ export function RandomDias() {
       updatedDR(DR);
       dialist.push(DR);
       db.collection("patientsData").doc(patientkey).update({
-        dia: dialist
-      })
+        dia: dialist,
+      });
     }, 1000);
   }, []);
   diasR = currentDR;
@@ -121,8 +127,8 @@ export function RandomHR() {
       updatedHR(HR);
       HRlist.push(HR);
       db.collection("patientsData").doc(patientkey).update({
-        hr: HRlist
-      })
+        hr: HRlist,
+      });
     }, 1000);
   }, []);
   heartR = currentHR;

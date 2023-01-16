@@ -40,15 +40,14 @@ export default function AddDocPopUp(props) {
                   value={doctorName}
                   onChange={(e) => {
                     const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
-                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)  || isNaN(finalChar)) setDoctorName(e.target.value)
-                    
-                  }}
-                />
+                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122)|| finalChar === 32 || isNaN(finalChar)) setDoctorName(e.target.value)}
+                  }/>
                 <input
-                  type="number"
+                  type="text"
                   placeholder="Office #"
                   value={doctorOffice}
-                  onChange={(e) => setDoctorOffice(e.target.value)}
+                  onChange={(e) => {
+                    if(e.target.value.length <= 4)setDoctorOffice(e.target.value)}}
                 />
                 <input
                   type="text"

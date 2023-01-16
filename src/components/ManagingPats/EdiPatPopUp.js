@@ -74,25 +74,31 @@ export default function EdiPatPopUp(props) {
                   type="text"
                   placeholder="Name"
                   value={updatedPatientName}
-                  onChange={(e) => setUpdatedPatientName(e.target.value)}
-                />
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length - 1);
+                    if ((finalChar >= 65 && finalChar <= 90) || (finalChar >= 97 && finalChar <= 122) || finalChar === 32 || isNaN(finalChar)) setUpdatedPatientName(e.target.value)}
+                  }/>
                 <input
                   type="text"
                   placeholder="Age"
                   value={updatedPatientAge}
-                  onChange={(e) => setUpdatedPatientAge(e.target.value)}
+                  onChange={(e) =>{
+                    if (e.target.value.length <= 3) setUpdatedPatientAge(e.target.value)}}
                 />
                 <input
                   type="text"
                   placeholder="Gender"
                   value={updatedPatientGender}
-                  onChange={(e) => setUpdatedPatientGender(e.target.value)}
+                  onChange={(e) => {
+                    const finalChar = e.target.value.charCodeAt(e.target.value.length-1);
+                    if ((finalChar === 70 && e.target.value.length ===1) || (finalChar === 77 && e.target.value.length ===1   || isNaN(finalChar)))setUpdatedPatientGender(e.target.value)}}
                 />
                 <input
                   type="text"
                   placeholder="Bed Number"
                   value={updatedPatientBedNO}
-                  onChange={(e) => setUpdatedPatientBedNO(e.target.value)}
+                  onChange={(e) => {
+                    if(e.target.value.length <= 4) setUpdatedPatientBedNO(e.target.value)}}
                 />
               </div>
               <button className="aedbtnstyle" onClick={updateData}>

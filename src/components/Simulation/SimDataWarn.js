@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import db from "../General/firebase";
 
-const patientkey = "xu9s02m4Y5n1MadwgaDD"
-
-
+const patientkey = "6a19KWPh2Kg7tor6IBjD";
 
 function RandomRespRW() {
   let min = 16;
@@ -14,14 +12,17 @@ function RandomRespRW() {
 export default function RandomRespRateW() {
   const [currentRRW, updatedRRW] = useState(RandomRespRW());
   let RRWlist = [];
+  let timelist = [];
   useEffect(() => {
     setInterval(() => {
       const RRW = RandomRespRW();
       updatedRRW(RRW);
-      RRWlist.push(RRW)
+      RRWlist.push(RRW);
+      timelist.push((new Date).getSeconds())
       db.collection("patientsData").doc(patientkey).update({
-        resp: RRWlist
-      })
+        resp: RRWlist,
+        time: timelist
+      });
     }, 1000);
   }, []);
   respRW = currentRRW;
@@ -43,10 +44,10 @@ export function RandomTempW() {
     setInterval(() => {
       const TR = RandomTempRW();
       updatedTRW(TR);
-      TRWlist.push(TR)
+      TRWlist.push(TR);
       db.collection("patientsData").doc(patientkey).update({
-        temp: TRWlist
-      })
+        temp: TRWlist,
+      });
     }, 1000);
   }, []);
   tempRW = currentTRW;
@@ -68,10 +69,10 @@ export function RandomSysW() {
     setInterval(() => {
       const SR = RandomSysRW();
       updatedSRW(SR);
-      SRWlist.push(SR)
+      SRWlist.push(SR);
       db.collection("patientsData").doc(patientkey).update({
-        sys: SRWlist
-      })
+        sys: SRWlist,
+      });
     }, 1000);
   }, []);
   sysRW = currentSRW;
@@ -93,10 +94,10 @@ export function RandomDiasW() {
     setInterval(() => {
       const DR = RandomDiasRateW();
       updatedDRW(DR);
-      DRWlist.push(DR)
+      DRWlist.push(DR);
       db.collection("patientsData").doc(patientkey).update({
-        dia: DRWlist
-      })
+        dia: DRWlist,
+      });
     }, 1000);
   }, []);
   diasRW = currentDRW;
@@ -118,10 +119,10 @@ export function RandomHRW() {
     setInterval(() => {
       const HR = RandomHRateW();
       updatedHRW(HR);
-      HRWlist.push(HR)
+      HRWlist.push(HR);
       db.collection("patientsData").doc(patientkey).update({
-        hr: HRWlist
-      })
+        hr: HRWlist,
+      });
     }, 1000);
   }, []);
   heartRW = currentHRW;

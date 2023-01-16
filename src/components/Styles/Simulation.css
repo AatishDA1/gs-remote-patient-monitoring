@@ -41,6 +41,7 @@ button {
   padding: 0 rem;
   position: relative;
 }
+
 .zoombuttons {
   display: flex;
   justify-content: center;
@@ -55,9 +56,11 @@ button {
   padding: 0 rem;
   position: relative;
 }
+
 .middle {
   margin: auto;
 }
+
 /* Reference https://www.youtube.com/watch?v=sA_glquejwE*/
 
 .RespGraph {
@@ -155,20 +158,11 @@ button {
   grid-area: ECG;
   list-style-type: none;
 
-  display: flex;
-  flex-direction: row;
 }
 
 .kontainer {
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* 1fr 1fr 1fr 1fr 1fr 1fr / 5fr 1fr ; */
-  /* 'RespGraph RespGraph RespGraph RespGraph RespGraph RespGraph RespRate RespRate RespRate RespRate'
-    'TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph TempGraph Temp Temp'
-    'BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys_Graph BP_Sys BP_Sys'
-    'BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias_Graph BP_Dias BP_Dias'
-    'HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HRGraph HR HR'
-    'ECG ECG ECG ECG ECG ECG ECG ECG ECG ECG'; */
   grid-gap: 15px;
   padding: 10px;
   grid-template-areas:
@@ -180,43 +174,26 @@ button {
     "HRGraph HR";
   text-align: Left;
 }
-.Nav{
-  /* padding-top: 2rem;
-  padding-bottom: 1rem;
-  padding-left: 3.2rem;
-  padding-right: 3.2rem; */
-  /* background: rgb(192, 228, 207); */
+
+.Nav {
   background-color: aliceblue;
 }
 
-.Nav_container{
+.Nav_container {
   display: flex;
+  flex-flow: row wrap;
 
-/* Then we define the flow direction 
-   and if we allow the items to wrap 
- * Remember this is the same as:
- * flex-direction: row;
- * flex-wrap: wrap;
- */
-flex-flow: row wrap;
-
-/* Then we define how is distributed the remaining space */
+  /* Then we define how is distributed the remaining space */
 
   justify-content: flex-end;
-gap:0;
-padding: 0;
-margin: 0;
-list-style: none;
-}
-
-.Nav_items{
-  /* order:6 ; */
-  /* margin-bottom: 1rem; */
-  
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .Nav_item {
-  
+
   background: lavender;
   padding: 5px;
   width: 100%;
@@ -228,7 +205,8 @@ list-style: none;
   margin: 0 0rem;
   border-radius: 0px;
 }
-.Nav_item:hover{
+
+.Nav_item:hover {
   background: aliceblue;
 }
 
@@ -243,7 +221,7 @@ list-style: none;
   flex-flow: column;
   width: 100%;
   overflow: hidden;
-text-decoration: none;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 600px) {

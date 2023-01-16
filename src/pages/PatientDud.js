@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/General/Layout";
 import RespGraph, {
   DiasGraph,
+  ECGGraph,
   HeartRateGraph,
   SysGraph,
   TempGraph,
@@ -20,6 +21,7 @@ export default function PatientDud() {
       <h1>Patient: {name}</h1>
       <div className="kontainer">
         <NoSignal trigger = {noSignalPopup} setTrigger = {setNoSignalPopup} />
+        <ECGGraph />
         <RespGraph />
         <div className="RespRate">
           <li>Resp Rate:</li>
@@ -54,9 +56,6 @@ export default function PatientDud() {
           <li>
              bpm
           </li>
-        </div>
-        <div className="ECG">
-          <li>ECG</li>
         </div>
       </div>
     </Layout>

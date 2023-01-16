@@ -95,9 +95,9 @@ export default function Simulation() {
   const [Normal, setNormal] = useState(true);
   const [Warning, setWarning] = useState(false);
   const [Critical, setCritical] = useState(false);
-  const setZoomIn = useState(false);
-  const setOriginal = useState(true);
-  const setZoomOut = useState(false);
+  const [ZoomIn,setZoomIn] = useState(false);
+  const [Original,setOriginal] = useState(true);
+  const [ZoomOut,setZoomOut] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [submitwarnPopup, setsubmitwarnPopup] = useState(false);
   const [buttonCritPopup, setButtonCritPopup] = useState(false);
@@ -228,12 +228,7 @@ export default function Simulation() {
           </h2>
         </PopupCritical>
       </div>
-      <div className="button_holder">
-        <button onClick={ZoomInHandler}>Zoom in</button>
-        <button onClick={OriginalHandler}>Original</button>
-        <button onClick={ZoomOutHandler}>Zoom out</button>
-      </div>
-      
+
       {Normal && (
         <div>
         <div className="zoombuttons">

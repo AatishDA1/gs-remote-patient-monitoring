@@ -35,10 +35,17 @@ Welcome to our Remote Patient Monitor
     Run the following command to install all dependencies.
 
     ```shell
-    npm install
+    npm install --force
     ```
-
-5.  **Start Developing**
+5.  **Install Reactjs Chart 2**
+    
+    Run the following command to install Reactjs Chart 2.
+    
+    ```shell
+    npm install --save chart.js react-chartjs-2
+    ```
+    
+6.  **Start Developing**
 
     Run the following command to begin developing.
 

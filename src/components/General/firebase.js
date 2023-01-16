@@ -12,13 +12,13 @@ import "firebase/compat/firestore";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyD7WqWV6_gd4vJelcg-AX6f1AFLreHU0Z4",
-  authDomain: "gilbert-98a99.firebaseapp.com",
-  projectId: "gilbert-98a99",
-  storageBucket: "gilbert-98a99.appspot.com",
-  messagingSenderId: "498941917981",
-  appId: "1:498941917981:web:d888d3b27b4ebd8e473ff4",
-  measurementId: "G-R3ZVV31Y0R"
+  apiKey: "AIzaSyATdnKOGZaaTViW3EdN3gwkQyqANGs4xb0",
+  authDomain: "gilbert2-329ad.firebaseapp.com",
+  projectId: "gilbert2-329ad",
+  storageBucket: "gilbert2-329ad.appspot.com",
+  messagingSenderId: "14716882201",
+  appId: "1:14716882201:web:a4131d6b01038f6fab4988",
+  measurementId: "G-1075B2QKJF"
 };
 
 // Initialize Firebase

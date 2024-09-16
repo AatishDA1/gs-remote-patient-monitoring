@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/Popup.css";
 import { GlobalStyle } from "../Styles/GlobalStyles";
-
+// Popup function for critical alerts
 function PopupCritical(props) {
   return props.trigger ? (
     <>

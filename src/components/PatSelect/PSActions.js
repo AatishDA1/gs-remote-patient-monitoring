@@ -23,41 +23,6 @@ export default function PSActions() {
     });
   }, []);
 
-    
-//   const [readData, setreadData] = useState("");
-//   const [getName, setGetName] = useState("");
-//   const [getResp, setGetResp] = useState("");
-//   const [getHR, setGetHR] = useState("");
-//   const [getSys, setGetSys] = useState("");
-//   const [getDia, setGetDia] = useState("");
-//   const [getTemp, setGetTemp] = useState("");
-
-//   const getData = (e) => {
-//     e.preventDefault();
-//     const please = db.collection("patientsData").doc(readData);
-
-//     const doc = please.get({
-//       name: getName,
-//       resp: getResp,
-//       temp: getTemp,
-//       sys: getSys,
-//       dia: getDia,
-//       hr: getHR,
-//     });
-
-//     if (!doc.exists) {
-//       <>'No such document!'</>;
-//     } else {
-//       setGetName(doc.name);
-//       setGetResp(doc.resp);
-//       setGetTemp(doc.temp);
-//       setGetSys(doc.sys);
-//       setGetDia(doc.dia);
-//       setGetHR(doc.hr);
-//       setreadData("");
-//     }
-//   };
-
   //AEDButton disabled
   function editDisabled() {
     return indices.length === 0 || indices.length > 1;
@@ -115,7 +80,7 @@ export default function PSActions() {
 
   //search
   const [query, setQuery] = useState("");
-  
+
   return (
     <>
       <div className="ChangeBtnState">
@@ -158,132 +123,35 @@ export default function PSActions() {
                   </li>
                 );
               })}
+          </div>
+          <li>
+            <div>
+              <AEDBtn>
+                <button
+                  className="aedbtnstyle"
+                  disabled={editDisabled()}
+                  onClick={() => {
+                    setButtonPopup(true);
+                    navigate("/PatientDud/");
+                  }}
+                >
+                  VIEW
+                </button>
+                <PSDudpage
+                  trigger={buttonPopup}
+                  setTrigger={setButtonPopup}
+                  info={edit}
+                ></PSDudpage>
+              </AEDBtn>
             </div>
-            <li>
-              <div>
-                <AEDBtn>
-                  <button
-                    className="aedbtnstyle"
-                    disabled={editDisabled()}
-                    onClick={() => {
-                      setButtonPopup(true);
-                      navigate("/PatientDud/")
-                    }}
-                  >
-                    VIEW
-                  </button>
-                  <PSDudpage
-                    trigger={buttonPopup}
-                    setTrigger={setButtonPopup}
-                    info={edit}
-                  ></PSDudpage>
-                  </AEDBtn>
-              </div>
-            </li>
-          </ul>
+          </li>
+        </ul>
       </div>
     </>
   );
 }
-// export default PatientSelect;
-      {/* <div className="App">
-        {!readData ? (
-          <div>
-            <button
-              className="aedbtnstyle"
-              onClick={() => {
-                setAddBtnPopup(true);
-              }}
-            >
-              ADD
-            </button>
-            <APpopup
-              trigger={addbtnPopup}
-              setTrigger={setAddBtnPopup}
-            ></APpopup>
-          </div>
-        ) : (
-          PLOT GRAPHS UNDER HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-          <div className="App__Updateform">
-            <h2>Patient Vitals</h2>
-            <button onClick={getData}>fetch</button>
-            Name : {getName}
-            Resp : {getResp}
-            Temp : {getTemp}
-            Sys : {getSys}
-            Dia : {getDia}
-            HR : {getHR}
-          </div>
-        )}
-
-        <div className="App__DataDisplay">
-          <table>
-            <tr>
-              <th>NAME</th>
-              <th>AGE</th>
-              <th>GENDER</th>
-              <th>BED NUMBER</th>
-              <th>View Details</th>
-              <th>Select</th>
-            </tr>
-
-            {patientsData?.map(({ id, data }) => (
-              <tr key={id}>
-                <td>{data.name}</td>
-                <td>{data.age}</td>
-                <td>{data.gender}</td>
-                <td>{data.bedNO}</td>
-                <td>
-                  <>
-                    <button
-                      onClick={() => {
-                        setreadData(id);
-                        setGetName(data.name);
-                        setGetResp(data.resp);
-                        setGetTemp(data.temp);
-                        setGetSys(data.sys);
-                        setGetDia(data.dia);
-                        setGetHR(data.hr);
-                      }}
-                    >
-                      {" "}
-                      View Details{" "}
-                    </button>
-                  </>
-                </td>
-              </tr>
-            ))}
-          </table>
-        </div>
-      </div> */}
-  //   </>
-  // );
-// }
-
-// export default PatientSelect;
-
 
 const AEDBtn = styled.div`
   margin: 5px;
   margin-right: 5px;
 `;
-
-
-// export default function PatientName() {
-// const [patProps, setPatProps] = useState(props.info);
-// const [patName, setPatName] = useState("")
-// useEffect(() => {
-//     props.info === undefined
-//       ? console.log("props notdefined")
-//       : setPatProps(props.info);
-//   });
-
-//   useEffect(() => {
-//     if (patProps.data === undefined) {
-//       console.log("pat not defined");
-//     } else {
-//       setPatName(patProps.data.name)
-//     }
-//   }, [patProps]);
-//   return(patName)
-// }

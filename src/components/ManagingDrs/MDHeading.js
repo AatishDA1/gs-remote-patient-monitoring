@@ -9,7 +9,6 @@ const MDHeading = () => {
         <li>Select</li>
         <span>Doctor Name</span>
         <div>Office Number</div>
-        <div>Pat. List</div>
       </div>
     </Nav>
   );

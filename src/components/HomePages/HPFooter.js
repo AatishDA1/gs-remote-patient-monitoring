@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import logo from "../../Assets/Images/GilbertSolutionsLogo.svg";
 import { LOButton } from "./LOButton";
-
+import { AlertHistoryButton } from "./AlertHistoryButton";
 const HPFooter = () => {
   return (
     <Foot>
@@ -14,6 +14,13 @@ const HPFooter = () => {
         />
         GILBERT SOLUTIONS
       </Logo>
+      <br></br>
+
+      <LOBtn>
+        <AlertHistoryButton primary="true" big="true" round="true" to= "/AlertHistory">
+            Alerts
+        </AlertHistoryButton>
+      </LOBtn>
       <LOBtn>
         <LOButton primary="true" big="true" round="true" to="/">
           Logout

@@ -1,3 +1,6 @@
+// Reference data from 
+// https://lightningchart.com/lightningchart-js-interactive-examples/examples/lcjs-example-0150-ecg.html
+
 const ECGData = [
     { x: 2, y: 81 },
     { x: 3, y: 83 },
@@ -1587,7 +1590,7 @@ const ECGData = [
     { x: 1587, y: 82 }
 
 ]
-
+// end of reference
 const datalist = [];
 for (let i = 0; i<ECGData.length; i++){
     let data = ECGData[[i]]
@@ -1604,14 +1607,12 @@ function getdata(){
     )
 }
 
-let timer = setInterval(getECGvalue,1000)
+let timer = setInterval(getECGvalue,10)
 
 export function getECGvalue() {
     if (counter == datalist.length){
-        console.log(counter)
     counter  = 0 }
     else{
-        
     var ECGy = getdata();}
     return ECGy
 }
